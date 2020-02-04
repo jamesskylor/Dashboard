@@ -24,7 +24,7 @@
             }
             .sidebar {
                 height: 100%;
-                width: 200px;
+                width: 250px;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -53,6 +53,7 @@
                 vertical-align: middle;
             }
             .material-icons {
+                padding-bottom: 3px;
                 margin-right: 30px
             }
             @media screen and (max-height: 450px) {
@@ -79,29 +80,39 @@
                 border: 1px solid black;
             }
         </style>
-        
+        <script>
+            function testIn() {
+                console.log("hovering in sidebar");
+            }
+            function testOut() {
+                console.log("hovering outside sidebar");
+            }
+         </script>
         
         
     </head>
     
     <body>
-        <div id="mySidebar" class="sidebar">
+        <div id="mySidebar" class="sidebar" onmouseover="testIn()" onmouseout="testOut()">
             <a href="#">
                 <span>
                     <i class="material-icons">info</i>
                     <span class="icon-text">about</span>
                 </span>
-            </a><br>
+            </a>
+            <br>
             <a href="#">
                 <span>
                     <i class="material-icons">spa</i>
                     <span class="icon-text">services</span>
                 </span>
-            </a><br>
+            </a>
+            <br>
             <a href="#">
                 <i class="material-icons">monetization_on</i>
                 <span class="icon-text">clients</span>
-            </a><br>
+            </a>
+            <br>
             <a href="#">
                 <i class="material-icons">email</i>
                 <span class="icon-text">contact</span>
