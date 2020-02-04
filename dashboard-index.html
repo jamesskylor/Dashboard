@@ -90,6 +90,21 @@
         </style>
        
         
+        <script> 
+        var small = true; 
+        function toggleSideBar() {
+            if(small) {
+                console.log("opening sidebar")
+                document.getElementId("mysidebar").style.width = "250px";
+                document.getElementId("content").style.marginLeft = "250px";
+                this.mini = false;
+            } else {
+                console.log("closing sidebar");
+                document.getElementId("mysidebar").style.width = "80px";
+                document.getelementId("content").style.marginLeft = "80px";
+            }
+        }
+        </script>
         
     </head>
     
@@ -194,22 +209,7 @@
             
             
         </div> 
-        <script>
-            var small = true; 
-            function toggleSideBar() {
-                if (small) {
-                    console.log("opening sidebar");
-                    document.getElementById("mySidebar").style.width = "250px";
-                    document.getElementById("content").style.marginLeft = "250px";
-                    this.small= false;
-                     } else {
-                         console.log("closing sidebar");
-                         document.getElementById("mySidebar").style.width = "80px";
-                         document.getElementById("content").style.marginLeft = "80px";
-                         this.mini = true;
-                     }
-            }
-          </script>
+       
     </body>
   
     
