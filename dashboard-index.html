@@ -5,6 +5,7 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <style> 
             h1 {
                 font-family: 'Lustria', serif;
@@ -14,9 +15,51 @@
                 font-size: 300%;
                 white-space: nowrap;
             }
-            
-            
-            
+            p {
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            .sidebar {
+                height: 100%;
+                width: 200px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                padding-top: 60px;
+            }
+            .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+            .sidebar a:hover {
+                color: #f1f1f1;
+            }
+            main .sidebar{
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+            .material-icons,
+            .icon-text {
+                vertical-align: middle;
+            }
+            .material-icons {
+                margin-right: 30px
+            }
+            @media screen and (max-height: 450px) {
+                .sidebar {
+                    padding-top: 15px;
+                }
+                .sidebar a {
+                    font-size: 18px;
+                }
+            }
         </style>
         
         
@@ -24,10 +67,25 @@
     </head>
     
     <body>
-        <div>
-            
-            
-            
+        <div id="mySidebar" class="sidebar">
+            <a href="#">
+                <span>
+                    <i class="material-icons">info</i>
+                    <span class="icon-text">about</span>
+            </a><br>
+            <a href="#">
+                <i class="material-icons">spa</i>
+                <span class="icon-text"></span>services
+            </a></span>
+            </a><br>
+            <a href="#">
+                <i class="material-icons">monetization_on</i><span class="icon-text"></span>clients</span>
+            </a><br>
+            <a href="#">
+                <i class="material-icons">email</i>
+                <span class="icon-text"></span>contact
+                <span>
+            </a>
         </div>
         <div>
             <h1>
@@ -42,84 +100,60 @@
             </h2>
             <table>
                 <tr>
-                    <td>
-                        <img>
+                    <td id="Updates">
+                        <img src="">
                         <h3>
-                            
-                            
-                            
+                            My Timeline
                         </h3>
                         <p>
-                            
-                            
-                            
+                            Submit weekly updates to track the health of your startup
                         </p>
                     </td>
-                    <td>
-                        <img>
+                    <td id="Lessons">
+                        <img src="">
                         <h3>
-                            
-                            
-                            
+                            Lessons
                         </h3>
                         <p>
-                            
-                            
-                            
+                           View lessons curated by Placeholder Name
                         </p>
                     </td>
-                    <td>
-                        <img>
+                    <td id="Network">
+                        <img src="">
                         <h3>
-                            
-                            
-                            
+                            Network
                         </h3>
                         <p>
-                            
-                            
-                            
+                            Connect with peers
                         </p>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <img>
+                    <td id="Placeholder ID">
+                        <img src="">
                         <h3>
-                            
-                            
-                            
+                            Placeholder ID
                         </h3>
                         <p>
-                            
-                            
-                            
+                            Placeholder Description
                         </p>
                     </td>
-                    <td>
-                        <img>
+                    <td id="Deals">
+                        <img src="">
                         <h3>
-                            
-                            
-                            
+                            Deals
                         </h3>
                         <p>
-                            
-                            
-                            
+                            Boost your productivity with discounted tools
                         </p>
                     </td>
-                    <td>
-                        <img>
+                    <td id="Help">
+                        <img src="">
                         <h3>
-                            
-                            
-                            
+                            Help
                         </h3>
                         <p>
-                            
-                            
-                            
+                           Something wrong? Contact us.
                         </p>
                     </td>
                 </tr>
