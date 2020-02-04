@@ -3,7 +3,8 @@ Questions: #000000
 Answers: #424252
 Background: #FFFFFF
 
-Buttons: #CCCCCC
+Button Text: #CCCCCC
+Buttons: #424242
 
 Sidebar: #303030
 
