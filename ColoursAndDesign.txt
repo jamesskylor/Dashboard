@@ -3,9 +3,9 @@ Questions: #000000
 Answers: #424252
 Background: #FFFFFF
 
-<<<<<<< HEAD
 Sidebar: #303030
-=======
+
+
 Black-y:
 - #545454
 - #666666
@@ -20,4 +20,3 @@ Bluey
 Purpl-y
 - #442244
 - #7F6981
->>>>>>> c56f8619d97a2cd3750b979a938e101bba6b66dc
