@@ -19,8 +19,11 @@
                 font-family: 'Lustria', serif;
                 color: #000000;
             }
-            .content {
-                padding-left: 80px;
+            #content {
+                margin-left: 80px;
+                padding: 16px;
+                transition: margin-left 0.5s;
+
             }
             .sidebar {
                 height: 100%;
@@ -92,12 +95,13 @@
            function toggleSideBar() {
                if (small) {
                    console.log("opening sidebar");
-                   document.getElementById("mySidebar").style.width = "300px";
+                   document.getElementById("mySidebar").style.width = "250px";
+                   document.getElementById("content").style.marginLeft = "250px";
                    this.small= false;
                     } else {
                         console.log("closing sidebar");
                         document.getElementById("mySidebar").style.width = "80px";
-                        
+                        docuemnt.getElementById("content").style.marginLeft = "80px";
                         this.mini = true;
                     }
            }
