@@ -3,6 +3,8 @@ Questions: #000000
 Answers: #424252
 Background: #FFFFFF
 
+Buttons: #CCCCCC
+
 Sidebar: #303030
 
 
