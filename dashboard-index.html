@@ -87,6 +87,43 @@
             table, th, td {
                 border: 1px solid black;
             }
+            div.notTable {
+                margin: 10%;
+            }
+            div.square {
+                float:left;
+                width: 30%;
+                padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+                margin:1.66%;
+                background-color: #424242;
+                position: relative;
+                overflow: hidden;
+            }
+            div.cont {
+                position: absolute;
+                height:80%; /* = 100% - 2*10% padding */
+                width:90%; /* = 100% - 2*5% padding */
+                padding: 10% 5%;
+                text-align: center;
+            }
+            div.table{
+                display:table;
+                height:100%;
+                width:100%;
+            }
+            div.table-cell{
+                display:table-cell;
+                vertical-align:middle;
+                height:100%;
+                width:100%;
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+                font-size: 100%;
+            }
+            p.inSquare {
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+            }
         </style>
        
         
@@ -131,67 +168,98 @@
             <h2>
                 Dashboard
             </h2>
-            <table id="Dashboard">
-                <tr>
-                    <td id="Updates">
-                        <img src="">
-                        <h3>
-                            My Timeline
-                        </h3>
-                        <p>
-                            Submit weekly updates to track the health of your startup
-                        </p>
-                    </td>
-                    <td id="Lessons">
-                        <img src="">
-                        <h3>
-                            Lessons
-                        </h3>
-                        <p>
-                           View lessons curated by Placeholder Name
-                        </p>
-                    </td>
-                    <td id="Network">
-                        <img src="">
-                        <h3>
-                            Network
-                        </h3>
-                        <p>
-                            Connect with peers
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="Placeholder ID">
-                        <img src="">
-                        <h3>
-                            Placeholder ID
-                        </h3>
-                        <p>
-                            Placeholder Description
-                        </p>
-                    </td>
-                    <td id="Deals">
-                        <img src="">
-                        <h3>
-                            Deals
-                        </h3>
-                        <p>
-                            Boost your productivity with discounted tools
-                        </p>
-                    </td>
-                    <td id="Help">
-                        <img src="">
-                        <h3>
-                            Help
-                        </h3>
-                        <p>
-                           Something wrong? Contact us.
-                        </p>
-                    </td>
-                </tr>
-            </table>
-            
+            <div id="Dashboard" class="notTable">
+                <div class="square">
+                    <div class="cont">
+                        <div class="table">
+                            <div id="Updates" class="table-cell">
+                                <img src="">
+                                <h3>
+                                    My Timeline
+                                </h3>
+                                <p class="inSquare">
+                                    Submit weekly updates to track the health of your startup
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="cont">
+                        <div class="table">
+                            <div id="Lessons" class="table-cell">
+                                <img src="">
+                                <h3>
+                                    Lessons
+                                </h3>
+                                <p class="inSquare">
+                                   View lessons curated by Placeholder Name
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="cont">
+                        <div class="table">
+                            <div id="Network" class="table-cell">
+                                <img src="">
+                                <h3>
+                                    Network
+                                </h3>
+                                <p class="inSquare">
+                                    Connect with peers
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="cont">
+                        <div class="table">
+                            <div id="Placeholder ID" class="table-cell">
+                                <img src="">
+                                <h3>
+                                    Placeholder ID
+                                </h3>
+                                <p class="inSquare">
+                                    Placeholder Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="cont">
+                        <div class="table">
+                            <div id="Deals" class="table-cell">
+                                <img src="">
+                                <h3>
+                                    Deals
+                                </h3>
+                                <p class="inSquare">
+                                    Boost your productivity with discounted tools
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="square">
+                    <div class="cont">
+                        <div class="table">
+                            <div id="Help" class="table-cell">
+                                <img src="">
+                                <h3>
+                                    Help
+                                </h3>
+                                <p class="inSquare">
+                                   Something wrong? Contact us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             
         </div> 
