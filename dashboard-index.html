@@ -95,7 +95,7 @@
     </head>
     
     <body>
-        <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="toggleSideBar()">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
             <a href="#">
                 <span>
                     <i class="material-icons">info</i>
@@ -196,19 +196,19 @@
             
         </div> 
         <script> 
-            var small = true; 
+           
             function toggleSideBar() {
-                if(small) {
+               
                     console.log("opening sidebar")
-                    //document.getElementById("mySidebar").style.width = "250px";
-                    //document.getElementById("dashboardContent").style.marginLeft = "250px";
-                    small = false;
-                } else {
+                    document.getElementById("mySidebar").style.width = "250px";
+                    document.getElementById("dashboardContent").style.marginLeft = "250px"; 
+            }
+            function untoggleSideBar() {
+                
                     console.log("closing sidebar");
-                    //document.getElementById("mySidebar").style.width = "80px";
-                    //document.getelementById("dashboardContent").style.marginLeft = "80px";
-                }
-                small = true;
+                    document.getElementById("mySidebar").style.width = "80px";
+                    document.getelementById("dashboardContent").style.marginLeft = "80px";
+                
             }
             </script>
     </body>
