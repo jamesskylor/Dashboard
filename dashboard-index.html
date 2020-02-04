@@ -21,12 +21,16 @@
             }
             .sidebar {
                 height: 100%;
-                width: 250px;
+                width: 80px;
                 position: fixed;
+                z-index:1;
+                transition: 0.5s;
                 top: 0;
                 left: 0;
                 background-color: #111;
                 padding-top: 60px;
+                white-space: nowrap;
+                overflow-x: hidden;
             }
             .sidebar a {
                 padding: 8px 8px 8px 32px;
@@ -63,12 +67,17 @@
             }
         </style>
         <script>
-            function testIn() {
-                console.log("hovering in sidebar");
-            }
-            function testOut() {
-                console.log("hovering outside sidebar");
-            }
+           var small = true; 
+           function toggleSideBar() {
+               if (small) {
+                   console.log("opening sidebar");
+                   document.getElementById("mySidebar").style.width = "250px";
+                   this.small= false;
+                    } else {
+                        console.log("closing sidebar");
+                        document.getElementById("mySidebar").style.width = "100px";
+                    }
+           }
          </script>
         
         
