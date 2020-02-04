@@ -24,12 +24,16 @@
             }
             .sidebar {
                 height: 100%;
-                width: 250px;
+                width: 80px;
                 position: fixed;
+                z-index:1;
+                transition: 0.5s;
                 top: 0;
                 left: 0;
                 background-color: #111;
                 padding-top: 60px;
+                white-space: nowrap;
+                overflow-x: hidden;
             }
             .sidebar a {
                 padding: 8px 8px 8px 32px;
@@ -76,27 +80,36 @@
             td {
                 word-break: break-word;
                 vertical-align: top;
+<<<<<<< HEAD
                 width: 30%;
                 height: 30%;
+=======
+                height: 200px;
+>>>>>>> 30e5f1e24f4c9e0bde45488de3da7c03ddd33aba
             }
             table, th, td {
                 border: 1px solid black;
             }
         </style>
         <script>
-            function testIn() {
-                console.log("hovering in sidebar");
-            }
-            function testOut() {
-                console.log("hovering outside sidebar");
-            }
+           var small = true; 
+           function toggleSideBar() {
+               if (small) {
+                   console.log("opening sidebar");
+                   document.getElementById("mySidebar").style.width = "300px";
+                   this.small= false;
+                    } else {
+                        console.log("closing sidebar");
+                        document.getElementById("mySidebar").style.width = "100px";
+                    }
+           }
          </script>
         
         
     </head>
     
     <body>
-        <div id="mySidebar" class="sidebar" onmouseover="testIn()" onmouseout="testOut()">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="toggleSideBar()">
             <a href="#">
                 <span>
                     <i class="material-icons">info</i>
