@@ -96,12 +96,12 @@
             if(small) {
                 console.log("opening sidebar")
                 document.getElementById("mySidebar").style.width = "250px";
-                document.getElementById("content").style.marginLeft = "250px";
+                document.getElementById("dashboardContent").style.marginLeft = "250px";
                 this.small = false;
             } else {
                 console.log("closing sidebar");
                 document.getElementById("mySidebar").style.width = "80px";
-                document.getelementById("content").style.marginLeft = "80px";
+                document.getelementById("dashboardContent").style.marginLeft = "80px";
             }
             this.small = true;
         }
@@ -135,7 +135,7 @@
                 <span class="icon-text">contact</span>
             </a>
         </div>
-        <div class="content" id="content">
+        <div class="content" id="dashboardContent">
             <h1>
                 Placeholder name
             </h1> 
