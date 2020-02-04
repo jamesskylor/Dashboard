@@ -80,7 +80,8 @@
             td {
                 word-break: break-word;
                 vertical-align: top;
-                height: 200px;
+                width: 30%;
+                height: 30%;
             }
             table, th, td {
                 border: 1px solid black;
@@ -91,13 +92,11 @@
            function toggleSideBar() {
                if (small) {
                    console.log("opening sidebar");
-                   document.getElementById("mySidebar").style.width = "250px";
-                   document.getElementById("content").style.marginLeft = "250px";
+                   document.getElementById("mySidebar").style.width = "300px";
                    this.small= false;
                     } else {
                         console.log("closing sidebar");
                         document.getElementById("mySidebar").style.width = "100px";
-                        document.getElementById("content").style.marginLeft = "100px";
                     }
            }
          </script>
