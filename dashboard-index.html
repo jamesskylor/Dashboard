@@ -97,12 +97,13 @@
                 console.log("opening sidebar")
                 document.getElementById("mySidebar").style.width = "250px";
                 document.getElementById("content").style.marginLeft = "250px";
-                this.mini = false;
+                this.small = false;
             } else {
                 console.log("closing sidebar");
                 document.getElementById("mySidebar").style.width = "80px";
                 document.getelementById("content").style.marginLeft = "80px";
             }
+            this.small = true;
         }
         </script>
         
