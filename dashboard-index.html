@@ -152,12 +152,34 @@
                 background-color: #303030;
                 margin: 0;
             }
-            .footer p {
+            .copyright p {
                 padding-top: 1.5vw;
                 color:  #CCCCCC;
-                text-align: center;
-                vertical-align: center;
+                text-align: left;
                 font-size: 1vw;
+            }
+            .footerLinks a {
+                text-decoration: none;
+                font-size: 1.5vw;
+                color:  #CCCCCC; /* #818181 */
+                padding-right: 0.1vw;
+                padding-left: 0.1vw;
+            }
+            .footerLinks {
+                display: inline-block;
+                padding-top: 2vw;
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+            .footerLinks a:hover {
+                color: #ffffff;
+                }
+            div.copyright {
+                padding-right: 70vw;
+                }
+            div.wrapper {
+                background-color: #303030;
+                margin-left: 7vw;
             }
             div.box {
                 display: flex;
@@ -372,7 +394,37 @@
             <div class="push"></div>
              
         </div>
-        <footer class ="footer"> <p>Contact us at support@atomcapital.com </p></footer>
+        <footer class ="footer"> 
+            <div class ="wrapper">
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">Atom Capital</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">About</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">Privacy</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">FAQ</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">Contact</span>
+                        </a>
+                    </div> 
+                    <div class = "copyright">
+                        <p>Copyright</p>
+                    </div>
+            </div></footer>
        
         <script> 
            
@@ -380,7 +432,7 @@
                
                     console.log("opening sidebar")
                     document.getElementById("mySidebar").style.width = "24vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
+                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
               
             }
             function untoggleSideBar() {
