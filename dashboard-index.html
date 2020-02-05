@@ -20,7 +20,7 @@
                 color: #000000;
             }
             .content {
-                padding-left: 0px;
+                padding-left: 80px;
 
             }
             .sidebar {
@@ -297,13 +297,13 @@
                
                     console.log("opening sidebar")
                     document.getElementById("mySidebar").style.width = "300px";
-                    document.getElementById("dashboardContent").style.marginLeft = "300px"; 
+                    document.getElementById("dashboardContent").style.marginLeft = "220px"; //subtract 80 from first one.
             }
             function untoggleSideBar() {
                 
                     console.log("closing sidebar");
                     document.getElementById("mySidebar").style.width = "80px";
-                    document.getElementById("dashboardContent").style.marginLeft = "80px";
+                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
                 
             }
             </script>
