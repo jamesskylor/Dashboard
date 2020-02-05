@@ -7,6 +7,10 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <style> 
+            html.body {
+                height: 100%;
+                margin: 0;
+            }
             h1 {
                 font-family: 'Lustria', serif;
                 color: #000000;
@@ -29,6 +33,8 @@
             }
             .content {
                 padding-left: 7vw;
+                min-height: 100%
+                margin-bottom: -2.5vw;
 
             }
             .sidebar {
@@ -122,6 +128,10 @@
             }
             #DashboardTitle {
                 padding-top: 15vw;
+            }
+            .footer,
+            .push {
+                height: 2.5vw;
             }
         </style>
        
@@ -281,7 +291,10 @@
                     </td>
                 </tr>
             </table> 
+            <div class="push"></div>
+            <footer class ="footer">Contact us at support@atomcapital.com</footer>
         </div> 
+        
         <script> 
            
             function toggleSideBar() {
