@@ -47,7 +47,7 @@
                 transition: 0.5s;
                 top: 0;
                 left: 0;
-                background-color: #303030; /* #111 */
+                background-color: #000000; /* #111 */
                 padding-top: 1vw;
                 white-space: nowrap; /* makes text not show up in the sidebar when minimized */
                 overflow-x: hidden; /* hides the text that over flows */
@@ -149,7 +149,7 @@
             }
             .footer {
                 height: 5vw;
-                background-color: #303030;
+                background-color: #000000;
                 margin: 0;
             }
             .copyright p {
@@ -174,12 +174,27 @@
             .footerLinks a:hover {
                 color: #ffffff;
                 }
+            .signUp-text{
+                text-decoration: none;
+                font-size: 1vw;
+                color:  #CCCCCC; /* #818181 */
+                padding-right: 1.5vw;
+                padding-left: 1.5vw;
+                text-align: right;
+            }
             div.copyright {
                 padding-right: 66vw;
+                padding-bottom: 2.0vw;
                 }
             div.wrapper {
-                background-color: #303030;
+                background-color: #000000;
                 margin-left: 7vw;
+            }
+            div.linkWrapper {
+                margin-top: 4vw;
+                margin-right: 16vw;
+                float: right;
+                display: inline-block;
             }
             div.box {
                 display: flex;
@@ -212,6 +227,17 @@
                 border-radius: 0.2vw;
                 height: 2.5vw;
                 margin-left: 6.5vw;
+            }
+            .apply-button {
+                font-family: 'Lustria', serif;
+                background-color: #ffffff;
+                border: none;
+                height: 2vw;
+                width: 6vw;
+            }
+            .linkWrapper button:hover {
+                background-color: #CCCCCC;
+                
             }
         </style>
        
@@ -396,7 +422,7 @@
                 <div class = "signUp">
                     <span class="signUp-text">Make something people want.</span>
                     <a href="#">
-                            <span class="signUp-text"><button> Apply</button></span>
+                            <span class="signUp-text"><button class="apply-button"> Apply Now</button></span>
                         </a>
                 </div>
             </div>
