@@ -20,7 +20,7 @@
                 color: #000000;
             }
             .content {
-                padding-left: 0px;
+                padding-left: 80px;
 
             }
             .sidebar {
@@ -108,7 +108,7 @@
                 color: #424242;
             }
             #Dashboard {
-                background: url("/Dashboard/DashboardSVG.svg");
+                background-image: url('/Dashboard/DashboardSVG.svg');
                 background-repeat: no-repeat;
                 background-size: auto;
             }
@@ -257,13 +257,13 @@
                
                     console.log("opening sidebar")
                     document.getElementById("mySidebar").style.width = "250px";
-                    document.getElementById("dashboardContent").style.marginLeft = "250px"; 
+                    document.getElementById("dashboardContent").style.marginLeft = "170px"; 
             }
             function untoggleSideBar() {
                 
                     console.log("closing sidebar");
                     document.getElementById("mySidebar").style.width = "80px";
-                    document.getElementById("dashboardContent").style.marginLeft = "80px";
+                    document.getElementById("dashboardContent").style.marginLeft = "0px";
                 
             }
             </script>
