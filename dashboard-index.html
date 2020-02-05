@@ -33,7 +33,7 @@
             }
             .content {
                 padding-left: 7vw;
-                margin-right: 1vw;
+                margin-right: 2vw;
                 min-height: 100%;
                 margin-bottom: -2.5vw;
                 margin-top: 7vh;
@@ -94,8 +94,14 @@
                 padding-top: 2%;
                 font-size: 5vw;
                 position: relative;
-                top: 1.6vh;
-                bottom: 1vh;
+                top: 0vw;
+                bottom: 1vw;
+            }
+            h4.inButton {
+                margin-bottom: 2vw;
+                position: relative;
+                top: 0vw;
+                bottom: 10vw;
             }
             @media screen and (max-height: 60vw) {
                 .sidebar {
@@ -166,11 +172,24 @@
             }
             div.button {
                 background-color: #424242;
+                padding-top: 0%;
                 padding-left: 3%;
                 padding-bottom: 3%;
-                color: #cccccc;
+                color: #ffffff;
                 font-family: 'Lustria', serif;
                 font-size: 2vw;
+                height: 14vw;
+                vertical-align: text-top;
+            }
+            .suButton {
+                font-family: 'Lustria', serif;
+                font-size: 1.5vw;
+                background-color: #ffffff;
+                color: #000000;
+                border: none;
+                border-radius: 0.2vw;
+                height: 2.5vw;
+                padding-left: 6.5vw;
             }
         </style>
        
@@ -239,15 +258,27 @@
                 </div>
                 <div class="pop">
                     <div id="ProgressUpdateButton" class="button">
-                        <h4>
-                            <i class="material-icons inButton">list</i>
-                            <span style="padding-left:3%">
-                                Submit Progress Report
-                            </span>
-                        </h4>
-                        
-                        
-                        
+                        <div class="box" style="margin:0;padding:0">
+                            <div style="margin:0;padding:0">
+                                <i class="material-icons inButton">list</i>
+                            </div>
+                            <div style="padding:0;margin:0">
+                                <h4 style="padding: 0; margin: 0; padding-top: 1.4vw; padding-left: 1.5vw">
+                                    Submit Progress Report
+                                </h4>
+                            </div>
+                        </div>
+                        <p style="font-size: 1.2vw; padding-right:1%; color: #cccccc; margin: 0; padding-left: 6.5vw">
+                            Remember to submit your weekly update
+                            <br>
+                            <br><br>
+                        </p>
+                        <a href="" style="color: #cccccc; font-size: 1.5vw; padding-left: 6.5vw; text-decoration: none; color: #c0683a">
+                                Submit Update >
+                        </a>
+                        <button class="suButton">
+                            Submit Update >
+                        </button>
                     </div>
                 </div>
             </div>
