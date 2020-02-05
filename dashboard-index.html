@@ -88,6 +88,10 @@
                 padding-top: 2vh;
                 font-size: 10vw;
             }
+            .material-icons.inButton {
+                padding-top: 2%;
+                font-size: 7vw;
+            }
             @media screen and (max-height: 60vw) {
                 .sidebar {
                     padding-top: 1.5vw;
@@ -132,6 +136,25 @@
             .footer,
             .push {
                 height: 2.5vw;
+            }
+            div.box {
+                display: flex;
+            }
+            div.main {
+                flex: 2 1 60%;
+            }
+            div.pop {
+                flex: 1 1 40%;
+                padding-top: 4%;
+                /* Hide this div if there is no updates */
+            }
+            div.button {
+                background-color: #424242;
+                padding-left: 3%;
+                padding-bottom: 3%;
+                color: #cccccc;
+                font-family: 'Lustria', serif;
+                font-size: 2vw;
             }
         </style>
        
@@ -189,8 +212,8 @@
             </a>
         </div>
         <div class="content" id="dashboardContent">
-            <div class="">
-                <div class="">
+            <div class="box">
+                <div class="main">
                     <h1>
                         Welcome!
                     </h1> 
@@ -198,10 +221,14 @@
                         Here you can find all the resources available for Placeholder_Name members.
                     </p>
                 </div>
-                <div class="">
-                    
-                    
-                    
+                <div class="pop">
+                    <div id="ProgressUpdateButton" class="button">
+                        <i class="material-icons inButton">list</i>
+                        <h4 style="padding-left: 3%">
+                            Submit a Progress Update
+                        </h4>
+                        
+                    </div>
                 </div>
             </div>
             <h2 id="DashboardTitle">
