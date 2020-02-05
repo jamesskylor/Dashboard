@@ -146,12 +146,27 @@
                 background-color: #303030;
                 margin: 0;
             }
-            .footer p {
+            .copyright p {
                 padding-top: 1.5vw;
                 color:  #CCCCCC;
-                text-align: center;
-                vertical-align: center;
+                text-align: left;
                 font-size: 1vw;
+            }
+            .footerLinks a {
+                text-decoration: none;
+                font-size: 1.5vw;
+                color:  #CCCCCC; /* #818181 */ 
+                display: block;
+                padding-left: 12vw;
+            }
+            .footerLinks a:hover {
+                color: #ffffff;
+                }
+            div.copyright {
+                padding-left: 7vw;
+            }
+            div.wrapper {
+                background-color: #303030;
             }
             div.box {
                 display: flex;
@@ -341,7 +356,37 @@
             <div class="push"></div>
              
         </div>
-        <footer class ="footer"> <p>Contact us at support@atomcapital.com </p></footer>
+        <footer class ="footer"> 
+            <div class ="wrapper">
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">Atom Capital</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">About</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">Privacy</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">FAQ</span>
+                        </a>
+                    </div> 
+                    <div class = "footerLinks">
+                        <a href="#">
+                            <span class="footer-text">Contact</span>
+                        </a>
+                    </div> 
+                    <div class = "copyright">
+                        <p>Copyright</p>
+                    </div>
+            </div></footer>
        
         <script> 
            
