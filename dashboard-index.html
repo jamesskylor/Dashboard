@@ -31,20 +31,28 @@
                 transition: 0.5s;
                 top: 0;
                 left: 0;
-                background-color: #111;
-                padding-top: 60px;
-                white-space: nowrap;
-                overflow-x: hidden;
+                background-color: #303030; /* #111 */
+                padding-top: 10px;
+                white-space: nowrap; /* makes text not show up in the sidebar when minimized */
+                overflow-x: hidden; /* hides the text that over flows */
             }
             .sidebar a {
-                padding: 8px 8px 8px 32px;
+                padding: 18px 8px 18px 32px;
                 text-decoration: none;
                 font-size: 25px;
-                color: #818181;
+                color:  #CCCCCC; /* #818181 */ 
                 display: block;
             }
+            .sidebar b {
+                padding: 5px 8px 25px 32px; /* top right bottom left */
+                text-decoration: none;
+                font-size: 35px;
+                color:  #CCCCCC; /* #818181 */
+                display: block; 
+
+            }
             .sidebar a:hover {
-                color: #f1f1f1;
+                color: #ffffff; /*f1f1f1 */
             }
             main .sidebar{
                 position: absolute;
@@ -100,6 +108,7 @@
                 text-align: center;
                 vertical-align: center;
             }
+           
         </style>
        
         
@@ -109,28 +118,50 @@
     
     <body>
         <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
+            <b>
+            <span> 
+                <i class= "material-icons">cloud</i>
+                <span class="icon-text">placeholder</span>
+            </span>
+            </b>
+            <br>
+             <a href="#">
+                <i class="material-icons">perm_identity</i>
+                <span class="icon-text">Profile</span>
+            </a>
+            <br>
             <a href="#">
                 <span>
-                    <i class="material-icons">info</i>
-                    <span class="icon-text">placeholder</span>
+                    <i class="material-icons">list</i>
+                    <span class="icon-text">My Updates</span>
                 </span>
             </a>
             <br>
             <a href="#">
                 <span>
-                    <i class="material-icons">spa</i>
-                    <span class="icon-text">placeholder</span>
+                    <i class="material-icons">ondemand_video</i>
+                    <span class="icon-text">Lessons</span>
                 </span>
             </a>
             <br>
             <a href="#">
-                <i class="material-icons">monetization_on</i>
-                <span class="icon-text">placeholder</span>
+                <i class="material-icons">people</i>
+                <span class="icon-text">Network</span>
             </a>
             <br>
             <a href="#">
-                <i class="material-icons">email</i>
-                <span class="icon-text">placeholder</span>
+                <i class="material-icons">local_offer</i>
+                <span class="icon-text">Deals</span>
+            </a>
+            <br>
+            <a href="#">
+                <i class="material-icons">help_outline</i>
+                <span class="icon-text">Help</span>
+            </a>
+            <br>
+            <a href="#">
+                <i class="material-icons">more_vert</i>
+                <span class="icon-text">More</span>
             </a>
         </div>
         <div class="content" id="dashboardContent">
@@ -228,22 +259,22 @@
                         </div>
                     </td>
                 </tr>
-            </table>
-            
+            </table> 
         </div> 
         <script> 
            
             function toggleSideBar() {
                
                     console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "250px";
-                    document.getElementById("dashboardContent").style.marginLeft = "170px"; 
+                    document.getElementById("mySidebar").style.width = "300px";
+                    document.getElementById("dashboardContent").style.marginLeft = "220px"; //subtract 80 from first one.
+              
             }
             function untoggleSideBar() {
                 
                     console.log("closing sidebar");
                     document.getElementById("mySidebar").style.width = "80px";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px";
+                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
                 
             }
             </script>
