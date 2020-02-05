@@ -26,12 +26,12 @@
                 padding-left: 5%;
             }
             .content {
-                padding-left: 80px;
+                padding-left: 110px;
 
             }
             .sidebar {
                 height: 100%;
-                width: 80px;
+                width: 110px;
                 position: fixed;
                 z-index:1;
                 transition: 0.5s;
@@ -67,13 +67,14 @@
                 font-size: 36px;
                 margin-left: 50px;
             }
-            .material-icons,
+            .material-icons.md-40,
             .icon-text {
                 vertical-align: middle;
             }
-            .material-icons {
+            .material-icons.md-40 {
                 padding-bottom: 3px;
-                margin-right: 30px
+                margin-right: 30px;
+                font-size: 40px; 
             }
             @media screen and (max-height: 450px) {
                 .sidebar {
@@ -128,47 +129,47 @@
         <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
             <b>
             <span> 
-                <i class= "material-icons">cloud</i>
+                <i class= "material-icons md-40">cloud</i>
                 <span class="icon-text">placeholder</span>
             </span>
             </b>
             <br>
              <a href="#">
-                <i class="material-icons">perm_identity</i>
+                <i class="material-icons md-40">perm_identity</i>
                 <span class="icon-text">Profile</span>
             </a>
             <br>
             <a href="#">
                 <span>
-                    <i class="material-icons">list</i>
+                    <i class="material-icons md-40">list</i>
                     <span class="icon-text">My Updates</span>
                 </span>
             </a>
             <br>
             <a href="#">
                 <span>
-                    <i class="material-icons">ondemand_video</i>
+                    <i class="material-icons md-40">ondemand_video</i>
                     <span class="icon-text">Lessons</span>
                 </span>
             </a>
             <br>
             <a href="#">
-                <i class="material-icons">people</i>
+                <i class="material-icons md-40">people</i>
                 <span class="icon-text">Network</span>
             </a>
             <br>
             <a href="#">
-                <i class="material-icons">local_offer</i>
+                <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
             <a href="#">
-                <i class="material-icons">help_outline</i>
+                <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
             <br>
             <a href="#">
-                <i class="material-icons">more_vert</i>
+                <i class="material-icons md-40">more_vert</i>
                 <span class="icon-text">More</span>
             </a>
         </div>
@@ -273,14 +274,14 @@
             function toggleSideBar() {
                
                     console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "300px";
-                    document.getElementById("dashboardContent").style.marginLeft = "220px"; //subtract 80 from first one.
+                    document.getElementById("mySidebar").style.width = "340px";
+                    document.getElementById("dashboardContent").style.marginLeft = "230px"; //subtract 80 from first one.
               
             }
             function untoggleSideBar() {
                 
                     console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "80px";
+                    document.getElementById("mySidebar").style.width = "110px";
                     document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
                 
             }
