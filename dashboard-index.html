@@ -69,48 +69,36 @@
                     font-size: 18px;
                 }
             }
-            div.notTable {
-                margin: 10%;
+            table {
+                background-image: url("DashboardSVG.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 90%;
+                margin: auto;
             }
-            div.square {
-                float:left;
+            td {
                 width: 30%;
-                padding-bottom: 30%;
-                margin: 0%;
-                background-color: #FFFFFF;
                 position: relative;
-                overflow: hidden;
-                
             }
-            div.cont {
+            td:after {
+                content: '';
+                display: block;
+                margin-top: 100%;
+            }
+            td .inside {
                 position: absolute;
-                height:80%;
-                width:90%;
-                padding: 10% 5%;
-                text-align: center;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                vertical-align: middle;
             }
-            div.table{
-                display:table;
-                height:100%;
-                width:100%;
-            }
-            div.table-cell{
-                display:table-cell;
-                vertical-align:middle;
-                height:100%;
-                width:100%;
+            td .innerContent {
+                margin: 5%;
                 font-family: 'Lustria', serif;
                 color: #000000;
-                font-size: 100%;
-            }
-            p.inSquare {
-                font-family: 'Lustria', serif;
-                color: #424242;
-            }
-            #Dashboard {
-                background: url("/Dashboard/DashboardSVG.svg");
-                background-repeat: no-repeat;
-                background-size: auto;
+                text-align: center;
+                vertical-align: center;
             }
         </style>
        
@@ -156,99 +144,57 @@
             <h2>
                 Dashboard
             </h2>
-            <div id="Dashboard" class="notTable">
-                <div class="square">
-                    <div class="cont">
-                        <div class="table">
-                            <div id="Updates" class="table-cell">
-                                <img src="">
-                                <h3>
-                                    My Timeline
-                                </h3>
-                                <p class="inSquare">
-                                    Submit weekly updates to track the health of your startup
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <div class="inside">
+                            <div class="innerContent">
+                                stuff
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inside">
+                            <div class="innerContent">
+                                stuff
+                            </div>
+                        </div> 
+                    </td>
+                    <td>
+                        <div class="inside">
+                            <div class="innerContent">
+                                <p>
+                                    Hello
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="square">
-                    <div class="cont">
-                        <div class="table">
-                            <div id="Lessons" class="table-cell">
-                                <img src="">
-                                <h3>
-                                    Lessons
-                                </h3>
-                                <p class="inSquare">
-                                   View lessons curated by Placeholder Name
-                                </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="inside">
+                            <div class="innerContent">
+                                stuff
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="square">
-                    <div class="cont">
-                        <div class="table">
-                            <div id="Network" class="table-cell">
-                                <img src="">
-                                <h3>
-                                    Network
-                                </h3>
-                                <p class="inSquare">
-                                    Connect with peers
-                                </p>
+                    </td>
+                    <td>
+                        <div class="inside">
+                            <div class="innerContent">
+                                stuff
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="square">
-                    <div class="cont">
-                        <div class="table">
-                            <div id="Placeholder ID" class="table-cell">
-                                <img src="">
-                                <h3>
-                                    Placeholder ID
-                                </h3>
-                                <p class="inSquare">
-                                    Placeholder Description
-                                </p>
+                    </td>
+                    <td>
+                        <div class="inside">
+                            <div class="innerContent">
+                                stuff
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="square">
-                    <div class="cont">
-                        <div class="table">
-                            <div id="Deals" class="table-cell">
-                                <img src="">
-                                <h3>
-                                    Deals
-                                </h3>
-                                <p class="inSquare">
-                                    Boost your productivity with discounted tools
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="square">
-                    <div class="cont">
-                        <div class="table">
-                            <div id="Help" class="table-cell">
-                                <img src="">
-                                <h3>
-                                    Help
-                                </h3>
-                                <p class="inSquare">
-                                   Something wrong? Contact us.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+                    </td>
+                </tr>
+            </table>
             
         </div> 
         <script> 
