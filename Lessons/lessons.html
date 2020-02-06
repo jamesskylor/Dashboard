@@ -28,6 +28,14 @@
                 color: #3D3D38; /* #818181 #CCCCCC #111 #30302C*/ 
                 display: block;
             }
+            .sidebar a.logo {
+                padding: 0.1vw 1.5vw 2vw 2vw; /* top right bottom left */
+                text-decoration: none;
+                font-size: 2.5vw;
+                color:  #3D3D38; /* #818181 #CCCCCC #111 #30302C*/
+                display: block; 
+
+            }
             .sidebar b {
                 padding: 0.1vw 1.5vw 2vw 2vw; /* top right bottom left */
                 text-decoration: none;
@@ -201,43 +209,43 @@
     
     <body>
         <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
-            <b>
+            <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
                 <span class="icon-text">Placeholder</span>
             </span>
-            </b>
+            </a>
             <br>
-            <a href="#">
+            <a href="../Profile/profile.html">
                 <i class="material-icons md-40">perm_identity</i>
                 <span class="icon-text">Profile</span>
             </a>
             <br>
-            <a href="#">
+            <a href="../Updates/my-updates.html">
                 <span>
                     <i class="material-icons md-40">list</i>
                     <span class="icon-text">My Updates</span>
                 </span>
             </a>
             <br>
-            <a href="#">
+            <a href="../Lessons/lessons.html">
                 <span>
                     <i class="material-icons md-40">ondemand_video</i>
                     <span class="icon-text">Lessons</span>
                 </span>
             </a>
             <br>
-            <a href="#">
-                <i class="material-icons md-40">people</i>
-                <span class="icon-text">Network</span>
+            <a href="../GroupSessions/groupSessions.html">
+                <i class="material-icons md-40">videocam</i>
+                <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="#">
+            <a href="">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="#">
+            <a href="mailto:">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
