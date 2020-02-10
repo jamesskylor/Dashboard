@@ -216,6 +216,7 @@
             }
             button.editButton {
                 margin-left: 15%;
+                margin-top: 3%;
                 border: none;
                 background-color: #3d3d3d;
                 width: 5vw;
@@ -224,7 +225,24 @@
                 font-family: 'Lustria', serif;
                 color: #cccccc;
             }
-            
+            table.infoList {
+                margin-left: 15%;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            td.infoList {
+                padding-top: 2vw;
+                padding-right: 2vw;
+            }
+            td.title {
+                width: 15vw;
+            }
+            td.data {
+                width: 30vw;
+            }
+            input.editBox {
+                width: 100%;
+            }
             
             
         </style>
@@ -306,45 +324,129 @@
                 <h2>
                     Placeholder Name Account
                 </h2>
-                <div class="box">
-                    <div class="title">
-                        <p id="nameField">
-                            Name: 
-                        </p>
-                    </div>
-                    <div class="value">
-                        <p>
+                <table class="infoList">
+                    <tr>
+                        <td class="infoList title">
+                            Name:
+                        </td>
+                        <td class="infoList data" id="nameField">
                             Placeholder Name
-                        </p>
-                    </div>
-                    <div class="title">
-                        <p id="nameField">
-                            Email: 
-                        </p>
-                    </div>
-                    <div class="value">
-                        <p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Email:
+                        </td>
+                        <td class="infoList" id="emailField">
                             Placeholder Email
-                        </p>
-                    </div>
-                    <div class="title">
-                        <p id="nameField">
-                            Avatar: 
-                        </p>
-                    </div>
-                    <div class="value">
-                        <p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Password:
+                        </td>
+                        <td class="infoList">
+                            Placeholder number of asterisks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Avatar:
+                        </td>
+                        <td class="infoList" id="avatarField">
                             Placeholder Image
-                        </p>
-                    </div>
-                </div>
-                <button class="editButton">Edit</button>
+                        </td>
+                    </tr>
+                </table>
+                <button class="editButton" id="theEditButton">Edit</button>
                 
                 
                 <h2>
                     More Information
                 </h2>
-                
+                <table class="infoList">
+                    <tr>
+                        <td class="infoList title">
+                            LinkedIn:
+                        </td>
+                        <td class="infoList data">
+                            <input type="text" placeholder="Placeholder URL" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            GitHub:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder URL" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Highest Level of Education:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Area of Expertise:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Technical Founder:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Seeking a Co-Founder:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Most Impressive Accomplishment:
+                        </td>
+                        <td class="infoList">
+                           <input type="text" placeholder="Placeholder Value" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Location:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Application Status:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value (Submitted/Not Submitted)" class="editBox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Profile:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value (Public/Private)" class="editBox">
+                        </td>
+                    </tr>
+                </table>
+                <button class="editButton" id="theSaveButton">Save</button>
                 
                 
                 
