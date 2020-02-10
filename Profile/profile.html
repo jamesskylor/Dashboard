@@ -154,22 +154,18 @@
             div.box {
                 display: flex;
                 margin-bottom: 5vw;
+                flex-wrap: wrap;
+                padding-left: 15%;
             }
-            div.video {
-                flex: 2 1 40%;
+            div.title {
+                flex: 1 1 1%;
             }
-            div.desc {
-                flex: 1 1 50%;
+            div.value {
+                flex: 1 1 95%;
                 padding-top: 4%;
                 text-align: left;
                 margin: 0;
                 padding: 0;
-            }
-            div.desc h2{
-                font-size: 1.5vw;
-                margin:0;
-                padding:0;
-                padding-left: 1vw;
             }
             h1 {
                 font-family: 'Lustria', serif;
@@ -183,7 +179,7 @@
             h2 {
                 font-family: 'Lustria', serif;
                 color: #000000;
-                padding-left: 15%;
+                padding-left: 10%;
                 font-size: 2.4vw;
             }
             p {
@@ -197,8 +193,37 @@
                 height: 18vw;
                 border: none;
             }
-            
-            
+            .content .inside {
+                padding-top: 10vw;
+                padding-bottom: 10vw;
+            }
+            table.selections {
+                margin: auto;
+                border-collapse: collapse;
+                table-layout: fixed;
+                width: 70vw;
+                text-align: center;
+                margin-bottom: 10vw;
+            }
+            td.selections {
+                border: 4px solid #3d3d3d;
+                padding: 1vw;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            td.selections:hover {
+                background-color: #cccccc;
+            }
+            button.editButton {
+                margin-left: 15%;
+                border: none;
+                background-color: #3d3d3d;
+                width: 5vw;
+                height: 3vw;
+                font-size: 1.5vw;
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+            }
             
             
             
@@ -257,14 +282,77 @@
         </div>
         
         
+        
+        
+        
         <div class="content" id="dashboardContent">
-            <h1>
-                Profile
-            </h1>
-            
-            
-            
+            <div class="inside">
+                <table class="selections">
+                    <tr>
+                        <td class="selections" style="background-color: #cccccc">
+                            My Profile
+                        </td>
+                        <td class="selections">
+                            Company
+                        </td>
+                        <td class="selections">
+                            Co-Founders
+                        </td>
+                    </tr>
+                </table>
+                <h1>
+                    My Profile
+                </h1>
+                <h2>
+                    Placeholder Name Account
+                </h2>
+                <div class="box">
+                    <div class="title">
+                        <p id="nameField">
+                            Name: 
+                        </p>
+                    </div>
+                    <div class="value">
+                        <p>
+                            Placeholder Name
+                        </p>
+                    </div>
+                    <div class="title">
+                        <p id="nameField">
+                            Email: 
+                        </p>
+                    </div>
+                    <div class="value">
+                        <p>
+                            Placeholder Email
+                        </p>
+                    </div>
+                    <div class="title">
+                        <p id="nameField">
+                            Avatar: 
+                        </p>
+                    </div>
+                    <div class="value">
+                        <p>
+                            Placeholder Image
+                        </p>
+                    </div>
+                </div>
+                <button class="editButton">Edit</button>
+                
+                
+                <h2>
+                    More Information
+                </h2>
+                
+                
+                
+                
+            </div>
         </div>
+        
+        
+        
         
         
         <footer class ="footer"> 
