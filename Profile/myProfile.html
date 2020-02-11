@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+    
+    
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0px;
+            }
+            h1 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                display: block;
+                font-size: 300%;
+                white-space: nowrap;
+                padding-left: 5%;
+                font-size: 4vw;
+            }
+            h2 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding-left: 10%;
+                font-size: 2.4vw;
+            }
+            p {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding-left: 5%;
+            }
+            table.selections {
+                margin: auto;
+                border-collapse: collapse;
+                table-layout: fixed;
+                width: 70vw;
+                text-align: center;
+                margin-bottom: 10vw;
+            }
+            td.selections {
+                border: 4px solid #3d3d3d;
+                padding: 1vw;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            td.selections:hover {
+                background-color: #cccccc;
+            }
+            button.editButton {
+                margin-left: 15%;
+                margin-top: 3%;
+                border: none;
+                background-color: #3d3d3d;
+                width: 5vw;
+                height: 3vw;
+                font-size: 1.5vw;
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+            }
+            table.infoList {
+                margin-left: 15%;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            td.infoList {
+                padding-top: 2vw;
+                padding-right: 2vw;
+            }
+            td.title {
+                width: 15vw;
+            }
+            td.data {
+                width: 30vw;
+            }
+            input.editBox {
+                width: 100%;
+            }
+        </style>
+    </head>
+    
+    
+    <body id="theContent">
+        <h1>
+            My Profile
+        </h1>
+        <h2>
+            Placeholder Name Account
+        </h2>
+        <table class="infoList">
+            <tr>
+                <td class="infoList title">
+                    Name:
+                </td>
+                <td class="infoList data" id="nameField">
+                    Placeholder Name
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Email:
+                </td>
+                <td class="infoList" id="emailField">
+                    Placeholder Email
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Password:
+                </td>
+                <td class="infoList" id="passwordField">
+                    Placeholder number of asterisks
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Avatar:
+                </td>
+                <td class="infoList" id="avatarField">
+                    Placeholder Image
+                </td>
+            </tr>
+        </table>
+        <button class="editButton" id="theEditButton">Edit</button>
+
+
+        <h2>
+            More Information
+        </h2>
+        <table class="infoList">
+            <tr>
+                <td class="infoList title">
+                    LinkedIn:
+                </td>
+                <td class="infoList data">
+                    <input type="text" placeholder="Placeholder URL" class="editBox" id="linkedinField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    GitHub:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder URL" class="editBox" id="githubField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Highest Level of Education:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value" class="editBox" id="educationField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Area of Expertise:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value" class="editBox" id="expertiseField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Technical Founder:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value" class="editBox" id="technicalField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Seeking a Co-Founder:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value" class="editBox" id="cofounderField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Most Impressive Accomplishment:
+                </td>
+                <td class="infoList">
+                   <input type="text" placeholder="Placeholder Value" class="editBox" id="accomplishmentField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Location:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Application Status:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value (Submitted/Not Submitted)" class="editBox" id="applicationField">
+                </td>
+            </tr>
+            <tr>
+                <td class="infoList">
+                    Profile:
+                </td>
+                <td class="infoList">
+                    <input type="text" placeholder="Placeholder Value (Public/Private)" class="editBox" id="publicFields">
+                </td>
+            </tr>
+        </table>
+        <button class="editButton" id="theSaveButton">Save</button>
+    </body>
+    
+    
+</html>
