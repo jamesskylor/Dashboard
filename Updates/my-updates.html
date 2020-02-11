@@ -3,7 +3,7 @@
 <html lang="en">
     
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <style>
@@ -197,10 +197,111 @@
                 height: 18vw;
                 border: none;
             }
+            .container {
+                margin:auto;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid black;
+                width: 50vw;
+                margin-top: 2vw;
+            }
+            .inner-container {
+                display:flex;
+                flex-direction: row;
+            }
+            .inner-container1 {
+                display:flex;
+                flex-direction: column;
+            }
+            .inner-inner-container {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .item {
+                flex-grow: 1;
+                height: 6vw;
+                padding: 10px;
+                background-color: white;
+            }
+            .item1 {
+                flex-grow: 1;               
+                height: 2vw;
+                padding: 10px;
+                background-color: #A49B9A;
+            }
+            .item2 {
+                flex-grow: 1;
+                height: 6vw;
+                padding: 10px;
+                background-color: white;
+                
+            }
+            .item3 {
+                flex-grow: 1;
+                height: 6vw;
+                padding: 10px;
+                background-color: white;
+                
+            }
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height:34px;
+            }
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            .slider {
+                position: absolute; 
+                cursor: pointer;
+                top:0;
+                left:0;
+                right:0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 34px;
+            }
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 50%;
+            }
+            input:checked + .slider {
+                background-color: #2196F3;
+            }
+            input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+            input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+            .slider.round {
+                    border-radius: 34px;
+            }
+
+            .slider.round:before {
+                    border-radius: 50%;
+            }
+            .morale {
+                height: 2vw;
+            }
             
-            
-            
-            
+
             
         </style>
         
@@ -256,17 +357,91 @@
             </a>
         </div>
         
-        
-        <div class="content" id="dashboardContent">
-            <h1>
-                My Updates
-            </h1>
-            
-            
-            
-        </div>
-        
-        
+<div class="content" id="dashboardContent">
+    <div class="container">
+        <div class="item1">Launch</div>
+            <div class="inner-container">
+                <div class="item"> <p>Have you launched yet? </p>
+                    <label class ="switch">
+                        <input type="checkbox" onclick="launched()">
+                            <span class="slider">
+                            </span>
+                    </label>
+                    </div>
+                <div class="item" id="switch-text"><p id="switch-innertext">Weeks until launch:</p>
+                        <div id="numberWeeks">
+                            <form> 
+                                <input type="text" id="inputWeeks">
+                            </form>
+                        </div>
+                </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="item1">Users</div>
+            <div class="inner-container">
+                <div class="item"> <p>Users/Perspective users talked to this week?</p>
+                    <form>
+                        <input type="type">
+                    </form>
+                </div>
+                <div class="item"><p>What have you learned from them?</p>
+                    <div>
+                        <form> 
+                            <input type="text" id="inputWeeks">
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="item1">Users</div>
+            <div class="inner-container1">
+                <div class="item2"> <p>Users/Perspective users talked to this week?</p>
+                    <form>
+                        <input type="type">
+                    </form>
+                </div>
+                <div class="inner-inner-container">
+                    <div class="item3"><p>What have you learned from them?</p>
+                        <div>
+                            <form> 
+                                <input type="text" id="inputWeeks">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="item3"><p>What have you learned from them?</p>
+                        <div>
+                            <form> 
+                                <input type="text" id="inputWeeks">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="item1">Morale</div>
+            <div class="inner-container">
+                <div class="item"> <p>On a scale of 1-10, what is your morale?</p>
+                    <form>
+                        <select class="morale" style="width:45vw">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
         <footer class ="footer"> 
             <div class ="linkWrapper">
                 <div class = "signUp">
@@ -307,22 +482,37 @@
                 </div>
             </div>
         </footer>
-        
-        
+        <script>
+            function launched () {
+                var x= document.getElementById("switch-innertext");
+                if(x.innerHTML ==="Weeks until launch:") {
+                   x.innerHTML = "Congratulations you are launched!";
+                   } else {
+                   x.innerHTML = "Weeks until launch:"
+                   }
+                 var y= document.getElementById("numberWeeks");
+                 if(y.style.display ==="none") {
+                     y.style.display = "block";
+                 }else {
+                     y.style.display = "none";
+                 }
+               
+            }
+        </script>
         <script> 
            
             function toggleSideBar() {
                
                     console.log("opening sidebar")
                     document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
+                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 7vw from first one.
               
             }
             function untoggleSideBar() {
                 
                     console.log("closing sidebar");
                     document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
+                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 7vw from the first one.
                 
             }
         </script>
