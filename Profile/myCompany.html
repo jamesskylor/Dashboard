@@ -76,6 +76,43 @@
             input.editBox {
                 width: 100%;
             }
+            select.editBox {
+                width: 100%;
+                max-width: 100%;
+            }
+            iframe.icontent {
+                width: 100%;
+                height 100%;
+            }
+            .current {
+                background-color: #3d3d3d;
+            }
+            a.myLink {
+                text-decoration: none;
+                color: #000000;
+            }
+            div.niceLink {
+                width: 100%;
+                height: 100%;
+            }
+            #theContent {
+                padding-left: 1vw;
+            }
+            input.YN {
+                margin-left: 8vw;
+            }
+            input.Priv {
+                margin-left: 7vw;;
+            }
+            textarea.editBox {
+                width: 100%;
+                height: 10vh;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            textarea.editBox.v2 {
+                height: 6vh;
+            }
         </style>
     </head>
     
@@ -91,7 +128,7 @@
                         Company Name:
                     </td>
                     <td class="infoList data">
-                        <input type="text" placeholder="Placeholder Name" class="editBox" id="linkedinField">
+                        <input type="text" placeholder="Placeholder Name" class="editBox" id="compNameField">
                     </td>
                 </tr>
                 <tr>
@@ -99,7 +136,7 @@
                         Company Website:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder URL" class="editBox" id="githubField">
+                        <input type="text" placeholder="Placeholder URL" class="editBox" id="compSiteField">
                     </td>
                 </tr>
                 <tr>
@@ -107,7 +144,7 @@
                         Describe your company in a sentence or two
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Sentences" class="editBox" id="educationField">
+                        <textarea class="editBox v2" id="compDescField" placeholder="Placeholder Sentences"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -115,7 +152,9 @@
                         Verticality?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Response" class="editBox" id="expertiseField">
+                        <select class="editBox" id="compVertField">
+                            <option value="" disabled selected>Select an Option</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -123,7 +162,7 @@
                         What does your company make?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="technicalField">
+                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="compProdField">
                     </td>
                 </tr>
                 <tr>
@@ -131,7 +170,7 @@
                         Why did you pick this idea?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Explanation" class="editBox" id="cofounderField">
+                        <textarea class="editBox v2" id="compReasField" placeholder="Placeholder Explanation"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -139,7 +178,11 @@
                         Are you Part-time or Full Time?
                     </td>
                     <td class="infoList">
-                       <input type="text" placeholder="Placeholder Choice" class="editBox" id="accomplishmentField">
+                        <select class="editBox" id="compTimeField">
+                            <option value="" disabled selected>Select an Option</option>
+                            <option value="partTime">Part-Time</option>
+                            <option value="fullTime">Full-Time</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -147,7 +190,11 @@
                         Which of the following best describes your progress?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Values" class="editBox" id="locationField">
+                        <select class="editBox" id="compProgField">
+                            <option value="" disabled selected>Select an Option</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -155,7 +202,7 @@
                         How far along are you?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Paragraph" class="editBox" id="applicationField">
+                        <textarea class="editBox" id="compProg2Field" placeholder="Placeholder Paragraph"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -163,7 +210,10 @@
                         Have you incorporated your company?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Response" class="editBox" id="publicFields">
+                        <input type="radio" id="incY" name="compInc" value="yes" class="YN">
+                        <label>Yes</label>
+                        <input type="radio" id="incN" name="compInc" value="no" class="YN">
+                        <label>No</label>
                     </td>
                 </tr>
                 <tr>
@@ -171,7 +221,10 @@
                         Do you want to make this information public?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Response" class="editBox" id="publicFields">
+                        <input type="radio" id="compPub" name="compPublicity" value="pub" class="Priv">
+                        <label>Public</label>
+                        <input type="radio" id="compPriv" name="compPublicity" value="priv" class="Priv">
+                        <label>Private</label>
                     </td>
                 </tr>
             </table>
