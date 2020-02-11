@@ -4,14 +4,179 @@
     
     
     <head>
-        
-        
+        <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0px;
+            }
+            h1 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                display: block;
+                font-size: 300%;
+                white-space: nowrap;
+                padding-left: 5%;
+                font-size: 4vw;
+            }
+            h2 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding-left: 10%;
+                font-size: 2.4vw;
+            }
+            p {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding-left: 5%;
+            }
+            table.selections {
+                margin: auto;
+                border-collapse: collapse;
+                table-layout: fixed;
+                width: 70vw;
+                text-align: center;
+                margin-bottom: 10vw;
+            }
+            td.selections {
+                border: 4px solid #3d3d3d;
+                padding: 1vw;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            td.selections:hover {
+                background-color: #cccccc;
+            }
+            button.editButton {
+                margin-left: 15%;
+                margin-top: 3%;
+                border: none;
+                background-color: #3d3d3d;
+                width: 5vw;
+                height: 3vw;
+                font-size: 1.5vw;
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+            }
+            table.infoList {
+                margin-left: 15%;
+                font-family: 'Lustria', serif;
+                color: #000000;
+            }
+            td.infoList {
+                padding-top: 2vw;
+                padding-right: 2vw;
+            }
+            td.title {
+                width: 15vw;
+            }
+            td.data {
+                width: 30vw;
+            }
+            input.editBox {
+                width: 100%;
+            }
+        </style>
     </head>
     
     
     <body>
-        
-        
+        <div id="theContent">
+            <h1>
+                My Company
+            </h1>
+            <table class="infoList">
+                <tr>
+                    <td class="infoList title">
+                        Company Name:
+                    </td>
+                    <td class="infoList data">
+                        <input type="text" placeholder="Placeholder Name" class="editBox" id="linkedinField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Company Website:
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder URL" class="editBox" id="githubField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Describe your company in a sentence or two
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Sentences" class="editBox" id="educationField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Verticality?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Response" class="editBox" id="expertiseField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        What does your company make?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="technicalField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Why did you pick this idea?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Explanation" class="editBox" id="cofounderField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Are you Part-time or Full Time?
+                    </td>
+                    <td class="infoList">
+                       <input type="text" placeholder="Placeholder Choice" class="editBox" id="accomplishmentField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Which of the following best describes your progress?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Values" class="editBox" id="locationField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        How far along are you?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Paragraph" class="editBox" id="applicationField">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Have you incorporated your company?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Response" class="editBox" id="publicFields">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infoList">
+                        Do you want to make this information public?
+                    </td>
+                    <td class="infoList">
+                        <input type="text" placeholder="Placeholder Response" class="editBox" id="publicFields">
+                    </td>
+                </tr>
+            </table>
+            <button class="editButton" id="theSaveButton">Save</button>
+        </div>
     </body>
     
     

@@ -8,10 +8,13 @@ $(function() {
     baseHeight = $pageWrap.height() - $mainContent.height();
     
     $("td.selection").click((e)=>{
-        e.target.children().preventDefault();
+        e.preventDefault();
         _link = $(e.target).find(".myLink").attr("href");
+        if(e.target.tagName == "A"){
+            _link = e.target.getAttribute("href");
+        }
         console.log(_link);
-        history.pushState(null, null, _link);
+        //history.pushState(null, null, _link);
         loadContent(_link);
     });
 
@@ -21,13 +24,17 @@ $(function() {
             .fadeOut(200, function() {
                 $mainContent.hide().load(href + " #theContent", function() {
                     $mainContent.fadeIn(200, function() {
+                        console.log("hallo");
                         $pageWrap.animate({
                             height: baseHeight + $mainContent.height() + "px"
                         });
+                        console.log("cya");
                     });
-                    $("#theNav td").removeClass("current");
+                    /*
+                    $("td.selection").removeClass("current");
                     console.log(href);
-                    $("#theNav td[href$="+href+"]").addClass("current");
+                    $("td.selection[href$="+href+"]").addClass("current");
+                    */
                 });
             });
     }
