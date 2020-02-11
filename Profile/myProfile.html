@@ -149,7 +149,13 @@
                         Highest Level of Education:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value" class="editBox" id="educationField">
+                        <select class="editBox" id="educationField">
+                            <option value="" disabled selected>Select an Option</option>
+                            <option value="HS">High School Diploma</option>
+                            <option value="Undergrad">Undergraduate Degree</option>
+                            <option value="Grad">Graduate Degree</option>
+                            <option value="PhD">PhD</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -157,7 +163,9 @@
                         Area of Expertise:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value" class="editBox" id="expertiseField">
+                        <select class="editBox" id="expertField">
+                            <option value="" disabled selected>Select an Option</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -165,7 +173,10 @@
                         Technical Founder:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value" class="editBox" id="technicalField">
+                        <input type="radio" id="techY" name="technical" value="yes" class="YN">
+                        <label>Yes</label>
+                        <input type="radio" id="techN" name="technical" value="no" class="YN">
+                        <label>No</label>
                     </td>
                 </tr>
                 <tr>
@@ -173,7 +184,10 @@
                         Seeking a Co-Founder:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value" class="editBox" id="cofounderField">
+                        <input type="radio" id="coY" name="cofounder" value="yes" class="YN">
+                        <label>Yes</label>
+                        <input type="radio" id="coN" name="cofounder" value="no" class="YN">
+                        <label>No</label>
                     </td>
                 </tr>
                 <tr>
@@ -181,7 +195,7 @@
                         Most Impressive Accomplishment:
                     </td>
                     <td class="infoList">
-                       <input type="text" placeholder="Placeholder Value" class="editBox" id="accomplishmentField">
+                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -197,7 +211,10 @@
                         Application Status:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value (Submitted/Not Submitted)" class="editBox" id="applicationField">
+                        <select class="editBox" id="applicationField">
+                            <option value="" disabled selected>Select an Option</option>
+                            <option value="applied">Applied</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -205,7 +222,10 @@
                         Profile:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value (Public/Private)" class="editBox" id="publicFields">
+                        <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
+                        <label>Public</label>
+                        <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
+                        <label>Private</label>
                     </td>
                 </tr>
             </table>

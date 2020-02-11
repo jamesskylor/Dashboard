@@ -244,6 +244,10 @@
             input.editBox {
                 width: 100%;
             }
+            select.editBox {
+                width: 100%;
+                max-width: 100%;
+            }
             iframe.icontent {
                 width: 100%;
                 height 100%;
@@ -261,6 +265,18 @@
             }
             #theContent {
                 padding-left: 1vw;
+            }
+            input.YN {
+                margin-left: 8vw;
+            }
+            input.Priv {
+                margin-left: 7vw;;
+            }
+            textarea.editBox {
+                width: 100%;
+                height: 10vw;
+                font-family: 'Lustria', serif;
+                color: #000000;
             }
         </style>
         
@@ -349,7 +365,155 @@
                 
                 <div id="contentContainer">
                     <div id="theContent">
-                        
+                        <h1>
+                            My Profile
+                        </h1>
+                        <h2>
+                            Placeholder Name Account
+                        </h2>
+                        <table class="infoList">
+                            <tr>
+                                <td class="infoList title">
+                                    Name:
+                                </td>
+                                <td class="infoList data" id="nameField">
+                                    Placeholder Name
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Email:
+                                </td>
+                                <td class="infoList" id="emailField">
+                                    Placeholder Email
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Password:
+                                </td>
+                                <td class="infoList" id="passwordField">
+                                    Placeholder number of asterisks
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Avatar:
+                                </td>
+                                <td class="infoList" id="avatarField">
+                                    Placeholder Image
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="editButton" id="theEditButton">Edit</button>
+
+
+                        <h2>
+                            More Information
+                        </h2>
+                        <table class="infoList">
+                            <tr>
+                                <td class="infoList title">
+                                    LinkedIn:
+                                </td>
+                                <td class="infoList data">
+                                    <input type="text" placeholder="Placeholder URL" class="editBox" id="linkedinField">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    GitHub:
+                                </td>
+                                <td class="infoList">
+                                    <input type="text" placeholder="Placeholder URL" class="editBox" id="githubField">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Highest Level of Education:
+                                </td>
+                                <td class="infoList">
+                                    <select class="editBox" id="educationField">
+                                        <option value="" disabled selected>Select an Option</option>
+                                        <option value="HS">High School Diploma</option>
+                                        <option value="Undergrad">Undergraduate Degree</option>
+                                        <option value="Grad">Graduate Degree</option>
+                                        <option value="PhD">PhD</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Area of Expertise:
+                                </td>
+                                <td class="infoList">
+                                    <select class="editBox" id="expertField">
+                                        <option value="" disabled selected>Select an Option</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Technical Founder:
+                                </td>
+                                <td class="infoList">
+                                    <input type="radio" id="techY" name="technical" value="yes" class="YN">
+                                    <label>Yes</label>
+                                    <input type="radio" id="techN" name="technical" value="no" class="YN">
+                                    <label>No</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Seeking a Co-Founder:
+                                </td>
+                                <td class="infoList">
+                                    <input type="radio" id="coY" name="cofounder" value="yes" class="YN">
+                                    <label>Yes</label>
+                                    <input type="radio" id="coN" name="cofounder" value="no" class="YN">
+                                    <label>No</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Most Impressive Accomplishment:
+                                </td>
+                                <td class="infoList">
+                                    <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Location:
+                                </td>
+                                <td class="infoList">
+                                    <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Application Status:
+                                </td>
+                                <td class="infoList">
+                                    <select class="editBox" id="applicationField">
+                                        <option value="" disabled selected>Select an Option</option>
+                                        <option value="applied">Applied</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="infoList">
+                                    Profile:
+                                </td>
+                                <td class="infoList">
+                                    <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
+                                    <label>Public</label>
+                                    <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
+                                    <label>Private</label>
+                                </td>
+                            </tr>
+                        </table>
+                        <button class="editButton" id="theSaveButton">Save</button>
                     </div>
                 </div>
                 
