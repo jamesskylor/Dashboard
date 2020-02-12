@@ -175,13 +175,14 @@
                 font-size: 300%;
                 white-space: nowrap;
                 padding-left: 10%;
-                font-size: 4vw;
+                font-size: 2.3vw;
+                margin-bottom: 3vw;
             }
             h2 {
                 font-family: 'Lustria', serif;
                 color: #000000;
                 padding-left: 10%;
-                font-size: 2.4vw;
+                font-size: 1.5vw;
             }
             p {
                 font-family: 'Lustria', serif;
@@ -195,7 +196,7 @@
                 border: none;
             }
             .content .inside {
-                padding-top: 10vw;
+                padding-top: 5vw;
                 padding-bottom: 10vw;
             }
             table.selections {
@@ -204,7 +205,7 @@
                 table-layout: fixed;
                 width: 70vw;
                 text-align: center;
-                margin-bottom: 10vw;
+                margin-bottom: 2vw;
             }
             td.selection {
                 border: 4px solid #3d3d3d;
@@ -225,12 +226,12 @@
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
                 color: #cccccc;
-                margin-bottom: 7%;
+                margin-bottom: 3%;
             }
             button.editButton:hover {
-                /*background-color: #616161;*/
-                background-color: #ee252d;
-                color: #ffffff;
+                background-color: #616161;
+                /*background-color: #ee252d;
+                color: #ffffff;*/
             }
             table.infoList {
                 margin-left: 10%;
@@ -243,6 +244,7 @@
             }
             td.title {
                 width: 15vw;
+                font-weight: bold;
             }
             td.data {
                 width: 30vw;
@@ -266,7 +268,7 @@
             a.myLink {
                 text-decoration: none;
                 color: #000000;
-                font-size: 2vw;
+                font-size: 1.4vw;
             }
             div.niceLink {
                 width: 100%;
@@ -290,6 +292,11 @@
             }
             textarea.editBox.v2 {
                 height: 6vh;
+            }
+            img.avatar {
+                height: auto;
+                max-width: 9vw;
+                border-radius: 50%;
             }
         </style>
         
@@ -394,7 +401,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Email:
                                 </td>
                                 <td class="infoList" id="emailField">
@@ -402,7 +409,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Password:
                                 </td>
                                 <td class="infoList" id="passwordField">
@@ -410,11 +417,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Avatar:
                                 </td>
                                 <td class="infoList" id="avatarField">
-                                    Placeholder Image
+                                    <img src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg" class="avatar">
                                 </td>
                             </tr>
                         </table>
@@ -434,7 +441,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     GitHub:
                                 </td>
                                 <td class="infoList">
@@ -442,7 +449,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Highest Level of Education:
                                 </td>
                                 <td class="infoList">
@@ -456,7 +463,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Area of Expertise:
                                 </td>
                                 <td class="infoList">
@@ -466,7 +473,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Technical Founder:
                                 </td>
                                 <td class="infoList">
@@ -477,7 +484,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Seeking a Co-Founder:
                                 </td>
                                 <td class="infoList">
@@ -488,7 +495,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Most Impressive Accomplishment:
                                 </td>
                                 <td class="infoList">
@@ -496,7 +503,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Location:
                                 </td>
                                 <td class="infoList">
@@ -504,7 +511,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Application Status:
                                 </td>
                                 <td class="infoList">
@@ -515,7 +522,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="infoList">
+                                <td class="infoList title">
                                     Profile:
                                 </td>
                                 <td class="infoList">
@@ -527,6 +534,7 @@
                             </tr>
                         </table>
                         <button class="editButton" id="theSaveButton">Save</button>
+                        <script src="js/profile.js"></script>
                     </div>
                 </div>
                 

@@ -112,6 +112,11 @@
             textarea.editBox.v2 {
                 height: 6vh;
             }
+            img.avatar {
+                height: auto;
+                max-width: 10vw;
+                border-radius: 50%;
+            }
         </style>
     </head>
     
@@ -134,7 +139,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Email:
                     </td>
                     <td class="infoList" id="emailField">
@@ -142,7 +147,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Password:
                     </td>
                     <td class="infoList" id="passwordField">
@@ -150,11 +155,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Avatar:
                     </td>
                     <td class="infoList" id="avatarField">
-                        Placeholder Image
+                        <img src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg" class="avatar">
                     </td>
                 </tr>
             </table>
@@ -174,7 +179,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         GitHub:
                     </td>
                     <td class="infoList">
@@ -182,7 +187,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Highest Level of Education:
                     </td>
                     <td class="infoList">
@@ -196,7 +201,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Area of Expertise:
                     </td>
                     <td class="infoList">
@@ -206,7 +211,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Technical Founder:
                     </td>
                     <td class="infoList">
@@ -217,7 +222,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Seeking a Co-Founder:
                     </td>
                     <td class="infoList">
@@ -228,7 +233,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Most Impressive Accomplishment:
                     </td>
                     <td class="infoList">
@@ -236,7 +241,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Location:
                     </td>
                     <td class="infoList">
@@ -244,7 +249,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Application Status:
                     </td>
                     <td class="infoList">
@@ -255,13 +260,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="infoList">
+                    <td class="infoList title">
                         Profile:
                     </td>
                     <td class="infoList">
-                        <input type="radio" id="proPub" name="publicity" value="pub" class="Priv">
+                        <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
                         <label>Public</label>
-                        <input type="radio" id="proPriv" name="publicity" value="priv" class="Priv">
+                        <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
                         <label>Private</label>
                     </td>
                 </tr>
