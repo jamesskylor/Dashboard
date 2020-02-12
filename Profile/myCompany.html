@@ -128,7 +128,7 @@
                         Company Name:
                     </td>
                     <td class="infoList data">
-                        <input type="text" placeholder="Placeholder Name" class="editBox" id="compNameField">
+                        <input type="text" placeholder="Placeholder Name" class="editBox" id="compNameField" maxlength="128">
                     </td>
                 </tr>
                 <tr>
@@ -136,7 +136,7 @@
                         Company Website:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder URL" class="editBox" id="compSiteField">
+                        <input type="text" placeholder="Placeholder URL" class="editBox" id="compSiteField" maxlength="128">
                     </td>
                 </tr>
                 <tr>
@@ -144,7 +144,7 @@
                         Describe your company in a sentence or two
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox v2" id="compDescField" placeholder="Placeholder Sentences"></textarea>
+                        <textarea class="editBox v2" id="compDescField" placeholder="Placeholder Sentences" maxlength="256"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -162,7 +162,7 @@
                         What does your company make?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="compProdField">
+                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="compProdField" maxlength="128">
                     </td>
                 </tr>
                 <tr>
@@ -170,7 +170,7 @@
                         Why did you pick this idea?
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox v2" id="compReasField" placeholder="Placeholder Explanation"></textarea>
+                        <textarea class="editBox v2" id="compReasField" placeholder="Placeholder Explanation" maxlength="1024"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -202,7 +202,7 @@
                         How far along are you?
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox" id="compProg2Field" placeholder="Placeholder Paragraph"></textarea>
+                        <textarea class="editBox" id="compProg2Field" placeholder="Placeholder Paragraph" maxlength="1024"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -229,6 +229,7 @@
                 </tr>
             </table>
             <button class="editButton" id="theSaveButton">Save</button>
+            <script src="js/company.js"></script>
         </div>
     </body>
     

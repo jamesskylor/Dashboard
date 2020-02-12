@@ -174,7 +174,7 @@
                 display: block;
                 font-size: 300%;
                 white-space: nowrap;
-                padding-left: 5%;
+                padding-left: 10%;
                 font-size: 4vw;
             }
             h2 {
@@ -216,7 +216,7 @@
                 background-color: #cccccc;
             }
             button.editButton {
-                margin-left: 15%;
+                margin-left: 10%;
                 margin-top: 3%;
                 border: none;
                 background-color: #3d3d3d;
@@ -225,9 +225,15 @@
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
                 color: #cccccc;
+                margin-bottom: 7%;
+            }
+            button.editButton:hover {
+                /*background-color: #616161;*/
+                background-color: #ee252d;
+                color: #ffffff;
             }
             table.infoList {
-                margin-left: 15%;
+                margin-left: 10%;
                 font-family: 'Lustria', serif;
                 color: #000000;
             }
@@ -247,6 +253,8 @@
             select.editBox {
                 width: 100%;
                 max-width: 100%;
+                font-family: 'Lustria', serif;
+                color: grey;
             }
             iframe.icontent {
                 width: 100%;
@@ -258,6 +266,7 @@
             a.myLink {
                 text-decoration: none;
                 color: #000000;
+                font-size: 2vw;
             }
             div.niceLink {
                 width: 100%;
@@ -277,6 +286,7 @@
                 height: 10vh;
                 font-family: 'Lustria', serif;
                 color: #000000;
+                overflow: auto;
             }
             textarea.editBox.v2 {
                 height: 6vh;
@@ -409,7 +419,7 @@
                             </tr>
                         </table>
                         <button class="editButton" id="theEditButton">Edit</button>
-
+                        
 
                         <h2>
                             More Information
@@ -420,7 +430,7 @@
                                     LinkedIn:
                                 </td>
                                 <td class="infoList data">
-                                    <input type="text" placeholder="Placeholder URL" class="editBox" id="linkedinField">
+                                    <input type="url" placeholder="Placeholder URL" class="editBox" id="linkedinField" maxlength="128">
                                 </td>
                             </tr>
                             <tr>
@@ -428,7 +438,7 @@
                                     GitHub:
                                 </td>
                                 <td class="infoList">
-                                    <input type="text" placeholder="Placeholder URL" class="editBox" id="githubField">
+                                    <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
                                 </td>
                             </tr>
                             <tr>
@@ -482,7 +492,7 @@
                                     Most Impressive Accomplishment:
                                 </td>
                                 <td class="infoList">
-                                    <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text"></textarea>
+                                    <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024"></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -490,7 +500,7 @@
                                     Location:
                                 </td>
                                 <td class="infoList">
-                                    <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField">
+                                    <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128">
                                 </td>
                             </tr>
                             <tr>

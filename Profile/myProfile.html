@@ -170,7 +170,7 @@
                         LinkedIn:
                     </td>
                     <td class="infoList data">
-                        <input type="text" placeholder="Placeholder URL" class="editBox" id="linkedinField">
+                        <input type="url" placeholder="Placeholder URL" class="editBox" id="linkedinField" maxlength="128">
                     </td>
                 </tr>
                 <tr>
@@ -178,7 +178,7 @@
                         GitHub:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder URL" class="editBox" id="githubField">
+                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
                     </td>
                 </tr>
                 <tr>
@@ -232,7 +232,7 @@
                         Most Impressive Accomplishment:
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text"></textarea>
+                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -240,7 +240,7 @@
                         Location:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField">
+                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128">
                     </td>
                 </tr>
                 <tr>
@@ -267,6 +267,7 @@
                 </tr>
             </table>
             <button class="editButton" id="theSaveButton">Save</button>
+            <script src="js/profile.js"></script>
         </div>
     </body>
     
