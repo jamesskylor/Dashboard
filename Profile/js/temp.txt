@@ -1,0 +1,7 @@
+For all js files, make the following:
+
+- Set the placeholder values to values retrieved from the server
+- Create event listeners for all buttons   
+    - Create functions to handle the logic of checking everything and sending to the server
+    
+- Maybe make a check function that as soon as a input is unfocused, if the value is invalid, display a message
