@@ -1,0 +1,316 @@
+<!doctype html>
+
+<html lang="en">
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <style>
+            .sidebar {
+                height: 100%;
+                width: 7vw;
+                position: fixed;
+                z-index:1;
+                transition: 0.5s;
+                top: 0;
+                left: 0;
+                background-color: #ffffff; /* #111 #000000 */
+                padding-top: 1vw;
+                white-space: nowrap; /* makes text not show up in the sidebar when minimized */
+                overflow-x: hidden; /* hides the text that over flows */
+                border-right:  0.1vw solid #3D3D38;
+            }
+            .sidebar a {
+                padding: 1vw 1.5vw 1vw 2vw;
+                text-decoration: none;
+                font-size: 1.5vw;
+                color: #3D3D38; /* #818181 #CCCCCC #111 #30302C*/ 
+                display: block;
+            }
+            .sidebar a.logo {
+                padding: 0.1vw 1.5vw 2vw 2vw; /* top right bottom left */
+                text-decoration: none;
+                font-size: 2.5vw;
+                color:  #3D3D38; /* #818181 #CCCCCC #111 #30302C*/
+                display: block; 
+
+            }
+            .sidebar b {
+                padding: 0.1vw 1.5vw 2vw 2vw; /* top right bottom left */
+                text-decoration: none;
+                font-size: 2.5vw;
+                color:  #3D3D38; /* #818181 #CCCCCC #111 #30302C*/
+                display: block; 
+
+            }
+            .sidebar a:hover {
+                /*color: #06C;*/ /*f1f1f1  #FFFFFF #000000 #EE252D*/
+                color: #ee252d;
+            }
+            main .sidebar{
+                position: absolute;
+                top: 0;
+                right: 2vw; /* 25, 36, 50 */
+                font-size: 2.5vw;
+                margin-left: 3vw;
+            }
+            .material-icons.md-40,
+            .icon-text {
+                vertical-align: middle;
+            }
+            .material-icons.md-40 {
+                padding-bottom: 0.2vw;
+                margin-right: 3.5vw;
+                font-size: 2.5vw; 
+            }
+            @media screen and (max-height: 60vw) {
+                .sidebar {
+                    padding-top: 1.5vw;
+                }
+            }
+            .push {
+                height: 5vw;
+            }
+            .footer {
+                height: 5vw;
+                background-color: #000000;
+                margin: 0;
+            }
+            .copyright p {
+                padding-top: 1.5vw;
+                color:  #CCCCCC;
+                text-align: left;
+                font-size: 0.75vw;
+            }
+            .footerLinks a {
+                text-decoration: none;
+                font-size: 1.1vw;
+                color:  #CCCCCC; /* #818181 */
+                padding-right: 0.1vw;
+                padding-left: 0.1vw;
+            }
+            .footerLinks {
+                display: inline-block;
+                padding-top: 3.5vw;
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+            .footerLinks a:hover {
+                color: #ffffff;
+                }
+            .signUp-text{
+                text-decoration: none;
+                font-size: 1.1vw;
+                color:  #CCCCCC; /* #818181 */
+                padding-right: 1.5vw;
+                padding-left: 1.5vw;
+                text-align: right;
+            }
+            div.copyright {
+                padding-right: 69vw;
+                padding-bottom: 2.5vw;
+                }
+            div.wrapper {
+                background-color: #000000;
+                margin-left: 7vw;
+            }
+            div.linkWrapper {
+                margin-top: 3.5vw;
+                margin-right: 10vw;
+                float: right;
+                display: inline-block;
+            }
+            .apply-button {
+                font-family: 'Lustria', serif;
+                background-color: #ffffff;
+                border: none;
+                height: 2vw;
+                width: 6vw;
+            }
+            .linkWrapper button:hover {
+                background-color: #CCCCCC;
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            html, body {
+                height: 100%;
+                margin: 0px;
+                overflow: hidden;
+            }
+            .content {
+                padding-left: 7vw;
+            }
+            div.box {
+                display: flex;
+                margin-bottom: 5vw;
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+            }
+            h1 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                display: block;
+                font-size: 300%;
+                white-space: nowrap;
+                padding-left: 5%;
+                font-size: 4vw;
+            }
+            h2 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding-left: 15%;
+                font-size: 2.4vw;
+            }
+            p {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding-left: 5%;
+            }
+            div.video {
+                flex: 2 1 75%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: blue;
+            }
+            div.desc {
+                flex: 1 1 25%;
+                padding-top: 4%;
+                text-align: left;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+            div.vidEmbed {
+                background-color: #000000;
+                height: 90vh;
+            }
+            div.vidControls {
+                background-color: #cccccc;
+                height: 10vh;
+            }
+            button.leaveCall {
+                width: 100%;
+                height: 5vh;
+                background-color: #3d3d3d;
+                border: none;
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+            }
+            button.leaveCall:hover {
+                background-color: #616161;
+            }
+            div.descContent {
+                max-height: 95vh;
+                padding-top: 5%;
+                padding-left: 5%;
+                padding-right: 5%;
+                margin-bottom: 5%;
+                overflow: scroll;
+            }
+            
+            
+        </style>
+        
+        
+    </head>
+    
+    <body>
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
+            <a class="logo" href="../Homepage/dashboard-index.html">
+            <span id="logoPart"> 
+                <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
+                <span class="icon-text">Placeholder</span>
+            </span>
+            </a>
+            <br>
+            <a href="../Profile/profile.html">
+                <i class="material-icons md-40">perm_identity</i>
+                <span class="icon-text">Profile</span>
+            </a>
+            <br>
+            <a href="../Updates/my-updates.html">
+                <span>
+                    <i class="material-icons md-40">list</i>
+                    <span class="icon-text">My Updates</span>
+                </span>
+            </a>
+            <br>
+            <a href="../Lessons/lessons.html">
+                <span>
+                    <i class="material-icons md-40">ondemand_video</i>
+                    <span class="icon-text">Lessons</span>
+                </span>
+            </a>
+            <br>
+            <a href="../GroupSessions/groupSessions.html">
+                <i class="material-icons md-40">videocam</i>
+                <span class="icon-text">Group Sessions</span>
+            </a>
+            <br>
+            <a href="">
+                <i class="material-icons md-40">local_offer</i>
+                <span class="icon-text">Deals</span>
+            </a>
+            <br>
+            <a href="mailto:">
+                <i class="material-icons md-40">help_outline</i>
+                <span class="icon-text">Help</span>
+            </a>
+            <br>
+            <a href="#">
+                <i class="material-icons md-40">more_vert</i>
+                <span class="icon-text">More</span>
+            </a>
+        </div>
+        
+        
+        <div class="content" id="dashboardContent">
+            <div class="box">
+                <div class="video">
+                    <div class="vidEmbed">
+                    </div>
+                    <div class="vidControls">
+                    </div>
+                </div>
+                <div class="desc">
+                    <button class="leaveCall">Leave Call</button>
+                    <div class="descContent">
+                        Description: Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script> 
+           
+            function toggleSideBar() {
+               
+                    console.log("opening sidebar")
+                    document.getElementById("mySidebar").style.width = "24vw";
+                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
+              
+            }
+            function untoggleSideBar() {
+                
+                    console.log("closing sidebar");
+                    document.getElementById("mySidebar").style.width = "7vw";
+                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
+                
+            }
+        </script>
+        
+        
+    </body>
+    
+    
+</html>
