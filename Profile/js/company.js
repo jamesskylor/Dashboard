@@ -8,7 +8,7 @@ document.getElementById("theSaveButton").addEventListener("click", (e)=>{
     saveInfo();
 });
 
-function loadValues(){
+function loadValues() {
     // Get database data
     var name = "John Smith Inc.";
     var site = "https://www.jsmith.com";

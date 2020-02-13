@@ -48,9 +48,10 @@ function saveTheProfile(){
     else{
         // If not valid
         // Reject the save
-        
-        // Reprompt for valid responses
-        
+        alert("Your passwords do not match, please try again.");
+        // Reprompt for valid responses by emptying the fields
+        document.getElementById("perPasswordField").value = "";
+        document.getElementById("perConfirmField").value = "";
     }
 }
 
