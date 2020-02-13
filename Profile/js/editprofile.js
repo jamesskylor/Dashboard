@@ -14,7 +14,7 @@ document.getElementById("theFileInput").addEventListener("change", (e)=>{
 });
 
 function loadValues(){
-    // Get info from database
+    // Get info from database ************************************************************************************************************
     var name = "John Smith";
     var email = "jsmith@gmail.com";
     var image = "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg";
@@ -35,10 +35,10 @@ function saveTheProfile(){
     // Check their validity
     if(password == checkPass){
         // If valid
-        // Send data to the server to save the update
+        // Send data to the server to save the update ***********************************************************************************
         
-        if(password == ""){
-            // Don't send the new password, since it's blank
+        if(password != ""){
+            // Send the new password, since it's not blank
             
         }
         
@@ -48,7 +48,10 @@ function saveTheProfile(){
     else{
         // If not valid
         // Reject the save
-        alert("Your passwords do not match, please try again.");
+        var warning = document.createElement("P");
+        warning.className = "warning";
+        warning.innerHTML = "Your passwords do not match, please try again.";
+        document.getElementById("appendWarning").appendChild(warning);
         // Reprompt for valid responses by emptying the fields
         document.getElementById("perPasswordField").value = "";
         document.getElementById("perConfirmField").value = "";

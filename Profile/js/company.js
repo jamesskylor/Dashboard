@@ -9,7 +9,7 @@ document.getElementById("theSaveButton").addEventListener("click", (e)=>{
 });
 
 function loadValues() {
-    // Get database data
+    // Get database data ************************************************************************************************
     var name = "John Smith Inc.";
     var site = "https://www.jsmith.com";
     var desc = "We do generic company things.";
@@ -48,13 +48,7 @@ function saveInfo(){
     var companyProgress2 = document.getElementById("compProg2Field").value;
     var incorporated = document.querySelector('input[name="compInc"]:checked').value;
     var publicity = document.querySelector('input[name="compPublicity"]:checked').value;
-    // Check for validity/process information
+    // Send data to the server ******************************************************************************************
     
-    // If not valid
     
-        // Reject and resubmit
-    
-    // If valid
-    
-        // Send data to the server
 }

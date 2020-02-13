@@ -300,10 +300,6 @@
                 background-size: cover;
                 background-position: center;
             }
-            
-            
-            
-            
             input.editButton {
                 margin-left: 10%;
                 margin-top: 3%;
@@ -329,6 +325,10 @@
             }
             label.fileUpload:hover{
                 background-color: #616161;
+            }
+            .warning {
+                color: red;
+                padding-left: 0;
             }
         </style>
         
@@ -399,7 +399,7 @@
                             Name:
                         </td>
                         <td class="infoList data" id="nameField">
-                            <input type="text" placeholder="Placeholder Name" class="editBox" id="perNameField" maxlength="128">
+                            <input type="text" placeholder="Placeholder Name" class="editBox" id="perNameField" maxlength="128" required>
                         </td>
                     </tr>
                     <tr>
@@ -407,7 +407,7 @@
                             Email:
                         </td>
                         <td class="infoList" id="emailField">
-                            <input type="email" placeholder="Placeholder Email Address" class="editBox" id="perEmailField" maxlength="128">
+                            <input type="email" placeholder="Placeholder Email Address" class="editBox" id="perEmailField" maxlength="128" required>
                         </td>
                     </tr>
                     <tr>
@@ -422,8 +422,14 @@
                         <td class="infoList">
                             Confirm Password:
                         </td>
-                        <td class="infoList" id="passwordField">
+                        <td class="infoList" id="passwordField2">
                             <input type="password" placeholder="Placeholder # of *'s" class="editBox" id="perConfirmField" maxlength="32" minlength="8">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td id="appendWarning">
                         </td>
                     </tr>
                     <tr>

@@ -177,7 +177,7 @@
                         Company Name:
                     </td>
                     <td class="infoList data">
-                        <input type="text" placeholder="Placeholder Name" class="editBox" id="compNameField" maxlength="128">
+                        <input type="text" placeholder="Placeholder Name" class="editBox" id="compNameField" maxlength="128" required>
                     </td>
                 </tr>
                 <tr>
@@ -185,7 +185,7 @@
                         Company Website:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder URL" class="editBox" id="compSiteField" maxlength="128">
+                        <input type="text" placeholder="Placeholder URL" class="editBox" id="compSiteField" maxlength="128" required>
                     </td>
                 </tr>
                 <tr>
@@ -193,7 +193,7 @@
                         Describe your company in a sentence or two
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox v2" id="compDescField" placeholder="Placeholder Sentences" maxlength="256"></textarea>
+                        <textarea class="editBox v2" id="compDescField" placeholder="Placeholder Sentences" maxlength="256" required></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -201,7 +201,7 @@
                         Verticality?
                     </td>
                     <td class="infoList">
-                        <select class="editBox" id="compVertField">
+                        <select class="editBox" id="compVertField" required>
                             <option value="" disabled selected>Select an Option</option>
                             <option value="idk">Temporary Placeholder</option>
                         </select>
@@ -212,7 +212,7 @@
                         What does your company make?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="compProdField" maxlength="128">
+                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="compProdField" maxlength="128" required>
                     </td>
                 </tr>
                 <tr>
@@ -220,7 +220,7 @@
                         Why did you pick this idea?
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox v2" id="compReasField" placeholder="Placeholder Explanation" maxlength="1024"></textarea>
+                        <textarea class="editBox v2" id="compReasField" placeholder="Placeholder Explanation" maxlength="1024" required></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -228,7 +228,7 @@
                         Are you Part-time or Full Time?
                     </td>
                     <td class="infoList">
-                        <select class="editBox" id="compTimeField">
+                        <select class="editBox" id="compTimeField" required>
                             <option value="" disabled selected>Select an Option</option>
                             <option value="partTime">Part-Time</option>
                             <option value="fullTime">Full-Time</option>
@@ -240,7 +240,7 @@
                         Which of the following best describes your progress?
                     </td>
                     <td class="infoList">
-                        <select class="editBox" id="compProgField">
+                        <select class="editBox" id="compProgField" required>
                             <option value="" disabled selected>Select an Option</option>
                             <option value="idk">Temporary Placeholder</option>
                         </select>
@@ -251,7 +251,7 @@
                         How far along are you?
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox" id="compProg2Field" placeholder="Placeholder Paragraph" maxlength="1024"></textarea>
+                        <textarea class="editBox" id="compProg2Field" placeholder="Placeholder Paragraph" maxlength="1024" required></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -259,7 +259,7 @@
                         Have you incorporated your company?
                     </td>
                     <td class="infoList">
-                        <input type="radio" id="incY" name="compInc" value="Y" class="YN">
+                        <input type="radio" id="incY" name="compInc" value="Y" class="YN" required>
                         <label>Yes</label>
                         <input type="radio" id="incN" name="compInc" value="N" class="YN">
                         <label>No</label>
@@ -270,7 +270,7 @@
                         Do you want to make this information public?
                     </td>
                     <td class="infoList">
-                        <input type="radio" id="compPubY" name="compPublicity" value="Y" class="Priv">
+                        <input type="radio" id="compPubY" name="compPublicity" value="Y" class="Priv" required>
                         <label>Public</label>
                         <input type="radio" id="compPubN" name="compPublicity" value="N" class="Priv">
                         <label>Private</label>

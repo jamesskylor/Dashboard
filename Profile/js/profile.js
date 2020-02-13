@@ -14,7 +14,7 @@ document.getElementById("theForm").addEventListener("submit", (e)=>{
 });
 
 function loadValues(){
-    // Get the values from database
+    // Get the values from database ***************************************************************************
     var name = "John Smith";
     var email = "jsmith@gmail.com";
     var passwordLength = 10;
@@ -64,9 +64,7 @@ function saveInfo(){
     var location = document.getElementById("locationField").value;
     var applicationStat = document.getElementById("applicationField").value;
     var publicity = document.querySelector('input[name="publicity"]:checked').value;
-    // Validate the info
+    // Send the info (Node.js I think) ********************************************************************************
     
-    // Send the info (Node.js I think)
-    // or
-    // Reject it (Clear the added javascript from previous rejects and add new ones depending on what was given)
+    
 }
