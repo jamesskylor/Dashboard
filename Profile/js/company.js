@@ -10,24 +10,24 @@ document.getElementById("theSaveButton").addEventListener("click", (e)=>{
 
 function loadValues(){
     // Get database data
-    var name;
-    var site;
-    var desc;
-    var vert;
-    var prod;
-    var reas;
-    var time;
-    var prog;
-    var prog2;
-    var inc;
-    var publ;
+    var name = "John Smith Inc.";
+    var site = "https://www.jsmith.com";
+    var desc = "We do generic company things.";
+    var vert = "idk";
+    var prod = "Normal things";
+    var reas = "Because people need normal things, so we make them";
+    var time = "fullTime";
+    var prog = "idk";
+    var prog2 = "We are doing average";
+    var inc = "inc"+"Y";
+    var publ = "compPub"+"Y";
     // Load the placeholder values to the correct ones
     document.getElementById("compNameField").value = name;
     document.getElementById("compSiteField").value = site;
-    document.getElementById("compDescField").value = desc;
+    document.getElementById("compDescField").defaultValue = desc;
     document.getElementById("compVertField").value = vert;
     document.getElementById("compProdField").value = prod;
-    document.getElementById("compReasField").value = reas;
+    document.getElementById("compReasField").defaultValue = reas;
     document.getElementById("compTimeField").value = time;
     document.getElementById("compProgField").value = prog;
     document.getElementById("compProg2Field").value = prog2;

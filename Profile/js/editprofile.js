@@ -15,11 +15,11 @@ document.getElementById("theFileInput").addEventListener("change", (e)=>{
 
 function loadValues(){
     // Get info from database
-    var name;
-    var email;
-    var image;
+    var name = "John Smith";
+    var email = "jsmith@gmail.com";
+    var image = "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg";
     // Set all the input values to their corresponding database values (except password)
-    document.getElementId("perNameField").value = name;
+    document.getElementById("perNameField").value = name;
     document.getElementById("perEmailField").value = email;
     document.getElementById("theAvatar").src = image;
 }
@@ -31,11 +31,16 @@ function saveTheProfile(){
     var password = document.getElementById("perPasswordField").value;
     var checkPass = document.getElementById("perConfirmField").value;
     // Get  the Image
-    var image = document.getElementById("theAvatar").src; // Care about this later when we have a database to compare pros/cons with *****************************
+    var image = document.getElementById("theAvatar").style.backgroundImage; // Care about this later when we have a database to compare pros/cons with *****************************
     // Check their validity
     if(password == checkPass){
         // If valid
         // Send data to the server to save the update
+        
+        if(password == ""){
+            // Don't send the new password, since it's blank
+            
+        }
         
         // Return to the Profile Page
         location.assign("profile.html");
@@ -51,7 +56,7 @@ function saveTheProfile(){
 
 function updateAvatar(){ // Change this accordingly with what our database ends up being *************************************************************************
     // Take in the file
-    var theImgFile = ;
+    var theImgFile = document.getElementById("theFileInput").files[0];
     // Change the src of "theAvatar" to the new image
-    document.getElementById("theAvatar").src = URL.createObjectURL(theImgFile);
+    document.getElementById("theAvatar").style.backgroundImage = "url("+URL.createObjectURL(theImgFile)+")";
 }

@@ -19,31 +19,31 @@ function loadValues(){
     var email = "jsmith@gmail.com";
     var passwordLength = 10;
     var obscuredPassword = new Array(passwordLength+1).join("*");
-    var avatarImg;
-    var linkedURL;
-    var githubURL;
+    var avatarImg = "https://g.foolcdn.com/editorial/images/539491/getty-stock-market-success.jpg";
+    var linkedURL = "https://www.google.com";
+    var githubURL = "https://www.google.com";
     var eduLvl = "HS";
-    var expArea;
-    var techFounder;
-    var coFounder;
+    var expArea = "idk";
+    var techFounder = "tech"+"N";
+    var coFounder = "co"+"N";
     var accomplishments = "Nothing";
-    var location;
-    var applicationStat;
-    var publicity;
+    var location = "Atlantis";
+    var applicationStat = "applied";
+    var publicity = "pub"+"Y";
     // Set the inputs and the <td>'s to the right values
     document.getElementById("nameField").innerHTML = name;
     document.getElementById("emailField").innerHTML = email;
     document.getElementById("passwordField").innerHTML = obscuredPassword;
-    document.getElementById("avatarField").src = avatarImg;
+    document.getElementById("theAvatar").style.backgroundImage = "url("+avatarImg+")";
     document.getElementById("linkedinField").value = linkedURL;
     document.getElementById("githubField").value = githubURL;
     document.getElementById("educationField").value = eduLvl;
     document.getElementById("expertField").value = expArea;
     document.getElementById(techFounder).checked = true;
     document.getElementById(coFounder).checked = true;
-    document.getElementById("accomplishmentField").innerHTML = accomplishments;
+    document.getElementById("accomplishmentField").defaultValue = accomplishments;
     document.getElementById("locationField").value = location;
-    document.getElementById(applicationStat).checked = true;
+    document.getElementById("applicationField").value = applicationStat;
     document.getElementById(publicity).checked = true;
 }
 

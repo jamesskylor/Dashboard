@@ -112,10 +112,15 @@
             textarea.editBox.v2 {
                 height: 6vh;
             }
-            img.avatar {
-                height: auto;
-                max-width: 10vw;
+            div.avatar {
+                width: 10vw;
+                height: 10vw;
+                overflow: hidden;
                 border-radius: 50%;
+                position: relative;
+                background-image: url("https://g.foolcdn.com/editorial/images/539491/getty-stock-market-success.jpg");
+                background-size: cover;
+                background-position: center;
             }
         </style>
     </head>
@@ -159,7 +164,8 @@
                         Avatar:
                     </td>
                     <td class="infoList" id="avatarField">
-                        <img src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg" class="avatar">
+                        <div class="avatar" id="theAvatar">
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -169,109 +175,112 @@
             <h2>
                 More Information
             </h2>
-            <table class="infoList">
-                <tr>
-                    <td class="infoList title">
-                        LinkedIn:
-                    </td>
-                    <td class="infoList data">
-                        <input type="url" placeholder="Placeholder URL" class="editBox" id="linkedinField" maxlength="128">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        GitHub:
-                    </td>
-                    <td class="infoList">
-                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Highest Level of Education:
-                    </td>
-                    <td class="infoList">
-                        <select class="editBox" id="educationField">
-                            <option value="" disabled selected>Select an Option</option>
-                            <option value="HS">High School Diploma</option>
-                            <option value="Undergrad">Undergraduate Degree</option>
-                            <option value="Grad">Graduate Degree</option>
-                            <option value="PhD">PhD</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Area of Expertise:
-                    </td>
-                    <td class="infoList">
-                        <select class="editBox" id="expertField">
-                            <option value="" disabled selected>Select an Option</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Technical Founder:
-                    </td>
-                    <td class="infoList">
-                        <input type="radio" id="techY" name="technical" value="yes" class="YN">
-                        <label>Yes</label>
-                        <input type="radio" id="techN" name="technical" value="no" class="YN">
-                        <label>No</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Seeking a Co-Founder:
-                    </td>
-                    <td class="infoList">
-                        <input type="radio" id="coY" name="cofounder" value="yes" class="YN">
-                        <label>Yes</label>
-                        <input type="radio" id="coN" name="cofounder" value="no" class="YN">
-                        <label>No</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Most Impressive Accomplishment:
-                    </td>
-                    <td class="infoList">
-                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Location:
-                    </td>
-                    <td class="infoList">
-                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Application Status:
-                    </td>
-                    <td class="infoList">
-                        <select class="editBox" id="applicationField">
-                            <option value="" disabled selected>Select an Option</option>
-                            <option value="applied">Applied</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="infoList title">
-                        Profile:
-                    </td>
-                    <td class="infoList">
-                        <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
-                        <label>Public</label>
-                        <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
-                        <label>Private</label>
-                    </td>
-                </tr>
-            </table>
-            <button class="editButton" id="theSaveButton">Save</button>
+            <form id="theForm">
+                <table class="infoList">
+                    <tr>
+                        <td class="infoList title">
+                            LinkedIn:
+                        </td>
+                        <td class="infoList data">
+                            <input type="url" placeholder="Please copy and paste in your LinkedIn Profile Page URL" class="editBox" id="linkedinField" maxlength="128">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            GitHub:
+                        </td>
+                        <td class="infoList">
+                            <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Highest Level of Education:
+                        </td>
+                        <td class="infoList">
+                            <select class="editBox" id="educationField">
+                                <option value="" disabled selected>Select an Option</option>
+                                <option value="HS">High School Diploma</option>
+                                <option value="Undergrad">Undergraduate Degree</option>
+                                <option value="Grad">Graduate Degree</option>
+                                <option value="PhD">PhD</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Area of Expertise:
+                        </td>
+                        <td class="infoList">
+                            <select class="editBox" id="expertField">
+                                <option value="" disabled selected>Select an Option</option>
+                                <option value="idk">TemporaryPlaceholder</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Technical Founder:
+                        </td>
+                        <td class="infoList">
+                            <input type="radio" id="techY" name="technical" value="Y" class="YN">
+                            <label>Yes</label>
+                            <input type="radio" id="techN" name="technical" value="N" class="YN">
+                            <label>No</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Seeking a Co-Founder:
+                        </td>
+                        <td class="infoList">
+                            <input type="radio" id="coY" name="cofounder" value="Y" class="YN">
+                            <label>Yes</label>
+                            <input type="radio" id="coN" name="cofounder" value="N" class="YN">
+                            <label>No</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Most Impressive Accomplishment:
+                        </td>
+                        <td class="infoList">
+                            <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Location:
+                        </td>
+                        <td class="infoList">
+                            <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Application Status:
+                        </td>
+                        <td class="infoList">
+                            <select class="editBox" id="applicationField">
+                                <option value="" disabled selected>Select an Option</option>
+                                <option value="applied">Applied</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList title">
+                            Profile:
+                        </td>
+                        <td class="infoList">
+                            <input type="radio" id="pubY" name="publicity" value="Y" class="Priv">
+                            <label>Public</label>
+                            <input type="radio" id="pubN" name="publicity" value="N" class="Priv">
+                            <label>Private</label>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="editButton" id="theSaveButton" value="Save">
+            </form>
             <script src="js/profile.js"></script>
         </div>
     </body>

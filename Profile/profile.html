@@ -295,10 +295,15 @@
             textarea.editBox.v2 {
                 height: 6vh;
             }
-            img.avatar {
-                height: auto;
-                max-width: 9vw;
+            div.avatar {
+                width: 10vw;
+                height: 10vw;
+                overflow: hidden;
                 border-radius: 50%;
+                position: relative;
+                background-image: url("https://g.foolcdn.com/editorial/images/539491/getty-stock-market-success.jpg");
+                background-size: cover;
+                background-position: center;
             }
             #theSaveButton {
                 margin-left: 10%;
@@ -440,7 +445,8 @@
                                     Avatar:
                                 </td>
                                 <td class="infoList" id="avatarField">
-                                    <img src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg" class="avatar">
+                                    <div class="avatar" id="theAvatar">
+                                    </div>
                                 </td>
                             </tr>
                         </table>
@@ -489,6 +495,7 @@
                                     <td class="infoList">
                                         <select class="editBox" id="expertField">
                                             <option value="" disabled selected>Select an Option</option>
+                                            <option value="idk">TemporaryPlaceholder</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -497,9 +504,9 @@
                                         Technical Founder:
                                     </td>
                                     <td class="infoList">
-                                        <input type="radio" id="techY" name="technical" value="yes" class="YN">
+                                        <input type="radio" id="techY" name="technical" value="Y" class="YN">
                                         <label>Yes</label>
-                                        <input type="radio" id="techN" name="technical" value="no" class="YN">
+                                        <input type="radio" id="techN" name="technical" value="N" class="YN">
                                         <label>No</label>
                                     </td>
                                 </tr>
@@ -508,9 +515,9 @@
                                         Seeking a Co-Founder:
                                     </td>
                                     <td class="infoList">
-                                        <input type="radio" id="coY" name="cofounder" value="yes" class="YN">
+                                        <input type="radio" id="coY" name="cofounder" value="Y" class="YN">
                                         <label>Yes</label>
-                                        <input type="radio" id="coN" name="cofounder" value="no" class="YN">
+                                        <input type="radio" id="coN" name="cofounder" value="N" class="YN">
                                         <label>No</label>
                                     </td>
                                 </tr>
@@ -546,9 +553,9 @@
                                         Profile:
                                     </td>
                                     <td class="infoList">
-                                        <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
+                                        <input type="radio" id="pubY" name="publicity" value="Y" class="Priv">
                                         <label>Public</label>
-                                        <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
+                                        <input type="radio" id="pubN" name="publicity" value="N" class="Priv">
                                         <label>Private</label>
                                     </td>
                                 </tr>
