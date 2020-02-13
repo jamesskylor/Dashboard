@@ -1,6 +1,5 @@
 <!doctype html>
-
-<html lang="en">
+<html>
     
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -152,14 +151,30 @@
                 margin-top: 7vh;
                 
             }
+            div.box {
+                display: flex;
+                margin-bottom: 5vw;
+                flex-wrap: wrap;
+                padding-left: 15%;
+            }
+            div.title {
+                flex: 1 1 1%;
+            }
+            div.value {
+                flex: 1 1 95%;
+                padding-top: 4%;
+                text-align: left;
+                margin: 0;
+                padding: 0;
+            }
             h1 {
                 font-family: 'Lustria', serif;
                 color: #000000;
                 display: block;
+                font-size: 300%;
                 white-space: nowrap;
                 padding-left: 10%;
                 font-size: 2.3vw;
-                margin-bottom: 3vw;
             }
             h2 {
                 font-family: 'Lustria', serif;
@@ -172,24 +187,29 @@
                 color: #000000;
                 padding-left: 5%;
             }
+            iframe {
+                margin-left: 7vw;
+                width: 32vw;
+                height: 18vw;
+                border: none;
+            }
             .content .inside {
-                padding-top: 2vw;
+                padding-top: 10vw;
                 padding-bottom: 10vw;
             }
             table.selections {
                 margin: auto;
                 border-collapse: collapse;
                 table-layout: fixed;
-                width: 50vw;
+                width: 70vw;
                 text-align: center;
-                margin-bottom: 4vw;
+                margin-bottom: 10vw;
             }
             td.selection {
-                border: 3px solid #cccccc;
-                padding: 0.7vw;
+                border: 4px solid #3d3d3d;
+                padding: 1vw;
                 font-family: 'Lustria', serif;
                 color: #000000;
-                font-weight: bold;
             }
             td.selection:hover {
                 background-color: #cccccc;
@@ -204,12 +224,12 @@
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
                 color: #cccccc;
-                margin-bottom: 3%;
+                margin-bottom: 7%;
             }
             button.editButton:hover {
-                background-color: #616161;
-                /*background-color: #ee252d;
-                color: #ffffff;*/
+                /*background-color: #616161;*/
+                background-color: #ee252d;
+                color: #ffffff;
             }
             table.infoList {
                 margin-left: 10%;
@@ -222,7 +242,6 @@
             }
             td.title {
                 width: 15vw;
-                font-weight: bold;
             }
             td.data {
                 width: 30vw;
@@ -234,9 +253,11 @@
                 width: 100%;
                 max-width: 100%;
                 font-family: 'Lustria', serif;
+                color: grey;
             }
-            input {
-                font-family: 'Lustria', serif;
+            iframe.icontent {
+                width: 100%;
+                height 100%;
             }
             .current {
                 background-color: #3d3d3d;
@@ -244,7 +265,7 @@
             a.myLink {
                 text-decoration: none;
                 color: #000000;
-                font-size: 1.2vw;
+                font-size: 2vw;
             }
             div.niceLink {
                 width: 100%;
@@ -279,7 +300,7 @@
                 background-size: cover;
                 background-position: center;
             }
-            #theSaveButton {
+            input.editButton {
                 margin-left: 10%;
                 margin-top: 3%;
                 border: none;
@@ -289,17 +310,30 @@
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
                 color: #cccccc;
-                margin-bottom: 3%;
+                margin-bottom: 7%;
             }
-            #theSaveButton:hover {
+            input.editButton:hover {
+                /*background-color: #616161;*/
+                background-color: #ee252d;
+                color: #ffffff;
+            }
+            label.fileUpload {
+                background-color: #3d3d3d;
+                color: #cccccc;
+                padding: 0.3vw 0.6vw;
+                cursor: pointer;
+            }
+            label.fileUpload:hover{
                 background-color: #616161;
-                /*background-color: #ee252d;
-                color: #ffffff;*/
+            }
+            .warning {
+                color: red;
+                padding-left: 0;
             }
         </style>
         
-        
     </head>
+    
     
     <body>
         <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
@@ -351,200 +385,71 @@
         </div>
         
         
-        
-        
-        
         <div class="content" id="dashboardContent">
-            <div class="inside">
-                
-                
-                <nav>
-                    <table class="selections">
-                        <tr id="theNav">
-                            <td class="selection">
-                                <a href="myProfile.html" class="myLink">
-                                        My Profile
-                                </a>
-                            </td>
-                            <td class="selection">
-                                <a href="myCompany.html" class="myLink">
-                                        Company
-                                </a>
-                            </td>
-                            <td class="selection">
-                                <a href="myCoFounders.html" class="myLink">
-                                        Co-Founders
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </nav>
-                
-                
-                <div id="contentContainer">
-                    <div id="theContent">
-                        <h1>
-                            My Profile
-                        </h1>
-                        <h2>
-                            Placeholder Name Account
-                        </h2>
-                        <table class="infoList">
-                            <tr>
-                                <td class="infoList title">
-                                    Name:
-                                </td>
-                                <td class="infoList data" id="nameField">
-                                    Placeholder Name
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Email:
-                                </td>
-                                <td class="infoList" id="emailField">
-                                    Placeholder Email
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Password:
-                                </td>
-                                <td class="infoList" id="passwordField">
-                                    Placeholder number of asterisks
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Avatar:
-                                </td>
-                                <td class="infoList" id="avatarField">
-                                    <div class="avatar" id="theAvatar">
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        <button class="editButton" id="theEditButton">Edit</button>
-                        
-
-                        <h2>
-                            More Information
-                        </h2>
-                        <form id="theForm">
-                            <table class="infoList">
-                                <tr>
-                                    <td class="infoList title">
-                                        LinkedIn:
-                                    </td>
-                                    <td class="infoList data">
-                                        <input type="url" placeholder="Please copy and paste in your LinkedIn Profile Page URL" class="editBox" id="linkedinField" maxlength="128">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        GitHub:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Highest Level of Education:
-                                    </td>
-                                    <td class="infoList">
-                                        <select class="editBox" id="educationField" required>
-                                            <option value="" disabled selected>Select an Option</option>
-                                            <option value="HS">High School Diploma</option>
-                                            <option value="Undergrad">Undergraduate Degree</option>
-                                            <option value="Grad">Graduate Degree</option>
-                                            <option value="PhD">PhD</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Area of Expertise:
-                                    </td>
-                                    <td class="infoList">
-                                        <select class="editBox" id="expertField" required>
-                                            <option value="" disabled selected>Select an Option</option>
-                                            <option value="idk">TemporaryPlaceholder</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Technical Founder:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="radio" id="techY" name="technical" value="Y" class="YN" required>
-                                        <label>Yes</label>
-                                        <input type="radio" id="techN" name="technical" value="N" class="YN">
-                                        <label>No</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Seeking a Co-Founder:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="radio" id="coY" name="cofounder" value="Y" class="YN" required>
-                                        <label>Yes</label>
-                                        <input type="radio" id="coN" name="cofounder" value="N" class="YN">
-                                        <label>No</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Most Impressive Accomplishment:
-                                    </td>
-                                    <td class="infoList">
-                                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024" required></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Location:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Application Status:
-                                    </td>
-                                    <td class="infoList">
-                                        <select class="editBox" id="applicationField" required>
-                                            <option value="" disabled selected>Select an Option</option>
-                                            <option value="applied">Applied</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Profile:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="radio" id="pubY" name="publicity" value="Y" class="Priv" required>
-                                        <label>Public</label>
-                                        <input type="radio" id="pubN" name="publicity" value="N" class="Priv">
-                                        <label>Private</label>
-                                    </td>
-                                </tr>
-                            </table>
-                            <input type="submit" class="editButton" id="theSaveButton" value="Save">
-                        </form>
-                        <script src="js/profile.js"></script>
-                    </div>
-                </div>
-                
-            </div>
+            <h1>
+                Editing Profile
+            </h1>
+            <h2>
+                Placeholder Name Account
+            </h2>
+            <form id="theForm">
+                <table class="infoList">
+                    <tr>
+                        <td class="infoList title">
+                            Name:
+                        </td>
+                        <td class="infoList data" id="nameField">
+                            <input type="text" placeholder="Placeholder Name" class="editBox" id="perNameField" maxlength="128" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Email:
+                        </td>
+                        <td class="infoList" id="emailField">
+                            <input type="email" placeholder="Placeholder Email Address" class="editBox" id="perEmailField" maxlength="128" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Password:
+                        </td>
+                        <td class="infoList" id="passwordField">
+                            <input type="password" placeholder="Placeholder # of *'s" class="editBox" id="perPasswordField" maxlength="32" minlength="8">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Confirm Password:
+                        </td>
+                        <td class="infoList" id="passwordField2">
+                            <input type="password" placeholder="Placeholder # of *'s" class="editBox" id="perConfirmField" maxlength="32" minlength="8">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td id="appendWarning">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoList">
+                            Avatar:
+                        </td>
+                        <td class="infoList" id="avatarField">
+                            <div class="avatar" id="theAvatar">
+                            </div>
+                            <br>
+                            <label class="fileUpload">
+                                <input type="file" id="theFileInput" accept="image/*" style="display: none"/>
+                                Choose an Image
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="editButton" id="theSaveButton" value="Save">
+            </form>
         </div>
-        
-        
-        
         
         
         <footer class ="footer"> 
@@ -607,8 +512,7 @@
             }
         </script>
         
-        
+        <script src="js/editprofile.js"></script>
     </body>
-    
     
 </html>

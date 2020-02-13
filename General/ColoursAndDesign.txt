@@ -6,6 +6,9 @@ Background: #FFFFFF
 Button Text: #CCCCCC
 Buttons: #424242
 
+Red: #ee252d
+Apple-Blue: #06c
+
 Sidebar: #303030
 
 
