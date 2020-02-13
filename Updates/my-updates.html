@@ -201,54 +201,102 @@
                 margin:auto;
                 display: flex;
                 flex-direction: column;
-                border: 1px solid black;
                 width: 50vw;
                 margin-top: 2vw;
+            }
+            #last {
+                margin-bottom: 10vw;    
             }
             .inner-container {
                 display:flex;
                 flex-direction: row;
+                border: 0.1vw solid #CCCCCC;
             }
             .inner-container1 {
                 display:flex;
                 flex-direction: column;
+                border: 0.1vw solid #CCCCCC;
+            }
+            .inner-container2 {
+                display: flex;
+                flex-direction: row;
+                height: 8vw;
+                border: 0.1vw solid #CCCCCC;
             }
             .inner-inner-container {
                 display: flex;
                 flex-direction: row;
             }
+    
 
             .item {
                 flex-grow: 1;
                 height: 6vw;
-                padding: 10px;
                 background-color: white;
             }
             .item1 {
-                flex-grow: 1;               
+                flex-grow: 1;
                 height: 2vw;
-                padding: 10px;
-                background-color: #A49B9A;
+                background-color:#FFFFFF;
+                }
+            .item-text {
+                margin-left: 1vw;
+                color: #000000;
+                font-size: 1.5vw;
+                font-family: 'Lustria';
             }
             .item2 {
                 flex-grow: 1;
                 height: 6vw;
-                padding: 10px;
                 background-color: white;
+                margin-right: 10vw;
                 
             }
             .item3 {
                 flex-grow: 1;
                 height: 6vw;
-                padding: 10px;
+                padding: 0px;
                 background-color: white;
-                
+            }
+            #input1 {
+            margin-left: 11.5vw;
+            height: 1.5vw;
+            width: 20vw;
+            }
+            #input2 {
+            margin-left: 2vw;
+            height: 2vw;
+            width: 20vw;
+            }
+            #input3 {
+                margin-left: 2vw;
+                width: 20vw;
+                height: 10vw;
+                resize: none;
+                overflow: auto;
+                overflow-x: hidden;
+            }
+            #input4 {
+                margin-left: 2vw;
+                width: 45vw;
+                height: 7vw;
+                resize: none;
+                overflow: auto;
+                overflow-x: hidden;
+            }
+            #goals1 {
+                height:30vw;
+            }
+            #goals {
+                height:18.25vw;
             }
             .switch {
+                margin-top: 1vw;
+                margin-left: 1.7vw;
                 position: relative;
                 display: inline-block;
                 width: 60px;
-                height:34px;
+                height:25px;
             }
             .switch input {
                 opacity: 0;
@@ -262,7 +310,7 @@
                 left:0;
                 right:0;
                 bottom: 0;
-                background-color: #ccc;
+                background-color:#CCCCCC;
                 -webkit-transition: .4s;
                 transition: .4s;
                 border-radius: 34px;
@@ -272,23 +320,23 @@
                 content: "";
                 height: 26px;
                 width: 26px;
-                left: 4px;
-                bottom: 4px;
+                left: 0px;
+                bottom: 0px;
                 background-color: white;
                 -webkit-transition: .4s;
                 transition: .4s;
                 border-radius: 50%;
             }
             input:checked + .slider {
-                background-color: #2196F3;
+                background-color: #ee252d;
             }
             input:focus + .slider {
-                box-shadow: 0 0 1px #2196F3;
+                box-shadow: 0 0 1px #ee252d;
             }
             input:checked + .slider:before {
-                -webkit-transform: translateX(26px);
-                -ms-transform: translateX(26px);
-                transform: translateX(26px);
+                -webkit-transform: translateX(34px);
+                -ms-transform: translateX(34px);
+                transform: translateX(34px);
             }
             .slider.round {
                     border-radius: 34px;
@@ -299,6 +347,29 @@
             }
             .morale {
                 height: 2vw;
+                margin-left: 2.0vw;
+            }
+            #moraleQuestion {
+                height: 8vw;
+            }
+            #switch-innertext {
+                margin-left:9.65vw;
+            }
+            #improvement {
+                margin-left: 0.7vw;
+                font-size: 1vw;
+            }
+            #launchedYet {
+                margin-left: 1vw
+            }
+            #scale {
+                padding-left: 2.1vw;
+                
+            }
+            h1 {
+                font-size: 2.3vw;
+                margin-left: 15.55vw;
+                margin-bottom: 3.2vw;
             }
             
 
@@ -358,62 +429,63 @@
         </div>
         
 <div class="content" id="dashboardContent">
-    <div class="container">
-        <div class="item1">Launch</div>
-            <div class="inner-container">
-                <div class="item"> <p>Have you launched yet? </p>
+    <h1> Submit Your Weekly Updates</h1>
+    <div class="container" id="launch">
+        <div class="item1"><b class="item-text">Launch</b></div>
+            <div class="inner-container2">
+                <div class="item"> <p id="launchedYet">Have you launched yet? </p>
                     <label class ="switch">
                         <input type="checkbox" onclick="launched()">
                             <span class="slider">
                             </span>
                     </label>
-                    </div>
+                </div>
                 <div class="item" id="switch-text"><p id="switch-innertext">Weeks until launch:</p>
                         <div id="numberWeeks">
                             <form> 
-                                <input type="text" id="inputWeeks">
+                                <input type="text" id="input1">
                             </form>
                         </div>
                 </div>
             </div>
     </div>
     <div class="container">
-        <div class="item1">Users</div>
-            <div class="inner-container">
-                <div class="item"> <p>Users/Perspective users talked to this week?</p>
+        <div class="item1"><b class="item-text">Users</b></div>
+            <div class="inner-container2">
+                <div class="item"> <p id="improvement">Users/Perspective users talked to this week?</p>
                     <form>
-                        <input type="type">
+                        <input type="type" id="input2" maxlength="10">
                     </form>
                 </div>
-                <div class="item"><p>What have you learned from them?</p>
+                <div class="item"><p id ="improvement">What have you learned from them?</p>
                     <div>
                         <form> 
-                            <input type="text" id="inputWeeks">
+                            <input type="text" id="input2">
                         </form>
                     </div>
                 </div>
             </div>
     </div>
     <div class="container">
-        <div class="item1">Users</div>
-            <div class="inner-container1">
-                <div class="item2"> <p>Users/Perspective users talked to this week?</p>
+        <div class="item1"><b class="item-text">Goals</b></div>
+            <div class="inner-container1" id="goals1">
+                <div class="item2"> <p>What are your top 1-3 goals for the next week?</p>
                     <form>
-                        <input type="type">
+                        <textarea type="type" wrap="soft" maxlength="800" id="input4"></textarea>
                     </form>
                 </div>
-                <div class="inner-inner-container">
-                    <div class="item3"><p>What have you learned from them?</p>
+                <div class="inner-inner-container" id="goals">
+                    <div class="item3"><p id="improvement">What most improved your primary method?</p>
                         <div>
                             <form> 
-                                <input type="text" id="inputWeeks">
+                                <textarea type="text" wrap="soft" maxlength="800" id="input3"></textarea>
                             </form>
                         </div>
                     </div>
-                    <div class="item3"><p>What have you learned from them?</p>
+                    <div class="item3"><p id="improvement">Biggest Obstacle?</p>
                         <div>
                             <form> 
-                                <input type="text" id="inputWeeks">
+                                <textarea type="text" wrap="soft" id="input3" maxlength="800"></textarea> 
                             </form>
                         </div>
                     </div>
@@ -421,9 +493,9 @@
             </div>
     </div>
     <div class="container">
-        <div class="item1">Morale</div>
-            <div class="inner-container">
-                <div class="item"> <p>On a scale of 1-10, what is your morale?</p>
+        <div class="item1"><b class="item-text">Morale</b></div>
+            <div class="inner-container" id="moraleQuestion">
+                <div class="item"> <p id="scale">On a scale of 1-10, what is your morale?</p>
                     <form>
                         <select class="morale" style="width:45vw">
                             <option value="1">1</option>
@@ -435,9 +507,18 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                             <option value="9">9</option>
-                            <option value="10">10</option>
+                            <option value="10">10-Couldn't be more excited or enthusiastic</option>
                         </select>
                     </form>
+                </div>
+            </div>
+    </div>
+    <div class="container" id="last">
+        <div class="item1"><b class="item-text">Group Sessions</b></div>
+            <div class="inner-container">
+                <div class="item"> <p>Users/Perspective users talked to this week?</p>
+                </div>
+                <div class="item"><p>What have you learned from them?</p>
                 </div>
             </div>
     </div>
