@@ -172,7 +172,6 @@
                 font-family: 'Lustria', serif;
                 color: #000000;
                 display: block;
-                font-size: 300%;
                 white-space: nowrap;
                 padding-left: 10%;
                 font-size: 2.3vw;
@@ -196,22 +195,23 @@
                 border: none;
             }
             .content .inside {
-                padding-top: 5vw;
+                padding-top: 2vw;
                 padding-bottom: 10vw;
             }
             table.selections {
                 margin: auto;
                 border-collapse: collapse;
                 table-layout: fixed;
-                width: 70vw;
+                width: 50vw;
                 text-align: center;
-                margin-bottom: 2vw;
+                margin-bottom: 4vw;
             }
             td.selection {
-                border: 4px solid #3d3d3d;
-                padding: 1vw;
+                border: 3px solid #cccccc;
+                padding: 0.7vw;
                 font-family: 'Lustria', serif;
                 color: #000000;
+                font-weight: bold;
             }
             td.selection:hover {
                 background-color: #cccccc;
@@ -256,7 +256,9 @@
                 width: 100%;
                 max-width: 100%;
                 font-family: 'Lustria', serif;
-                color: grey;
+            }
+            input {
+                font-family: 'Lustria', serif;
             }
             iframe.icontent {
                 width: 100%;
@@ -268,7 +270,7 @@
             a.myLink {
                 text-decoration: none;
                 color: #000000;
-                font-size: 1.4vw;
+                font-size: 1.2vw;
             }
             div.niceLink {
                 width: 100%;
@@ -297,6 +299,23 @@
                 height: auto;
                 max-width: 9vw;
                 border-radius: 50%;
+            }
+            #theSaveButton {
+                margin-left: 10%;
+                margin-top: 3%;
+                border: none;
+                background-color: #3d3d3d;
+                width: 5vw;
+                height: 3vw;
+                font-size: 1.5vw;
+                font-family: 'Lustria', serif;
+                color: #cccccc;
+                margin-bottom: 3%;
+            }
+            #theSaveButton:hover {
+                background-color: #616161;
+                /*background-color: #ee252d;
+                color: #ffffff;*/
             }
         </style>
         
@@ -431,109 +450,111 @@
                         <h2>
                             More Information
                         </h2>
-                        <table class="infoList">
-                            <tr>
-                                <td class="infoList title">
-                                    LinkedIn:
-                                </td>
-                                <td class="infoList data">
-                                    <input type="url" placeholder="Placeholder URL" class="editBox" id="linkedinField" maxlength="128">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    GitHub:
-                                </td>
-                                <td class="infoList">
-                                    <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Highest Level of Education:
-                                </td>
-                                <td class="infoList">
-                                    <select class="editBox" id="educationField">
-                                        <option value="" disabled selected>Select an Option</option>
-                                        <option value="HS">High School Diploma</option>
-                                        <option value="Undergrad">Undergraduate Degree</option>
-                                        <option value="Grad">Graduate Degree</option>
-                                        <option value="PhD">PhD</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Area of Expertise:
-                                </td>
-                                <td class="infoList">
-                                    <select class="editBox" id="expertField">
-                                        <option value="" disabled selected>Select an Option</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Technical Founder:
-                                </td>
-                                <td class="infoList">
-                                    <input type="radio" id="techY" name="technical" value="yes" class="YN">
-                                    <label>Yes</label>
-                                    <input type="radio" id="techN" name="technical" value="no" class="YN">
-                                    <label>No</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Seeking a Co-Founder:
-                                </td>
-                                <td class="infoList">
-                                    <input type="radio" id="coY" name="cofounder" value="yes" class="YN">
-                                    <label>Yes</label>
-                                    <input type="radio" id="coN" name="cofounder" value="no" class="YN">
-                                    <label>No</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Most Impressive Accomplishment:
-                                </td>
-                                <td class="infoList">
-                                    <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024"></textarea>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Location:
-                                </td>
-                                <td class="infoList">
-                                    <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Application Status:
-                                </td>
-                                <td class="infoList">
-                                    <select class="editBox" id="applicationField">
-                                        <option value="" disabled selected>Select an Option</option>
-                                        <option value="applied">Applied</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Profile:
-                                </td>
-                                <td class="infoList">
-                                    <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
-                                    <label>Public</label>
-                                    <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
-                                    <label>Private</label>
-                                </td>
-                            </tr>
-                        </table>
-                        <button class="editButton" id="theSaveButton">Save</button>
+                        <form id="theForm">
+                            <table class="infoList">
+                                <tr>
+                                    <td class="infoList title">
+                                        LinkedIn:
+                                    </td>
+                                    <td class="infoList data">
+                                        <input type="url" placeholder="Please copy and paste in your LinkedIn Profile Page URL" class="editBox" id="linkedinField" maxlength="128">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        GitHub:
+                                    </td>
+                                    <td class="infoList">
+                                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Highest Level of Education:
+                                    </td>
+                                    <td class="infoList">
+                                        <select class="editBox" id="educationField">
+                                            <option value="" disabled selected>Select an Option</option>
+                                            <option value="HS">High School Diploma</option>
+                                            <option value="Undergrad">Undergraduate Degree</option>
+                                            <option value="Grad">Graduate Degree</option>
+                                            <option value="PhD">PhD</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Area of Expertise:
+                                    </td>
+                                    <td class="infoList">
+                                        <select class="editBox" id="expertField">
+                                            <option value="" disabled selected>Select an Option</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Technical Founder:
+                                    </td>
+                                    <td class="infoList">
+                                        <input type="radio" id="techY" name="technical" value="yes" class="YN">
+                                        <label>Yes</label>
+                                        <input type="radio" id="techN" name="technical" value="no" class="YN">
+                                        <label>No</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Seeking a Co-Founder:
+                                    </td>
+                                    <td class="infoList">
+                                        <input type="radio" id="coY" name="cofounder" value="yes" class="YN">
+                                        <label>Yes</label>
+                                        <input type="radio" id="coN" name="cofounder" value="no" class="YN">
+                                        <label>No</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Most Impressive Accomplishment:
+                                    </td>
+                                    <td class="infoList">
+                                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Location:
+                                    </td>
+                                    <td class="infoList">
+                                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Application Status:
+                                    </td>
+                                    <td class="infoList">
+                                        <select class="editBox" id="applicationField">
+                                            <option value="" disabled selected>Select an Option</option>
+                                            <option value="applied">Applied</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="infoList title">
+                                        Profile:
+                                    </td>
+                                    <td class="infoList">
+                                        <input type="radio" id="coY" name="publicity" value="pub" class="Priv">
+                                        <label>Public</label>
+                                        <input type="radio" id="coN" name="publicity" value="priv" class="Priv">
+                                        <label>Private</label>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="submit" class="editButton" id="theSaveButton" value="Save">
+                        </form>
                         <script src="js/profile.js"></script>
                     </div>
                 </div>
