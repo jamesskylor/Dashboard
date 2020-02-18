@@ -21,6 +21,7 @@
 /Updates (1-4 work-days)
     Connect to the database (4 hr)
     Improve CSS (4 hr)
+    Connect the Submit Updates (4 hr)
     Possibly more (IDK)
     
 /db (1-2 work-days)
