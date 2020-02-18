@@ -192,13 +192,58 @@
                 color: #000000;
                 padding-left: 5%;
             }
-            iframe {
-                margin-left: 7vw;
-                width: 32vw;
-                height: 18vw;
-                border: none;
+            .chart-container {
+                position: relative;
+                height: 30vh;
+                width: 45vw;
             }
-            
+            .table {
+                margin-top: 50vw;
+                margin-left: 0vw;
+                margin-bottom: 3vw;
+                flex-wrap: nowrap;
+                border-spacing: 0;
+                width: 100vw;
+            }
+            .parent {
+                width: 100vw;
+            }
+            .paragraph2 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding: 0%;
+                border-spacing: 0%;
+                border-left: 1px solid black;
+                margin-block-start: 0em;
+                margin-block-end: 0em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+            }
+            .paragraph {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding: 0%;
+                border-spacing: 0%;
+                margin-block-start: 0em;
+                margin-block-end: 0em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+            }
+            .currentRow2 {
+                outline: 1px solid black;
+            }
+            .currentCell {
+                padding: 0px;
+                border-spacing: 0%;
+            }
+            .tableHeader {
+                font-size: 2vw;
+                padding-left: 0vw;
+                margin-left: 0vw;
+            }
+            .parentTable {
+                width: 90vw;
+            }
             
             
             
@@ -262,11 +307,25 @@
             <h1>
                 My Updates
             </h1>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <div class="chart-container">
+            <canvas id="myChart" width="20" height="20" responsive="true"></canvas>
+            </div>
+            <div class="table">
+                <table id="parent">
+                    <tr> 
+                        <th> Updates history</th>
+                    </tr>
+                    <tr> 
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             
             
-            
-        </div>
+        </div> 
         
         
         <footer class ="footer"> 
@@ -331,12 +390,11 @@
         <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'radar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Number of Users', 'Weeks until launch', 'Morale', 'Revenue', 'Margins', 'Monthly Users', 'Expenses'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -367,9 +425,49 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+
+
         
-        
-    </body>
     
+    </body>
+    <script> 
+function updateHistory ()  {
+// function used to print the update history.
+    var tabel = document.createElement("TABLE");
+    tabel.className= "parentTable";
+    var parentTable = document.getElementById("parent");
+    var currentRow = document.createElement("TR");
+    var currentRow2 = document.createElement("TR");
+    currentRow2.className = "currentRow2";
+    tabel.appendChild(currentRow);
+    tabel.appendChild(currentRow2);
+    var currentCell = document.createElement("TD");
+    currentCell.className="currentCell";
+    var currentCell2 = document.createElement("TD");
+    currentCell2.className="currentCell";
+    var tableHeader  = document.createElement("A");
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var link = document.createTextNode(date); // placeholder for the actual date
+    tableHeader.appendChild(link);
+    tableHeader.title=date;
+    tableHeader.href = ("/Dashboard/Updates/my-updates.html");
+    tableHeader.className ="tableHeader";
+    var paragraph = document.createElement("P");
+    paragraph.className="paragraph";
+    var paragraph2 = document.createElement("P");
+    paragraph2.className="paragraph2";
+    paragraph.innerHTML = "number of Users: 1000.";
+    paragraph2.innerHTML = "Margins: 1000";
+    currentRow.appendChild(tableHeader);
+    currentCell.appendChild(paragraph);
+    currentCell2.appendChild(paragraph2);
+    currentRow2.appendChild(currentCell);
+    currentRow2.appendChild(currentCell2);
+    parentTable.appendChild(tabel);
+    
+}
+    updateHistory();
+        </script>
     
 </html>
