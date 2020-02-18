@@ -209,12 +209,40 @@
                 background-color: #616161;
             }
             div.descContent {
-                max-height: 95vh;
+                max-height: 92vh;
                 padding-top: 5%;
                 padding-left: 5%;
                 padding-right: 5%;
-                margin-bottom: 5%;
-                overflow: scroll;
+                overflow: auto;
+            }
+            button.vidContButton {
+                border: none;
+                height: 10vh;
+                width: 10vh;
+                padding: none;
+                margin: none;
+                vertical-align: top;
+                background: #cccccc;
+            }
+            button.vidContButton:hover {
+                background-color: #616161;
+            }
+            .material-icons.controls {
+                padding: none;
+                margin: none;
+                font-size: 3vw;
+                vertical-align: center;
+                text-align: center;
+            }
+            #commonControls {
+                text-align: left;
+                float: left;
+            }
+            #lessCommonControls {
+                text-align: right;
+            }
+            .toggle {
+                
             }
             
             
@@ -279,10 +307,49 @@
                     <div class="vidEmbed">
                     </div>
                     <div class="vidControls">
+                        
+                        <div id="commonControls">
+                            
+                            <button class="vidContButton" id="toggleVideo">
+                                <i class="material-icons controls toggle" id="videocam">
+                                    videocam
+                                </i>
+                            </button>
+                            
+                            <button class="vidContButton" id="toggleAudio">
+                                <i class="material-icons controls toggle" id="mic">
+                                    mic
+                                </i>
+                            </button>
+                            
+                            <button class="vidContButton" id="screenShare">
+                                <i class="material-icons controls toggle" id="screen_share">
+                                    stop_screen_share
+                                </i>
+                            </button>
+                            
+                        </div>
+                        
+                        <div id="lessCommonControls">
+                            
+                            <button class="vidContButton" id="moreOptions">
+                                <i class="material-icons controls" id="more_horiz">
+                                    more_horiz
+                                </i>
+                            </button>
+                            
+                            <button class="vidContButton" id="viewNetwork">
+                                <i class="material-icons controls" id="network_check">
+                                    network_check
+                                </i>
+                            </button>
+                            
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="desc">
-                    <button class="leaveCall">Leave Call</button>
+                    <button class="leaveCall" id="exitCall">Leave Call</button>
                     <div class="descContent">
                         Description: Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text Placeholder Text
                     </div>
@@ -290,6 +357,7 @@
             </div>
         </div>
         
+        <script src="js/callPage.js"></script>
         
         <script> 
            
