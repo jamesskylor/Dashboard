@@ -17,8 +17,11 @@ INSERT INTO userData (id, linkedURL, githubURL, eduLVL, expArea, techFounder, co
 
 INSERT INTO companyData (id, name, site, description, verticality, product, raisondetre, fulltime, progress, progressPlus, incorporated, publicity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
 
+The three UPDATE ___ SET ___ WHERE id = $#
+
 */
 
+// works
 const getUsers = (req, res) => {
     db.query('SELECT * FROM users ORDER BY id ASC', (err, results) => {
         if(err) throw err;
@@ -26,6 +29,7 @@ const getUsers = (req, res) => {
     });
 }
 
+// works
 const getUserById = (req, res) => {
     const id = parseInt(req.params.id);
     db.query('SELECT * FROM users WHERE id = $1', [id], (err, results) => {
@@ -34,6 +38,7 @@ const getUserById = (req, res) => {
     });
 }
 
+// works
 const getUDataById = (req, res) => {
     const id = parseInt(req.params.id);
     db.query('SELECT * FROM userData WHERE id = $1', [id], (err, results) => {
@@ -42,6 +47,7 @@ const getUDataById = (req, res) => {
     });
 }
 
+// works
 const getCDataById = (req, res) => {
     const id = parseInt(req.params.id);
     db.query('SELECT * FROM companyData WHERE id = $1', [id], (err, results) => {
@@ -49,16 +55,20 @@ const getCDataById = (req, res) => {
     });
 }
 
+// works
 const createUser = (req, res) => {
     const {name, email, avatar} = req.body;
     db.query('INSERT INTO users (name, email, avatar) VALUES ($1, $2, $3)', [name, email, avatar], (err, results) => {
         if(err) throw err;
+        // results.insertID doesn't exist
         res.status(201).send(`User added with ID: ${results.insertID}`);
     });
 }
 
+// works
 const createUData = (req, res) => {
-    const {id, linkedURL, githubURL, eduLVL, expArea, techFounder, coFounder, accomplishments, location, applicationStat, publicity} = req.body;
+    const id = parseInt(req.params.id);
+    const {linkedURL, githubURL, eduLVL, expArea, techFounder, coFounder, accomplishments, location, applicationStat, publicity} = req.body;
     db.query(
         'INSERT INTO userData (id, linkedURL, githubURL, eduLVL, expArea, techFounder, coFounder, accomplishments, location, applicationStat, publicity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)',
         [id, linkedURL, githubURL, eduLVL, expArea, techFounder, coFounder, accomplishments, location, applicationStat, publicity],
@@ -69,8 +79,10 @@ const createUData = (req, res) => {
     );
 }
 
+// works
 const createCData = (req, res) => {
-    const {id, name, site, description, verticality, product, raisondetre, fulltime, progress, progressPlus, incorporated, publicity} = req.body;
+    const id = parseInt(req.params.id);
+    const {name, site, description, verticality, product, raisondetre, fulltime, progress, progressPlus, incorporated, publicity} = req.body;
     db.query(
         'INSERT INTO companyData (id, name, site, description, verticality, product, raisondetre, fulltime, progress, progressPlus, incorporated, publicity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)',
         [id, name, site, description, verticality, product, raisondetre, fulltime, progress, progressPlus, incorporated, publicity],
@@ -81,6 +93,7 @@ const createCData = (req, res) => {
     );
 }
 
+// works
 const updateUser = (req, res) => {
     const id = parseInt(req.params.id);
     const {name, email, avatar} = req.body;
@@ -94,6 +107,7 @@ const updateUser = (req, res) => {
     );
 }
 
+// works
 const updateUData = (req, res) => {
     const id = parseInt(req.params.id);
     const {linkedURL, githubURL, eduLVL, expArea, techFounder, coFounder, accomplishments, location, applicationStat, publicity} = req.body;
@@ -107,6 +121,7 @@ const updateUData = (req, res) => {
     );
 }
 
+// works
 const updateCData = (req, res) => {
     const id = parseInt(req.params.id);
     const {name, site, description, verticality, product, raisondetre, fulltime, progress, progressPlus, incorporated, publicity} = req.body;
@@ -120,8 +135,47 @@ const updateCData = (req, res) => {
     );
 }
 
+// works
+const deleteUser = (req, res) => {
+    const id = parseInt(req.params.id);
+    db.query('DELETE FROM users WHERE id = $1', [id], (err, results) => {
+        if(err) throw err;
+        res.status(200).send(`User deleted with ID: ${id}`);
+    });
+}
+
+// works
+const deleteUData = (req, res) => {
+    const id = parseInt(req.params.id);
+    db.query('DELETE FROM userData WHERE id = $1', [id], (err, results) => {
+        if(err) throw err;
+        res.status(200).send(`User data deleted with ID: ${id}`);
+    });
+}
+
+// works
+const deleteCData = (req, res) => {
+    const id = parseInt(req.params.id);
+    db.query('DELETE FROM companyData WHERE id = $1', [id], (err, results) => {
+        if(err) throw err;
+        res.status(200).send(`Company data deleted with ID: ${id}`);
+    });
+}
+
 // Functions using db.query
 
 module.exports = {
-    // List out the functions to export
+    getUsers,
+    getUserById,
+    getUDataById,
+    getCDataById,
+    createUser,
+    createUData,
+    createCData,
+    updateUser,
+    updateUData,
+    updateCData,
+    deleteUser,
+    deleteUData,
+    deleteCData,
 }
