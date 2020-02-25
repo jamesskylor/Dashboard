@@ -48,6 +48,15 @@ Jason (organize thoughts):
 - Create limit to size of image and just do everything as base64 string
 - Make js that resized to ~100*100px
 
+(5 min)
+- Use part of Tania Rascia's tutorial to cat in the new init.sql file
+   - Remember to use Postman to hash the password since the hashing is in express, not postgres
+   
+(1 hr)
+- Drop the CoFounders
+
+
+
 (0.5 hr)
 - Ask how to integrate Philips code into a site
 - Add Philip's code
@@ -55,7 +64,3 @@ Jason (organize thoughts):
 (2 hr)
 - Figure out how to find other groups
 - Display on a template html page
-
-(5 min)
-- Use part of Tania Rascia's tutorial to cat in the new init.sql file
-   - Remember to use Postman to hash the password since the hashing is in express, not postgres

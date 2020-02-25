@@ -13,6 +13,21 @@ document.getElementById("theFileInput").addEventListener("change", (e)=>{
     updateAvatar();
 });
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function loadValues(){
     
     var url = 'http://localhost:3002';
@@ -20,19 +35,7 @@ function loadValues(){
     sessionStorage.setItem('dashdbemail', 'jason@temporary.placeholder');
     // var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
-        let getID = await fetch(url+'/id', {
-            method: "GET",
-            headers: {
-                "apiKey": theAPIKey,
-                "email": sessionStorage.getItem('dashdbemail')
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-        let tempIdNum = await getID.json();
-        let idNum = tempIdNum[0].id;
-        //console.log("id: "+idNum);
+        var idNum = parseInt(getCookie("dashId"));
         
         let getUsers = await fetch(url+'/users/'+idNum, {
             method: "GET",
@@ -68,34 +71,41 @@ function saveTheProfile(){
         avatar: document.getElementById("theAvatar").style.backgroundImage // Check if it's in the format of just the url or url(theURL), also deal with how we are going to stor this
     }
     console.log(JSON.stringify(newData));
-    var password = document.getElementById("perPasswordField").value;
+    var passwrd = document.getElementById("perPasswordField").value;
     var checkPass = document.getElementById("perConfirmField").value;
     // Check their validity
-    if(password == checkPass){
+    if(passwrd == checkPass){
         // If valid
         var url = 'http://localhost:3002';
         var theAPIKey = "notTheRealAPIKey";
         // var theAPIKey = "C@D@123";
         
-        if(password != ""){
+        if(passwrd != ""){
+            var newPass = {
+                password: passwrd
+            }
             // Send the new password, since it's not blank
+            let updatePass = async(url, newPass) => {
+                var idNum = parseInt(getCookie("dashId"));
+                
+                let sendPass = await fetch(url+"/users/pass/"+idNum, {
+                    method: "PUT",
+                    headers: {
+                        "apiKey": theAPIKey,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newPass)
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            }
             
+            updatePass(url, newPass);
         }
         
-        sessionStorage.setItem('dashdbemail', newData.email);
         let updateData = async (url, newData) => {
-            let getID = await fetch(url+'/id', {
-                method: "GET",
-                headers: {
-                    "apiKey": theAPIKey,
-                    "email": sessionStorage.getItem('dashdbemail')
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-            let tempIdNum = await getID.json();
-            let idNum = tempIdNum[0].id;
+            var idNum = parseInt(getCookie("dashId"));
 
             let sendData = await fetch(url+'/users/cont/'+idNum, {
                 method: "PUT",

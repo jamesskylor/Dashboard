@@ -8,25 +8,27 @@ document.getElementById("theSaveButton").addEventListener("click", (e)=>{
     saveInfo();
 });
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function loadValues() {
-    
     var url = 'http://localhost:3002';
     var theAPIKey = "notTheRealAPIKey";
-    sessionStorage.setItem('dashdbemail', 'jason@temporary.placeholder');
     // var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
-        let getID = await fetch(url+'/id', {
-            method: "GET",
-            headers: {
-                "apiKey": theAPIKey,
-                "email": sessionStorage.getItem('dashdbemail')
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-        let tempIdNum = await getID.json();
-        let idNum = tempIdNum[0].id;
+        var idNum = parseInt(getCookie("dashId"));
         //console.log("id: "+idNum);
         
         let getUsers = await fetch(url+'/companyData/'+idNum, {
@@ -85,18 +87,7 @@ function saveInfo(){
     // var theAPIKey = "C@D@123";
     
     let updateData = async (url, newCData) => {
-        let getID = await fetch(url+'/id', {
-            method: "GET",
-            headers: {
-                "apiKey": theAPIKey,
-                "email": sessionStorage.getItem('dashdbemail')
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-        let tempIdNum = await getID.json();
-        let idNum = tempIdNum[0].id;
+        var idNum = parseInt(getCookie("dashId"));
         
         let sendCData = await fetch(url+'/companyData/'+idNum, {
             method: "PUT",
