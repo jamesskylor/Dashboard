@@ -76,6 +76,15 @@ app.get('/users', (req, res) => {
         res.status(200).json(results.rows);
     });
 });
+app.get('/updates', (req, res) => {
+    if (!req.header('apiKey') || req.header('apiKey') !== process.env.API_KEY) {
+        return res.status(401).json({ status: 'error', message: 'Unauthorized.' });
+    }
+    db.query('SELECT * FROM updates ORDER BY id ASC', (err, results) => {
+        if(err) throw err;
+        res.status(200).json(results.rows);
+    });
+});
 
 app.get('/users/:id', (req, res) => {
     if (!req.header('apiKey') || req.header('apiKey') !== process.env.API_KEY) {
