@@ -3,7 +3,7 @@ CREATE TABLE users (
     name VARCHAR(64) NOT NULL,
     email VARCHAR(64) NOT NULL UNIQUE,
     passwordhash TEXT NOT NULL,
-    avatar VARCHAR(2048)
+    avatar TEXT
 );
 
 CREATE TABLE userData (
@@ -33,12 +33,6 @@ CREATE TABLE companyData (
     progressPlus TEXT,
     incorporated CHAR NOT NULL,
     publicity CHAR NOT NULL
-);
-
-CREATE TABLE updates (
-    id INT,
-    updateDate TIMESTAMPTZ,
-    
 );
 
 INSERT INTO users (name, email, passwordhash, avatar)

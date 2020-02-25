@@ -278,7 +278,6 @@
                 overflow: hidden;
                 border-radius: 50%;
                 position: relative;
-                background-image: url("https://g.foolcdn.com/editorial/images/539491/getty-stock-market-success.jpg");
                 background-size: cover;
                 background-position: center;
             }
@@ -298,6 +297,61 @@
                 background-color: #616161;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
+            }
+            #saved {
+                font-family: 'Lustria', serif;
+                padding-left: 10vw;
+                opacity: 0;
+            }
+            .fade-out {
+                animation: fadeOut ease-in 3s;
+                -webkit-animation: fadeOut ease-in 3s;
+                -moz-animation: fadeOut ease-in 3s;
+                -o-animation: fadeOut ease-in 3s;
+                -ms-animation: fadeOut ease-in 3s;
+            }
+            @keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-moz-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-webkit-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-o-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-ms-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
             }
         </style>
         
@@ -374,11 +428,6 @@
                                         Company
                                 </a>
                             </td>
-                            <td class="selection">
-                                <a href="myCoFounders.html" class="myLink">
-                                        Co-Founders
-                                </a>
-                            </td>
                         </tr>
                     </table>
                 </nav>
@@ -398,7 +447,7 @@
                                     Name:
                                 </td>
                                 <td class="infoList data" id="nameField">
-                                    Placeholder Name
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -406,15 +455,7 @@
                                     Email:
                                 </td>
                                 <td class="infoList" id="emailField">
-                                    Placeholder Email
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Password:
-                                </td>
-                                <td class="infoList" id="passwordField">
-                                    Placeholder number of asterisks
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -448,7 +489,7 @@
                                         GitHub:
                                     </td>
                                     <td class="infoList">
-                                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
+                                        <input type="url" placeholder="Please copy and paste in your Github Profile Page URL" class="editBox" id="githubField" maxlength="128">
                                     </td>
                                 </tr>
                                 <tr>
@@ -539,6 +580,9 @@
                             </table>
                             <input type="submit" class="editButton" id="theSaveButton" value="Save">
                         </form>
+                        <div id="saved">
+                            Saved!
+                        </div>
                         <script src="js/profile.js"></script>
                     </div>
                 </div>

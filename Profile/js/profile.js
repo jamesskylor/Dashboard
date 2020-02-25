@@ -74,9 +74,7 @@ function loadValues(){
 function loadUser(userJSON){
     document.getElementById("nameField").innerHTML = userJSON.name;
     document.getElementById("emailField").innerHTML = userJSON.email;
-    //var obscuredPassword = new Array(userJSON.passwordHash.length + 1).join("*");
-    //document.getElementById("passwordField").innerHTML = obscuredPassword;
-    document.getElementById("theAvatar").style.backgroundImage = "url("+userJSON.avatar+")";
+    document.getElementById("theAvatar").style.backgroundImage = userJSON.avatar;
 }
 
 function loadUserData(userDataJSON){
@@ -134,4 +132,10 @@ function saveInfo(){
     }
     
     updateData(url, newUData);
+    
+    var responsiveText = document.getElementById("saved");
+    if(responsiveText.classList.contains("fade-out")){
+        responsiveText.classList.remove("fade-out");
+    }
+    responsiveText.classList.add("fade-out");
 }

@@ -39,7 +39,7 @@ app.get('/', (req, res)=>{
 
 app.get('/id', (req, res) => {
     if (!req.header('apiKey') || req.header('apiKey') !== process.env.API_KEY) {
-        return res.status(401).json({ status: 'error', message: 'Unauthorized.' });
+        return res.status(401).json([{ status: 'error', message: 'Unauthorized.' }]);
     }
     const email = req.header('email');
     const password = req.header('key');
@@ -47,7 +47,7 @@ app.get('/id', (req, res) => {
     db.query('SELECT passwordhash FROM users WHERE email = $1', [email], (error, result) => {
         if(error) throw error;
         if(result.rows.length < 1) {
-            res.status(401).json({ status:'error', message: 'Invalid Login' });
+            res.status(401).json([{ status:'error', message: 'Invalid Login' }]);
         }
         else {
             var hash = result.rows[0].passwordhash;
@@ -60,7 +60,7 @@ app.get('/id', (req, res) => {
                     });
                 }
                 else {
-                    res.status(401).json({ status:'error', message: 'Invalid Login'});
+                    res.status(401).json([{ status:'error', message: 'Invalid Login'}]);
                 }
             });
         }
@@ -115,7 +115,7 @@ app.post('/users',
         check('name').isLength({ min: 1, max: 64 }),
         check('email').isLength({ min: 1, max: 64 }),
         check('password').isLength({ min: 6, max: 50 }),
-        check('avatar').isLength({ min: 0, max: 2048 })
+        check('avatar').isLength({ min: 0, max: 65000 })
     ],
     (req, res) => {
         if (!req.header('apiKey') || req.header('apiKey') !== process.env.API_KEY) {
@@ -218,7 +218,7 @@ app.put('/users/cont/:id',
     [
         check('name').isLength({ min: 1, max: 64 }),
         check('email').isLength({ min: 1, max: 64 }),
-        check('avatar').isLength({ min: 0, max: 2048 })
+        check('avatar').isLength({ min: 0, max: 65000 })
     ],
     (req, res) => {
         if (!req.header('apiKey') || req.header('apiKey') !== process.env.API_KEY) {
@@ -226,6 +226,7 @@ app.put('/users/cont/:id',
         }
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
+            console.log(errors.array());
             return res.status(422).json({ errors: errors.array() });
         }
         

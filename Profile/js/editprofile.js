@@ -60,7 +60,7 @@ function loadValues(){
 function loadUser(userJSON) {
     document.getElementById("perNameField").value = userJSON.name;
     document.getElementById("perEmailField").value = userJSON.email;
-    document.getElementById("theAvatar").src = userJSON.avatar;
+    document.getElementById("theAvatar").style.backgroundImage = userJSON.avatar;
 }
 
 function saveTheProfile(){
@@ -68,7 +68,7 @@ function saveTheProfile(){
     var newData = {
         name: document.getElementById("perNameField").value,
         email: document.getElementById("perEmailField").value,
-        avatar: document.getElementById("theAvatar").style.backgroundImage // Check if it's in the format of just the url or url(theURL), also deal with how we are going to stor this
+        avatar: document.getElementById("theAvatar").style.backgroundImage
     }
     console.log(JSON.stringify(newData));
     var passwrd = document.getElementById("perPasswordField").value;
@@ -142,9 +142,37 @@ function saveTheProfile(){
     }
 }
 
-function updateAvatar(){ // Change this accordingly with what our database ends up being *************************************************************************
+function updateAvatar(){
     // Take in the file
-    var theImgFile = document.getElementById("theFileInput").files[0];
-    // Change the src of "theAvatar" to the new image
-    document.getElementById("theAvatar").style.backgroundImage = "url("+URL.createObjectURL(theImgFile)+")";
+    var fileInput = document.getElementById("theFileInput").files[0];
+    var canvas = document.createElement("CANVAS");
+    
+    var tempImg = new Image();
+    var theImgFile;
+    tempImg.onload = () => {
+        var endWidth = 100;
+        var endHeight = 100;
+        var xcoord = 0;
+        var ycoord = 0;
+        if(tempImg.width > tempImg.height) {
+            var temp = tempImg.height / 100.0;
+            endWidth = tempImg.width / temp;
+            endHeight = 100;
+            xcoord = -1*(endWidth - 100)/2;
+            ycoord = 0;
+        }
+        else {
+            var temp = tempImg.width / 100.0;
+            endWidth = 100;
+            endHeight = tempImg.height / temp;
+            xcoord = 0;
+            ycoord = -1*(endHeight - 100)/2;
+        }
+        canvas.width = 100;
+        canvas.height = 100;
+        canvas.getContext("2d").drawImage(tempImg, xcoord, ycoord, endWidth, endHeight);
+        theImgFile = "url("+canvas.toDataURL()+")";
+        document.getElementById("theAvatar").style.backgroundImage = theImgFile;
+    }
+    tempImg.src = URL.createObjectURL(fileInput);
 }
