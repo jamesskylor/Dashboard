@@ -9,46 +9,107 @@ document.getElementById("theSaveButton").addEventListener("click", (e)=>{
 });
 
 function loadValues() {
-    // Get database data ************************************************************************************************
-    var name = "John Smith Inc.";
-    var site = "https://www.jsmith.com";
-    var desc = "We do generic company things.";
-    var vert = "idk";
-    var prod = "Normal things";
-    var reas = "Because people need normal things, so we make them";
-    var time = "fullTime";
-    var prog = "idk";
-    var prog2 = "We are doing average";
-    var inc = "inc"+"Y";
-    var publ = "compPub"+"Y";
-    // Load the placeholder values to the correct ones
-    document.getElementById("compNameField").value = name;
-    document.getElementById("compSiteField").value = site;
-    document.getElementById("compDescField").defaultValue = desc;
-    document.getElementById("compVertField").value = vert;
-    document.getElementById("compProdField").value = prod;
-    document.getElementById("compReasField").defaultValue = reas;
-    document.getElementById("compTimeField").value = time;
-    document.getElementById("compProgField").value = prog;
-    document.getElementById("compProg2Field").value = prog2;
-    document.getElementById(inc).checked = true;
-    document.getElementById(publ).checked = true;
+    
+    var url = 'http://localhost:3002';
+    var theAPIKey = "notTheRealAPIKey";
+    sessionStorage.setItem('dashdbemail', 'jason@temporary.placeholder');
+    // var theAPIKey = "C@D@123";
+    let fetchData = async (url) => {
+        let getID = await fetch(url+'/id', {
+            method: "GET",
+            headers: {
+                "apiKey": theAPIKey,
+                "email": sessionStorage.getItem('dashdbemail')
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        let tempIdNum = await getID.json();
+        let idNum = tempIdNum[0].id;
+        //console.log("id: "+idNum);
+        
+        let getUsers = await fetch(url+'/companyData/'+idNum, {
+            method: "GET",
+            headers: {
+                "apiKey": theAPIKey
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            //console.log(data[0]);
+            loadCompany(data[0]);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        
+        return;
+    }
+    fetchData(url);
+}
+
+function loadCompany(companyJSON) {
+    document.getElementById("compNameField").value = companyJSON.name;
+    document.getElementById("compSiteField").value = companyJSON.site;
+    document.getElementById("compDescField").defaultValue = companyJSON.description;
+    document.getElementById("compVertField").value = companyJSON.verticality;
+    document.getElementById("compProdField").value = companyJSON.product;
+    document.getElementById("compReasField").defaultValue = companyJSON.raisondetre;
+    document.getElementById("compTimeField").value = "fullTime"+companyJSON.fulltime;
+    document.getElementById("compProgField").value = companyJSON.progress;
+    document.getElementById("compProg2Field").value = companyJSON.progressplus;
+    document.getElementById("inc"+companyJSON.incorporated).checked = true;
+    document.getElementById("compPub"+companyJSON.publicity).checked = true;
 }
 
 function saveInfo(){
     // Take in the values
-    var companyName = document.getElementById("compNameField").value;
-    var companyWebsite = document.getElementById("compSiteField").value;
-    var companyDescription = document.getElementById("compDescField").value;
-    var verticality = document.getElementById("compVertField").value;
-    var companyProduct = document.getElementById("compProdField").value;
-    var companyReason = document.getElementById("compReasField").value;
-    var fullOrPartTime = document.getElementById("compTimeField").value;
-    var companyProgress = document.getElementById("compProgField").value;
-    var companyProgress2 = document.getElementById("compProg2Field").value;
-    var incorporated = document.querySelector('input[name="compInc"]:checked').value;
-    var publicity = document.querySelector('input[name="compPublicity"]:checked').value;
-    // Send data to the server ******************************************************************************************
+    var newCData = {
+        name: document.getElementById("compNameField").value,
+        site: document.getElementById("compSiteField").value,
+        description: document.getElementById("compDescField").value,
+        verticality: document.getElementById("compVertField").value,
+        product: document.getElementById("compProdField").value,
+        raisondetre: document.getElementById("compReasField").value,
+        fulltime: document.getElementById("compTimeField").value.replace('fullTime', ''),
+        progress: document.getElementById("compProgField").value,
+        progressPlus: document.getElementById("compProg2Field").value,
+        incorporated: document.querySelector('input[name="compInc"]:checked').value,
+        publicity: document.querySelector('input[name="compPublicity"]:checked').value
+    }
+    console.log(JSON.stringify(newCData));
     
+    var url = 'http://localhost:3002';
+    var theAPIKey = "notTheRealAPIKey";
+    // var theAPIKey = "C@D@123";
     
+    let updateData = async (url, newCData) => {
+        let getID = await fetch(url+'/id', {
+            method: "GET",
+            headers: {
+                "apiKey": theAPIKey,
+                "email": sessionStorage.getItem('dashdbemail')
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        let tempIdNum = await getID.json();
+        let idNum = tempIdNum[0].id;
+        
+        let sendCData = await fetch(url+'/companyData/'+idNum, {
+            method: "PUT",
+            headers: {
+                "apiKey": theAPIKey,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newCData)
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+    
+    updateData(url, newCData);
 }

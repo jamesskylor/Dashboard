@@ -1,4 +1,5 @@
 const db = require('./mdlrQuery');
+const { body, check } = require('express-validator');
 
 /*
 Information that the JS needs

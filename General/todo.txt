@@ -5,15 +5,6 @@
     Connect it to the database and Philip's code (1-2 hr)
     Testing (6 hr)
 
-/Homepage (1/4 work-days)
-    Tweak some of the hrefs to go to the right places (1 hr including going to all other sidebar pages)
-    Change the Help mailto: (5 min)
-    Change the Lessons href to notability (30 min)
-    Add the Deals href notability (30 min)
-
-/Lessons (Negligible)
-    Switch to notability (30 min)
-
 /Profile (1-2 work-days)
     Connect to the database (4 hr)
     Testing (4 hr)
@@ -23,19 +14,48 @@
     Improve CSS (4 hr)
     Connect the Submit Updates (4 hr)
     Possibly more (IDK)
-    
-/db (1-2 work-days)
-    Create (4 hr including ExpressJS)
-    Deploy (4 hr including debugging)
-    
-Work-order:
-1. /db [Tue1-Fri1]
-3. /Profile [Mon2-Tue2]
-4. /GroupSessions [Wed2-Thur2]
-5. /Homepage [Thurs2]
-6. /Lessons [Fri2]
 
-Work-order:
-1. /db [Tue1-Fri1]
-2. /Updates [Mon2-Tue2]
-3. /Application [Wed2-Fri2]
+
+Jason:
+- Implement Passwords on site (Can handle on own)
+- Deal with the avatars in profile (Ask for advice)
+- Connect Group Sessions to Philip's code (For sure ask)
+- Finish the Group Sessions 'homepage' for connecting to others (Can handle on own after asking about how Philip's code works and understand how to find currently running groups)
+- Drop the tables and cat new init.sql file in (Connect to heroku via psql) (Can handle on own)
+
+Jackie:
+- Finish the Webflow
+- Do Updates things
+- Do the Application Page
+
+Anyone:
+- Fix the Sidebar links for all pages w/ it
+- Fix the Homepage links
+- Publish the site
+- Change the CORS URL to the published site URL
+
+
+
+Jason (organize thoughts):
+(2 hr [Mostly on making the page itself, not the implementation of the passwords])
+- Add id to sessionStorage during login
+   - Use /id
+   - Display proper error messages when failed login
+   - Remember to teach how to use Postman for password reset
+- Use that to fetch everything (Go through .js and just quickly edit things)
+
+(1 hr)
+- Create limit to size of image and just do everything as base64 string
+- Make js that resized to ~100*100px
+
+(0.5 hr)
+- Ask how to integrate Philips code into a site
+- Add Philip's code
+
+(2 hr)
+- Figure out how to find other groups
+- Display on a template html page
+
+(5 min)
+- Use part of Tania Rascia's tutorial to cat in the new init.sql file
+   - Remember to use Postman to hash the password since the hashing is in express, not postgres

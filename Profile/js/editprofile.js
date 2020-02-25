@@ -14,36 +14,110 @@ document.getElementById("theFileInput").addEventListener("change", (e)=>{
 });
 
 function loadValues(){
-    // Get info from database ************************************************************************************************************
-    var name = "John Smith";
-    var email = "jsmith@gmail.com";
-    var image = "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg";
-    // Set all the input values to their corresponding database values (except password)
-    document.getElementById("perNameField").value = name;
-    document.getElementById("perEmailField").value = email;
-    document.getElementById("theAvatar").src = image;
+    
+    var url = 'http://localhost:3002';
+    var theAPIKey = "notTheRealAPIKey";
+    sessionStorage.setItem('dashdbemail', 'jason@temporary.placeholder');
+    // var theAPIKey = "C@D@123";
+    let fetchData = async (url) => {
+        let getID = await fetch(url+'/id', {
+            method: "GET",
+            headers: {
+                "apiKey": theAPIKey,
+                "email": sessionStorage.getItem('dashdbemail')
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        let tempIdNum = await getID.json();
+        let idNum = tempIdNum[0].id;
+        //console.log("id: "+idNum);
+        
+        let getUsers = await fetch(url+'/users/'+idNum, {
+            method: "GET",
+            headers: {
+                "apiKey": theAPIKey
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            //console.log(data[0]);
+            loadUser(data[0]);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        
+        return;
+    }
+    fetchData(url);
+}
+
+function loadUser(userJSON) {
+    document.getElementById("perNameField").value = userJSON.name;
+    document.getElementById("perEmailField").value = userJSON.email;
+    document.getElementById("theAvatar").src = userJSON.avatar;
 }
 
 function saveTheProfile(){
     // Take in all the values
-    var name = document.getElementById("perNameField").value;
-    var email = document.getElementById("perEmailField").value;
+    var newData = {
+        name: document.getElementById("perNameField").value,
+        email: document.getElementById("perEmailField").value,
+        avatar: document.getElementById("theAvatar").style.backgroundImage // Check if it's in the format of just the url or url(theURL), also deal with how we are going to stor this
+    }
+    console.log(JSON.stringify(newData));
     var password = document.getElementById("perPasswordField").value;
     var checkPass = document.getElementById("perConfirmField").value;
-    // Get  the Image
-    var image = document.getElementById("theAvatar").style.backgroundImage; // Care about this later when we have a database to compare pros/cons with *****************************
     // Check their validity
     if(password == checkPass){
         // If valid
-        // Send data to the server to save the update ***********************************************************************************
+        var url = 'http://localhost:3002';
+        var theAPIKey = "notTheRealAPIKey";
+        // var theAPIKey = "C@D@123";
         
         if(password != ""){
             // Send the new password, since it's not blank
             
         }
         
+        sessionStorage.setItem('dashdbemail', newData.email);
+        let updateData = async (url, newData) => {
+            let getID = await fetch(url+'/id', {
+                method: "GET",
+                headers: {
+                    "apiKey": theAPIKey,
+                    "email": sessionStorage.getItem('dashdbemail')
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+            let tempIdNum = await getID.json();
+            let idNum = tempIdNum[0].id;
+
+            let sendData = await fetch(url+'/users/cont/'+idNum, {
+                method: "PUT",
+                headers: {
+                    "apiKey": theAPIKey,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newData)
+            })
+            .then(() => {
+                // Return to the profile page
+                location.assign("profile.html");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        }
+        
+        updateData(url, newData);
+        
         // Return to the Profile Page
-        location.assign("profile.html");
+        //location.assign("profile.html");
     }
     else{
         // If not valid
