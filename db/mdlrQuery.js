@@ -6,7 +6,6 @@ module.exports = {
         return pool.query(text, params, (err, res) => {
             const duration = Date.now() - start;
             console.log('RESPONSE THINGY'+JSON.stringify(res));
-            console.log('PARAMS THINGY'+params); // DELETE THIS ***************************************************8888
             console.log('executed query', { text, duration, rows: res.rowCount });
             callback(err, res);
         });

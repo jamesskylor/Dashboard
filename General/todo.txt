@@ -29,10 +29,6 @@ Anyone:
 
 
 Jason (organize thoughts):
-(5 min) [3 hr if need debugging] {Wednesday}
-- Pull db branch into master
-    - Debug if anything goes wrong
-
 (5 min) [Do this after everything is working properly] {Wednesday}
 - Use part of Tania Rascia's tutorial to cat in the new init.sql file
    - Remember to use Postman to hash the password since the hashing is in express, not postgres
