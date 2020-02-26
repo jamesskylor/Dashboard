@@ -226,6 +226,9 @@
                 height: 8vw;
                 border: 0.1vw solid #CCCCCC;
             }
+            .inner-container2.plus {
+                border-bottom: none;
+            }
             .inner-inner-container {
                 display: flex;
                 flex-direction: row;
@@ -374,8 +377,21 @@
                 margin-left: 15.55vw;
                 margin-bottom: 3.2vw;
             }
-            
-
+            input.numberField {
+                margin-left: 2vw;
+                width: auto;
+            }
+            textarea.textField {
+                margin-left: 2vw;
+                width: 45vw;
+                height: 5vw;
+                resize: none;
+                overflow: auto;
+                overflow-x: hidden;
+            }
+            #hideThis {
+                display: none;
+            }
             
         </style>
         
@@ -495,6 +511,114 @@
                 </div>
             </div>
     </div>
+    <div id="hideThis">
+        <div class="container">
+            <div class="item1">
+                <b class="item-text">
+                    Financials
+                </b>
+            </div>
+            <div class="inner-container2" id="financial">
+                <div class="item">
+                    <p>
+                        Money in the Bank
+                    </p>
+                    <form>
+                        <input type="number" class="numberField">
+                    </form>
+                </div>
+                <div class="item">
+                    <p>
+                        Revenue (MRR)
+                    </p>
+                    <form>
+                        <input type="number" class="numberField">
+                    </form>
+                </div>
+                <div class="item">
+                    <p>
+                        Monthly Burn Rate
+                    </p>
+                    <form>
+                        <input type="number" class="numberField">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item1">
+                <b class="item-text">
+                    Product Updates
+                </b>
+            </div>
+            <div class="inner-container1" id="financial">
+                <div class="inner-inner-container">
+                    <div class="item">
+                        <p>
+                            Please tell us about any updates to your product
+                        </p>
+                        <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item1">
+                <b class="item-text">
+                    Marketing
+                </b>
+            </div>
+            <div class="inner-container1" id="financial">
+                <div class="item">
+                    <p>
+                        Please update us on your marketing activities (sales, traffic, conversions rates, press, new partnerships, etc.)
+                    </p>
+                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item1">
+                <b class="item-text">
+                    Team
+                </b>
+            </div>
+            <div class="inner-container1" id="financial">
+                <div class="inner-inner-container">
+                    <div class="item">
+                        <p>
+                            Offers Accepted
+                        </p>
+                        <form>
+                            <input type="number" class="numberField">
+                        </form>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Offers Declined
+                        </p>
+                        <form>
+                            <input type="number" class="numberField">
+                        </form>
+                    </div>
+                    <div class="item">
+                        <p>
+                            Offers Outstanding
+                        </p>
+                        <form>
+                            <input type="number" class="numberField">
+                        </form>
+                    </div>
+                </div>
+                <div class="item">
+                    <p>
+                        Major Hires/Fires
+                    </p>
+                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="item1"><b class="item-text">Morale</b></div>
             <div class="inner-container" id="moraleQuestion">
@@ -570,16 +694,24 @@
             function launched () {
                 var x= document.getElementById("switch-innertext");
                 if(x.innerHTML ==="Weeks until launch:") {
-                   x.innerHTML = "Congratulations you are launched!";
-                   } else {
-                   x.innerHTML = "Weeks until launch:"
-                   }
-                 var y= document.getElementById("numberWeeks");
-                 if(y.style.display ==="none") {
-                     y.style.display = "block";
-                 }else {
-                     y.style.display = "none";
-                 }
+                    x.innerHTML = "Congratulations you are launched!";
+                } else {
+                    x.innerHTML = "Weeks until launch:"
+                }
+                var y= document.getElementById("numberWeeks");
+                if(y.style.display ==="none") {
+                    y.style.display = "block";
+                }
+                else {
+                    y.style.display = "none";
+                }
+                var hideThis = document.getElementById("hideThis");
+                if(hideThis.style.display =="block") {
+                    hideThis.style.display = "none";
+                }
+                else{
+                    hideThis.style.display = "block";
+                }
                
             }
         </script>
