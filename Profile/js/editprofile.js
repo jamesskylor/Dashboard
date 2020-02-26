@@ -31,8 +31,8 @@ function getCookie(cname) {
 function loadValues(){
     
     var url = 'http://localhost:3002';
+    // var url = 'https://dashdb.herokuapp.com';
     var theAPIKey = "notTheRealAPIKey";
-    sessionStorage.setItem('dashdbemail', 'jason@temporary.placeholder');
     // var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
         var idNum = parseInt(getCookie("dashId"));
@@ -77,6 +77,7 @@ function saveTheProfile(){
     if(passwrd == checkPass){
         // If valid
         var url = 'http://localhost:3002';
+        // var url = 'https://dashdb.herokuapp.com';
         var theAPIKey = "notTheRealAPIKey";
         // var theAPIKey = "C@D@123";
         

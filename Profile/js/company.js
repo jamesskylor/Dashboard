@@ -25,6 +25,7 @@ function getCookie(cname) {
 
 function loadValues() {
     var url = 'http://localhost:3002';
+    // var url = 'https://dashdb.herokuapp.com';
     var theAPIKey = "notTheRealAPIKey";
     // var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
@@ -83,6 +84,7 @@ function saveInfo(){
     console.log(JSON.stringify(newCData));
     
     var url = 'http://localhost:3002';
+    // var url = 'https://dashdb.herokuapp.com';
     var theAPIKey = "notTheRealAPIKey";
     // var theAPIKey = "C@D@123";
     

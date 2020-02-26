@@ -25,16 +25,10 @@ Jackie:
 Anyone:
 - Fix the Sidebar links for all pages w/ it
 - Fix the Homepage links
-- Publish the site (Thurs)
-- Change the CORS URL to the published site URL (Thurs)
 
 
 
 Jason (organize thoughts):
-(5 min) [Need Skylor's knowledge] {Tuesday}
-- The select statements are all filled with placeholder values
-    - Fill it with actual values
-
 (5 min) [3 hr if need debugging] {Wednesday}
 - Pull db branch into master
     - Debug if anything goes wrong
