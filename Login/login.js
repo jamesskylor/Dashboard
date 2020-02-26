@@ -33,7 +33,7 @@ function login() {
         if(tempIdNum[0].hasOwnProperty("id")) { // Check if login passed
             let idNum = tempIdNum[0].id;
 
-            // put id into cookie that expires (or not if remember me is selected)
+            // put id into cookie that expires in a day
             setCookie("dashId", idNum, 1);
             location.assign("../Homepage/dashboard-index.html"); // Not sure if this is the right address
         }

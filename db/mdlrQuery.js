@@ -38,6 +38,6 @@ module.exports = {
             }
             
             callback(err, client, release);
-        })
+        });
     }
 }

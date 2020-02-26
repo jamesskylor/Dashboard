@@ -34,7 +34,11 @@ function loadValues(){
     var theAPIKey = "notTheRealAPIKey";
     // var theAPIKey = "C@D@123";
     let fetchData = async (url, theAPIKey) => {
-        var idNum = parseInt(getCookie("dashId"));
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
         
         let getUsers = await fetch(url+'/users/'+idNum, {
             method: "GET",
@@ -118,7 +122,11 @@ function saveInfo(){
     // var theAPIKey = "C@D@123";
     
     let updateData = async (url, newUData) => {
-        var idNum = parseInt(getCookie("dashId"));
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
         
         let sendUData = await fetch(url+'/userData/'+idNum, {
             method: "PUT",

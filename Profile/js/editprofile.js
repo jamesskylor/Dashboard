@@ -35,7 +35,11 @@ function loadValues(){
     var theAPIKey = "notTheRealAPIKey";
     // var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
-        var idNum = parseInt(getCookie("dashId"));
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
         
         let getUsers = await fetch(url+'/users/'+idNum, {
             method: "GET",
@@ -87,7 +91,11 @@ function saveTheProfile(){
             }
             // Send the new password, since it's not blank
             let updatePass = async(url, newPass) => {
-                var idNum = parseInt(getCookie("dashId"));
+                var idString = getCookie("dashId");
+                if(idString == ""){
+                    location.assign("../Login/login.html");
+                }
+                var idNum = parseInt(idString);
                 
                 let sendPass = await fetch(url+"/users/pass/"+idNum, {
                     method: "PUT",
@@ -106,7 +114,11 @@ function saveTheProfile(){
         }
         
         let updateData = async (url, newData) => {
-            var idNum = parseInt(getCookie("dashId"));
+            var idString = getCookie("dashId");
+            if(idString == ""){
+                location.assign("../Login/login.html");
+            }
+            var idNum = parseInt(idString);
 
             let sendData = await fetch(url+'/users/cont/'+idNum, {
                 method: "PUT",
