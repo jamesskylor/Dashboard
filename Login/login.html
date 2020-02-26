@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lustria|Raleway&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        
+        
+        <title>
+            Login | _____
+        </title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                /*overflow-x: hidden;
+                overflow-y: hidden;*/
+            }
+            #theBackground {
+                /*background-image: linear-gradient(135deg, white, black);*/
+                height: 90vh;
+                width: 100vw;
+                padding-top: 10vh;
+                align-content: center;
+                background-color: #EEF2F7;
+            }
+            #theBox {
+                width: 20.1vw;
+                margin: auto;
+                padding-left: 10vw;
+                padding-top: 4vw;
+                padding-bottom: 4vw;
+                padding-right: 10vw;
+                background-color: white;
+                
+            }
+            #theContent {
+                width: 21vw;
+                height: 63vh;
+                background-color: white;
+            }
+            h1 {
+                font-size: 3.1vw;
+                margin-bottom: 4vw;
+                font-family: 'Raleway', sans-serif;
+            }
+            h2 {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 550;
+                font-size: 2vw;
+            }
+            div.inBoxes {
+                text-align: left;
+            }
+            input.textfield {
+                width: 19.7vw;
+                height: 3vw;
+                font-size: 1.5vw;
+                margin-top: 1vw;
+                margin-bottom: 1.5vw;
+                font-family: 'Raleway', sans-serif;
+                overflow-y: hidden;
+                background-color: #e0e0e0;
+                border: none;
+                padding-left: 5%;
+                border-radius: 5px;
+            }
+            input.textfield:focus{
+                background-color: white;
+                outline: none;
+                border-bottom: 1.5px solid #e0e0e0;
+            }
+            .shadow {
+                box-shadow:
+                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12)
+                ;
+                border-radius: 5px;
+            }
+            #submit {
+                border: none;
+                border-radius: 0.3vh;
+                width: 20.7vw;
+                margin-top: 2vw;
+                font-size: 2vw;
+                padding-top: 0.7vw;
+                padding-bottom: 0.7vw;
+                font-family: 'Raleway', sans-serif;
+                font-weight: bold;
+                background-color: #000000;
+                color: #949494;
+            }
+            #submit:hover {
+                color: #000000;
+                background-color: #949494;
+            }
+            #invalidlogin {
+                font-family: 'Raleway', sans-serif;
+                text-align: center;
+                color: red;
+                font-size: 1.5vw;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="theBackground">
+            <div id="theBox" class="shadow">
+                <div id="theContent">
+                    <h1>
+                        Account Login
+                    </h1>
+                    <form id="theForm">
+                        <div>
+                            <h2>
+                                Email:
+                            </h2>
+                            <input type="text" id="email" placeholder="Email" class="textfield">
+                            <br>
+                        </div>
+                        <div>
+                            <h2>
+                                Password:
+                            </h2>
+                            <input type="password" id="password" placeholder="Password" class="textfield">
+                            <br>
+                        </div>
+                        <div id="invalidlogin">
+                            
+                        </div>
+                        <input type="submit" id="submit" value="Login">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="login.js"></script>
+    </body>
+    
+</html>
