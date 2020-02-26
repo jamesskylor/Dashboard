@@ -3,9 +3,10 @@
 <html lang="en">
     
     <head>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
         <title>
             My Updates | _____
         </title>
@@ -194,207 +195,73 @@
                 color: #000000;
                 padding-left: 5%;
             }
-            iframe {
-                margin-left: 7vw;
-                width: 32vw;
-                height: 18vw;
-                border: none;
-            }
-            .container {
-                margin:auto;
-                display: flex;
-                flex-direction: column;
-                width: 50vw;
-                margin-top: 2vw;
-            }
-            #last {
-                margin-bottom: 10vw;    
-            }
-            .inner-container {
-                display:flex;
-                flex-direction: row;
-                border: 0.1vw solid #CCCCCC;
-            }
-            .inner-container1 {
-                display:flex;
-                flex-direction: column;
-                border: 0.1vw solid #CCCCCC;
-            }
-            .inner-container2 {
-                display: flex;
-                flex-direction: row;
-                height: 8vw;
-                border: 0.1vw solid #CCCCCC;
-            }
-            .inner-container2.plus {
-                border-bottom: none;
-            }
-            .inner-inner-container {
-                display: flex;
-                flex-direction: row;
-            }
-    
-
-            .item {
-                flex-grow: 1;
-                height: 6vw;
-                background-color: white;
-            }
-            .item1 {
-                flex-grow: 1;
-                height: 2vw;
-                background-color:#FFFFFF;
-                }
-            .item-text {
-                margin-left: 1vw;
-                color: #000000;
-                font-size: 1.5vw;
-                font-family: 'Lustria';
-            }
-            .item2 {
-                flex-grow: 1;
-                height: 6vw;
-                background-color: white;
-                margin-right: 10vw;
-                
-            }
-            .item3 {
-                flex-grow: 1;
-                height: 6vw;
-                padding: 0px;
-                background-color: white;
-            }
-            #input1 {
-            margin-left: 11.5vw;
-            height: 1.5vw;
-            width: 20vw;
-            }
-            #input2 {
-            margin-left: 2vw;
-            height: 2vw;
-            width: 20vw;
-            }
-            #input3 {
-                margin-left: 2vw;
-                width: 20vw;
-                height: 10vw;
-                resize: none;
-                overflow: auto;
-                overflow-x: hidden;
-            }
-            #input4 {
-                margin-left: 2vw;
-                width: 45vw;
-                height: 7vw;
-                resize: none;
-                overflow: auto;
-                overflow-x: hidden;
-            }
-            #goals1 {
-                height:30vw;
-            }
-            #goals {
-                height:18.25vw;
-            }
-            .switch {
-                margin-top: 1vw;
-                margin-left: 1.7vw;
+            .chart-container {
                 position: relative;
-                display: inline-block;
-                width: 60px;
-                height:25px;
-            }
-            .switch input {
-                opacity: 0;
-                width: 0;
-                height: 0;
-            }
-            .slider {
-                position: absolute; 
-                cursor: pointer;
-                top:0;
-                left:0;
-                right:0;
-                bottom: 0;
-                background-color:#CCCCCC;
-                -webkit-transition: .4s;
-                transition: .4s;
-                border-radius: 34px;
-            }
-            .slider:before {
-                position: absolute;
-                content: "";
-                height: 26px;
-                width: 26px;
-                left: 0px;
-                bottom: 0px;
-                background-color: white;
-                -webkit-transition: .4s;
-                transition: .4s;
-                border-radius: 50%;
-            }
-            input:checked + .slider {
-                background-color: #ee252d;
-            }
-            input:focus + .slider {
-                box-shadow: 0 0 1px #ee252d;
-            }
-            input:checked + .slider:before {
-                -webkit-transform: translateX(34px);
-                -ms-transform: translateX(34px);
-                transform: translateX(34px);
-            }
-            .slider.round {
-                    border-radius: 34px;
-            }
-
-            .slider.round:before {
-                    border-radius: 50%;
-            }
-            .morale {
-                height: 2vw;
-                margin-left: 2.0vw;
-            }
-            #moraleQuestion {
-                height: 8vw;
-            }
-            #switch-innertext {
-                margin-left:9.65vw;
-            }
-            #improvement {
-                margin-left: 0.7vw;
-                font-size: 1vw;
-            }
-            #launchedYet {
-                margin-left: 1vw
-            }
-            #scale {
-                padding-left: 2.1vw;
-                
-            }
-            h1 {
-                font-size: 2.3vw;
-                margin-left: 15.55vw;
-                margin-bottom: 3.2vw;
-            }
-            input.numberField {
-                margin-left: 2vw;
-                width: auto;
-            }
-            textarea.textField {
-                margin-left: 2vw;
+                height: 30vh;
                 width: 45vw;
-                height: 5vw;
-                resize: none;
-                overflow: auto;
-                overflow-x: hidden;
             }
-            #hideThis {
-                display: none;
+            .table {
+                margin-top: 50vw;
+                margin-left: 0vw;
+                margin-bottom: 3vw;
+                flex-wrap: nowrap;
+                border-spacing: 0;
+                width: 100vw;
             }
-            p.ptitle {
-                margin-left: 2vw;
+            .parent {
+                width: 100vw;
             }
+            .paragraph2 {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding: 0%;
+                border-spacing: 0%;
+                margin-block-start: 0em;
+                margin-block-end: 0em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                width: 45vw;
+            }
+            .paragraph {
+                font-family: 'Lustria', serif;
+                color: #000000;
+                padding: 0%;
+                border-spacing: 0%;
+                margin-block-start: 0em;
+                margin-block-end: 0em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                width: 45vw;
+            }
+            .currentRow2 {
+                width: 90vw;
+            }
+            .currentCell {
+                padding: 0px;
+                border-spacing: 0%;
+            }
+            .tableHeader {
+                font-size: 2vw;
+                padding-left: 0vw;
+                margin-left: 0vw;
+                text-decoration: none;
+                color: #000000;
+            }
+            .tableHeader :hover {
+                color: #ee252d;
+            }
+            .parentTable {
+                width: 90vw;
+            }
+            .tableContainer {
+                width: 90vw;
+                border-top: 1px solid black;
+            }
+            
+            
+            
+            
+            
         </style>
         
         
@@ -449,209 +316,32 @@
             </a>
         </div>
         
-<div class="content" id="dashboardContent">
-    <h1> Submit Your Weekly Updates</h1>
-    <div class="container" id="launch">
-        <div class="item1"><b class="item-text">Launch</b></div>
-            <div class="inner-container2">
-                <div class="item"> <p id="launchedYet">Have you launched yet? </p>
-                    <label class ="switch">
-                        <input type="checkbox" onclick="launched()">
-                            <span class="slider">
-                            </span>
-                    </label>
-                </div>
-                <div class="item" id="switch-text"><p id="switch-innertext">Weeks until launch:</p>
-                        <div id="numberWeeks">
-                            <form> 
-                                <input type="text" id="input1">
-                            </form>
-                        </div>
-                </div>
+        
+        <div class="content" id="dashboardContent">
+            <h1>
+                My Updates
+            </h1>
+            <div class="chart-container">
+            <canvas id="myChart" width="20" height="20" responsive="true"></canvas>
             </div>
-    </div>
-    <div class="container">
-        <div class="item1"><b class="item-text">Users</b></div>
-            <div class="inner-container2">
-                <div class="item"> <p id="improvement">Users/Perspective users talked to this week?</p>
-                    <form>
-                        <input type="type" id="input2" maxlength="10">
-                    </form>
-                </div>
-                <div class="item"><p id ="improvement">What have you learned from them?</p>
-                    <div>
-                        <form> 
-                            <input type="text" id="input2">
-                        </form>
-                    </div>
-                </div>
+            <div class="table">
+                <table id="parent">
+                    <tr> 
+                        <th> Updates history</th>
+                    </tr>
+                    <tr> 
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
             </div>
-    </div>
-    <div class="container">
-        <div class="item1"><b class="item-text">Goals</b></div>
-            <div class="inner-container1" id="goals1">
-                <div class="item2"> <p>What are your top 1-3 goals for the next week?</p>
-                    <form>
-                        <textarea type="type" wrap="soft" maxlength="800" id="input4"></textarea>
-                    </form>
-                </div>
-                <div class="inner-inner-container" id="goals">
-                    <div class="item3"><p id="improvement">What most improved your primary method?</p>
-                        <div>
-                            <form> 
-                                <textarea type="text" wrap="soft" maxlength="800" id="input3"></textarea>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="item3"><p id="improvement">Biggest Obstacle?</p>
-                        <div>
-                            <form> 
-                                <textarea type="text" wrap="soft" id="input3" maxlength="800"></textarea> 
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div id="hideThis">
-        <div class="container">
-            <div class="item1">
-                <b class="item-text">
-                    Financials
-                </b>
-            </div>
-            <div class="inner-container2" id="financial">
-                <div class="item">
-                    <p class="ptitle">
-                        Money in the Bank
-                    </p>
-                    <form>
-                        <input type="number" class="numberField">
-                    </form>
-                </div>
-                <div class="item">
-                    <p class="ptitle">
-                        Revenue (MRR)
-                    </p>
-                    <form>
-                        <input type="number" class="numberField">
-                    </form>
-                </div>
-                <div class="item">
-                    <p class="ptitle">
-                        Monthly Burn Rate
-                    </p>
-                    <form>
-                        <input type="number" class="numberField">
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="item1">
-                <b class="item-text">
-                    Product Updates
-                </b>
-            </div>
-            <div class="inner-container1" id="financial" style="height: 10vw;">
-                <div class="inner-inner-container">
-                    <div class="item">
-                        <p>
-                            Please tell us about any updates to your product
-                        </p>
-                        <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="item1">
-                <b class="item-text">
-                    Marketing
-                </b>
-            </div>
-            <div class="inner-container1" id="financial" style="height: 11vw;">
-                <div class="item">
-                    <p>
-                        Please update us on your marketing activities (sales, traffic, conversions rates, press, new partnerships, etc.)
-                    </p>
-                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="item1">
-                <b class="item-text">
-                    Team
-                </b>
-            </div>
-            <div class="inner-container1" id="financial" style="height: 16vw;">
-                <div class="inner-inner-container">
-                    <div class="item">
-                        <p class="ptitle">
-                            Offers Accepted
-                        </p>
-                        <form>
-                            <input type="number" class="numberField">
-                        </form>
-                    </div>
-                    <div class="item">
-                        <p class="ptitle">
-                            Offers Declined
-                        </p>
-                        <form>
-                            <input type="number" class="numberField">
-                        </form>
-                    </div>
-                    <div class="item">
-                        <p class="ptitle">
-                            Offers Outstanding
-                        </p>
-                        <form>
-                            <input type="number" class="numberField">
-                        </form>
-                    </div>
-                </div>
-                <div class="item">
-                    <p>
-                        Major Hires/Fires
-                    </p>
-                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="item1"><b class="item-text">Morale</b></div>
-            <div class="inner-container" id="moraleQuestion">
-                <div class="item"> <p id="scale">On a scale of 1-10, what is your morale?</p>
-                    <form>
-                        <select class="morale" style="width:45vw">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10-Couldn't be more excited or enthusiastic</option>
-                        </select>
-                    </form>
-                </div>
-            </div>
-    </div>
-    <div class="container" id="last">
-        <div class="item1"><b class="item-text">Group Sessions</b></div>
-            <div class="inner-container">
-                <div class="item"> <p>Users/Perspective users talked to this week?</p>
-                </div>
-                <div class="item"><p>What have you learned from them?</p>
-                </div>
-            </div>
-    </div>
-</div>
+            
+            
+        </div> 
+        
+        
         <footer class ="footer"> 
             <div class ="linkWrapper">
                 <div class = "signUp">
@@ -692,51 +382,109 @@
                 </div>
             </div>
         </footer>
-        <script>
-            function launched () {
-                var x= document.getElementById("switch-innertext");
-                if(x.innerHTML ==="Weeks until launch:") {
-                    x.innerHTML = "Congratulations you are launched!";
-                } else {
-                    x.innerHTML = "Weeks until launch:"
-                }
-                var y= document.getElementById("numberWeeks");
-                if(y.style.display ==="none") {
-                    y.style.display = "block";
-                }
-                else {
-                    y.style.display = "none";
-                }
-                var hideThis = document.getElementById("hideThis");
-                if(hideThis.style.display =="block") {
-                    hideThis.style.display = "none";
-                }
-                else{
-                    hideThis.style.display = "block";
-                }
-               
-            }
-        </script>
+        
+        
         <script> 
            
             function toggleSideBar() {
                
                     console.log("opening sidebar")
                     document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 7vw from first one.
+                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
               
             }
             function untoggleSideBar() {
                 
                     console.log("closing sidebar");
                     document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 7vw from the first one.
+                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
                 
             }
         </script>
+        <script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ['Number of Users', 'Weeks until launch', 'Morale', 'Revenue', 'Margins', 'Monthly Users', 'Expenses'],
+        datasets: [{
+            data: [],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
         
-        
-    </body>
     
+    </body>
+    <script> 
+function updateHistory ()  {
+// function used to print the update history.
+    var tabel = document.createElement("TABLE");
+    tabel.className= "parentTable";
+    var parentTable = document.getElementById("parent");
+    var currentRow = document.createElement("TR");
+    var currentRow2 = document.createElement("TR");
+    currentRow2.className = "currentRow2";
+    tabel.appendChild(currentRow);
+    var currentCell = document.createElement("TD");
+    currentCell.className="currentCell";
+    var currentCell2 = document.createElement("TD");
+    currentCell2.className="currentCell";
+    var tableHeader  = document.createElement("A");
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var link = document.createTextNode(date); // placeholder for the actual date
+    tableHeader.appendChild(link);
+    tableHeader.title=date;
+    tableHeader.href = ("/Dashboard/Updates/my-updates.html");
+    tableHeader.className ="tableHeader";
+    var paragraph = document.createElement("P");
+    paragraph.className="paragraph";
+    var paragraph2 = document.createElement("P");
+    paragraph2.className="paragraph2";
+    paragraph.innerHTML = "number of Users: 1000.";
+    paragraph2.innerHTML = "Margins: 1000";
+    var tableContainer = document.createElement("DIV");
+    tableContainer.className = "tableContainer";
+    currentRow.appendChild(tableHeader);
+    currentCell.appendChild(paragraph);
+    currentCell2.appendChild(paragraph2);
+    currentRow2.appendChild(currentCell);
+    currentRow2.appendChild(currentCell2);
+    tableContainer.appendChild(currentRow2);
+    tabel.appendChild(tableContainer);
+    parentTable.appendChild(tabel);
+    
+}
+    updateHistory();
+        </script>
     
 </html>
