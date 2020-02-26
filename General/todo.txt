@@ -10,6 +10,16 @@
     Improve CSS (4 hr)
     Connect the Submit Updates (4 hr)
     Possibly more (IDK)
+    updates add 
+ New of the week;
+Change obstacles to the bottom of the box. 
+for goals.
+*Only shows up if they are launched.* In this order underneath the goals section.
+Financials: Money in the Bank, revenue(MRR), Monthly burn rate. 
+Product updates: Long text. 
+Marketing: Long text. Please update us on your marketing activities(sales, traffic, conversions rates, press, new partnerships etc.)
+Team section: Offers accepted, offered declined, offers outstanding. Major hires and fires(text box). 
+
 
 
 Jason:
