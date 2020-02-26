@@ -30,10 +30,8 @@ function getCookie(cname) {
 
 function loadValues(){
     
-    var url = 'http://localhost:3002';
-    // var url = 'https://dashdb.herokuapp.com';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
         var idString = getCookie("dashId");
         if(idString == ""){
@@ -80,10 +78,8 @@ function saveTheProfile(){
     // Check their validity
     if(passwrd == checkPass){
         // If valid
-        var url = 'http://localhost:3002';
-        // var url = 'https://dashdb.herokuapp.com';
-        var theAPIKey = "notTheRealAPIKey";
-        // var theAPIKey = "C@D@123";
+        var url = 'https://dashdb.herokuapp.com';
+        var theAPIKey = "C@D@123";
         
         if(passwrd != ""){
             var newPass = {

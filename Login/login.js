@@ -13,10 +13,8 @@ function setCookie(cname, cvalue, exdays) {
 function login() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-    var url = 'http://localhost:3002';
-    // var url = 'https://dashdb.herokuapp.com';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url, theAPIKey, email, password) => {
         let getID = await fetch(url+'/id', {
             method: "GET",

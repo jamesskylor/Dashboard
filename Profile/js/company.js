@@ -24,10 +24,8 @@ function getCookie(cname) {
 }
 
 function loadValues() {
-    var url = 'http://localhost:3002';
-    // var url = 'https://dashdb.herokuapp.com';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
         var idString = getCookie("dashId");
         if(idString == ""){
@@ -86,10 +84,8 @@ function saveInfo(){
     }
     console.log(JSON.stringify(newCData));
     
-    var url = 'http://localhost:3002';
-    // var url = 'https://dashdb.herokuapp.com';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     
     let updateData = async (url, newCData) => {
         var idString = getCookie("dashId");
@@ -112,4 +108,10 @@ function saveInfo(){
     }
     
     updateData(url, newCData);
+    
+    var responsiveText = document.getElementById("saved");
+    if(responsiveText.classList.contains("fade-out")){
+        responsiveText.classList.remove("fade-out");
+    }
+    responsiveText.classList.add("fade-out");
 }

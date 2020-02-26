@@ -13,7 +13,6 @@
 
 
 Jason:
-- Fill out the value for the select statements on My Profile (EZ)
 - Drop the tables and cat new init.sql file in (Connect to heroku via psql) (EZ)
 - Connect Group Sessions to Philip's code (For sure ask)
 - Finish the Group Sessions 'homepage' for connecting to others (Can handle on own after asking about how Philip's code works and understand how to find currently running groups)
@@ -29,17 +28,16 @@ Anyone:
 
 
 Jason (organize thoughts):
-(5 min) [Do this after everything is working properly] {Wednesday}
-- Use part of Tania Rascia's tutorial to cat in the new init.sql file
-   - Remember to use Postman to hash the password since the hashing is in express, not postgres
-
-(0.5 hr) {Wednesday}
-- Switch all localhosts to herokuapp
-    - Change API Keys for all
 
 (1 hr) {Wednesday}
 - Publish onto domain
     - Enable CORS
+    
+(5 min)
+- Use the site as:
+    jason@temporary.placeholder
+    thisIsTheOnlyUnhashedPassword
+    - Change any blank values that are bugged just for demo
 
 
 (0.5 hr)
