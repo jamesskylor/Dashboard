@@ -22,11 +22,6 @@ Team section: Offers accepted, offered declined, offers outstanding. Major hires
 
 
 
-Jason:
-- Drop the tables and cat new init.sql file in (Connect to heroku via psql) (EZ)
-- Connect Group Sessions to Philip's code (For sure ask)
-- Finish the Group Sessions 'homepage' for connecting to others (Can handle on own after asking about how Philip's code works and understand how to find currently running groups)
-
 Jackie:
 - Do Updates things
 - Do the Application Page
@@ -49,4 +44,4 @@ Jason (organize thoughts):
     - Change any blank values that are bugged just for demo
     
 (1 hr)
-- Clean
+- Clean site of redundant pages and code

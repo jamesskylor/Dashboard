@@ -18,7 +18,7 @@ app.use(helmet());
 
 const isProduction = process.env.NODE_ENV === 'production';
 const origin = { // Change the https://www.example.com to whatever the site that needs to access this data is later ****************************************************************8
-  origin: isProduction ? 'https://www.example.com' : '*',
+  origin: isProduction ? 'https://www.founderschool.ca' : '*',
 }
 app.use(cors(origin));
 
