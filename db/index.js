@@ -223,6 +223,50 @@ app.post('/companyData/:id',
     }
 );
 
+app.post('/updates/:id',
+    [
+        check('updateDate').isLength({ min: 1, max: 64 }),
+        check('launch').isLength({ min: 1, max: 2048 }),
+        check('users').isLength({ min: 1, max: 65000 }),
+        check('userLearning').isLength({ min: 1, max: 32 }),
+        check('goals').isLength({ min: 1, max: 128 }),
+        check('improvement').isLength({ min: 1, max: 65000 }),
+        check('biggestObstacle').isLength({ min: 1, max: 100 }),
+        check('news').isLength({ min: 1, max: 32 }),
+        check('morale').isLength({ min: 1, max: 65000 }),
+        check('expenses').isLength({ min: 1, max: 100 }),
+        check('revenue').isLength({ min: 1, max: 100 }),
+        check('moneyInTheBank').isLength({ min: 1, max: 100 }),
+        check('monthlyBurnRate').isLength({ min: 1, max: 100 }),
+        check('productUpdates').isLength({ min:1, max: 100 }),
+        check('marketing').isLength({ min:1, max: 100 }),
+        check('offersAccepted').isLength({ min:1, max: 100 }),
+        check('offersDeclined').isLength({ min:1, max: 100 }), 
+        check('offersOutstanding').isLength({ min:1, max: 100 }),
+        check('hiresFires').isLength({ min:1, max: 100})
+    ], 
+    (req, res) => {
+        if (!req.header('apiKey') || req.header('apiKey') !== process.env.API_KEY) {
+            return res.status(401).json({ status: 'error', message: 'Unauthorized.' });
+        }
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.status(422).json({ errors: errors.array() });
+        }
+        
+        const id = parseInt(req.params.id);
+        const {updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale, expenses, renvenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires} = req.body;
+        db.query(
+            'INSERT INTO updates (id, updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale, expenses, renvenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)',
+            [id, updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale, expenses, renvenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires],
+            (err, results) => {
+                if(err) throw err;
+                res.status(201).send(`Company data added with ID: ${results.insertID}`);
+            }
+        );
+    }
+);
+
 app.put('/users/cont/:id',
     [
         check('name').isLength({ min: 1, max: 64 }),
