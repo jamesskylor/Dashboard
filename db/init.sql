@@ -37,10 +37,21 @@ CREATE TABLE companyData (
 
 CREATE TABLE updates (
     id INT,
-    updateDate TIMESTAMPTZ,
-    
+    updateDate TIMESTAMP,
+    launch INT NOT NULL,
+    Users INT NOT NULL,
+    UserLearning TEXT,
+    Goals TEXT,
+    Improvement TEXT,
+    BiggestObstacle TEXT,
+    Morale TEXT,
+    Expenses FLOAT NOT NULL,
+    Margins FLOAT NOT NULL,
+    Revenue FLOAT NOT NULL  
 );
 
+INSERT INTO updates (updateDate, launch, Users, UserLearning, Goals, Improvement, BiggestObstacle, Morale, Expenses, Margins, Revenue)
+VALUES ('2017-07-23', '1','100', 'What to focus on as a compnay', 'Learng more about users', 'grow start-up', 'Finding Users', '10', '2000.50', '100', '50');
 INSERT INTO users (name, email, passwordhash, avatar)
 VALUES ('Jason X', 'jason@temporary.placeholder', 'thisIsTheOnlyUnhashedPassword', 'http://www.doesntexist.com');
 
