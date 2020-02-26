@@ -41,7 +41,7 @@ CREATE TABLE updates (:
     launch INT NOT NULL,
     users INT NOT NULL,
     userLearning TEXT,
-    goals TEXT,
+    goals TEXT
     improvement TEXT,
     biggestObstacle TEXT,
     news TEXT,
