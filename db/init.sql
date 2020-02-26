@@ -35,23 +35,31 @@ CREATE TABLE companyData (
     publicity CHAR NOT NULL
 );
 
-CREATE TABLE updates (
-    id INT,
+CREATE TABLE updates (:
+    id INT NOT NULL,
     updateDate TIMESTAMP,
     launch INT NOT NULL,
-    Users INT NOT NULL,
-    UserLearning TEXT,
-    Goals TEXT,
-    Improvement TEXT,
-    BiggestObstacle TEXT,
-    Morale TEXT,
-    Expenses FLOAT NOT NULL,
-    Margins FLOAT NOT NULL,
-    Revenue FLOAT NOT NULL  
+    users INT NOT NULL,
+    userLearning TEXT,
+    goals TEXT,
+    improvement TEXT,
+    biggestObstacle TEXT,
+    news TEXT,
+    morale INT NOT NULL,
+    expenses FLOAT,
+    revenue FLOAT,
+    moneyInTheBank FlOAT,
+    monthlyBurnRate FLOAT,
+    productUpdates TEXT,
+    marketing TEXT,
+    offersAccepted INT,
+    offersDeclined INT,
+    offersOutstanding INT,
+    hiresFires TEXT
 );
 
-INSERT INTO updates (updateDate, launch, Users, UserLearning, Goals, Improvement, BiggestObstacle, Morale, Expenses, Margins, Revenue)
-VALUES ('2017-07-23', '1','100', 'What to focus on as a compnay', 'Learng more about users', 'grow start-up', 'Finding Users', '10', '2000.50', '100', '50');
+INSERT INTO updates (id,updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale, expenses,revenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires)
+VALUES ('1','2017-07-23', '1','100', 'What to focus on as a compnay', 'Learng more about users', 'grow start-up', 'Finding Users', 'talked to potential LPS', '10', '2000.50', '100','10', '50', 'product doing well', 'Got pres from major news outlets', '10', '20', '5', 'Hired Great senior executive of marketing fired old vp');
 INSERT INTO users (name, email, passwordhash, avatar)
 VALUES ('Jason X', 'jason@temporary.placeholder', 'thisIsTheOnlyUnhashedPassword', 'http://www.doesntexist.com');
 
