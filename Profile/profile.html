@@ -7,6 +7,9 @@
         <script type='text/javascript' src='../Profile/switchContent.js'>console.log("loaded");"</script>
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>
+            My Profile | _____
+        </title>
         <style>
             .sidebar {
                 height: 100%;
@@ -275,7 +278,6 @@
                 overflow: hidden;
                 border-radius: 50%;
                 position: relative;
-                background-image: url("https://g.foolcdn.com/editorial/images/539491/getty-stock-market-success.jpg");
                 background-size: cover;
                 background-position: center;
             }
@@ -295,6 +297,61 @@
                 background-color: #616161;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
+            }
+            #saved {
+                font-family: 'Lustria', serif;
+                padding-left: 10vw;
+                opacity: 0;
+            }
+            .fade-out {
+                animation: fadeOut ease-in 3s;
+                -webkit-animation: fadeOut ease-in 3s;
+                -moz-animation: fadeOut ease-in 3s;
+                -o-animation: fadeOut ease-in 3s;
+                -ms-animation: fadeOut ease-in 3s;
+            }
+            @keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-moz-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-webkit-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-o-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-ms-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
             }
         </style>
         
@@ -371,11 +428,6 @@
                                         Company
                                 </a>
                             </td>
-                            <td class="selection">
-                                <a href="myCoFounders.html" class="myLink">
-                                        Co-Founders
-                                </a>
-                            </td>
                         </tr>
                     </table>
                 </nav>
@@ -395,7 +447,7 @@
                                     Name:
                                 </td>
                                 <td class="infoList data" id="nameField">
-                                    Placeholder Name
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -403,15 +455,7 @@
                                     Email:
                                 </td>
                                 <td class="infoList" id="emailField">
-                                    Placeholder Email
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Password:
-                                </td>
-                                <td class="infoList" id="passwordField">
-                                    Placeholder number of asterisks
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -445,7 +489,7 @@
                                         GitHub:
                                     </td>
                                     <td class="infoList">
-                                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
+                                        <input type="url" placeholder="Please copy and paste in your Github Profile Page URL" class="editBox" id="githubField" maxlength="128">
                                     </td>
                                 </tr>
                                 <tr>
@@ -456,8 +500,9 @@
                                         <select class="editBox" id="educationField" required>
                                             <option value="" disabled selected>Select an Option</option>
                                             <option value="HS">High School Diploma</option>
-                                            <option value="Undergrad">Undergraduate Degree</option>
-                                            <option value="Grad">Graduate Degree</option>
+                                            <option value="someU">Some University</option>
+                                            <option value="bach">Bachelors Degree</option>
+                                            <option value="grad">Masters Degree</option>
                                             <option value="PhD">PhD</option>
                                         </select>
                                     </td>
@@ -469,7 +514,13 @@
                                     <td class="infoList">
                                         <select class="editBox" id="expertField" required>
                                             <option value="" disabled selected>Select an Option</option>
-                                            <option value="idk">TemporaryPlaceholder</option>
+                                            <option value="operations">Business Operations</option>
+                                            <option value="data">Data</option>
+                                            <option value="design">Design</option>
+                                            <option value="engineering">Engineering</option>
+                                            <option value="growth">Growth</option>
+                                            <option value="product">Product</option>
+                                            <option value="sales">Sales</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -500,7 +551,7 @@
                                         Most Impressive Accomplishment:
                                     </td>
                                     <td class="infoList">
-                                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024" required></textarea>
+                                        <textarea class="editBox" id="accomplishmentField" placeholder="Please tell us about your most impressive accomplishments..." maxlength="1024" required></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -508,7 +559,7 @@
                                         Location:
                                     </td>
                                     <td class="infoList">
-                                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128" required>
+                                        <input type="text" placeholder="Where are you based?" class="editBox" id="locationField" maxlength="128" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -519,6 +570,7 @@
                                         <select class="editBox" id="applicationField" required>
                                             <option value="" disabled selected>Select an Option</option>
                                             <option value="applied">Applied</option>
+                                            <option value="notapplied">Not Applied</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -536,6 +588,9 @@
                             </table>
                             <input type="submit" class="editButton" id="theSaveButton" value="Save">
                         </form>
+                        <div id="saved">
+                            Saved!
+                        </div>
                         <script src="js/profile.js"></script>
                     </div>
                 </div>

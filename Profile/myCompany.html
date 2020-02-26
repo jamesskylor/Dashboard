@@ -5,6 +5,9 @@
     
     <head>
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
+        <title>
+            My Company | _____
+        </title>
         <style>
             html, body {
                 height: 100%;
@@ -177,7 +180,7 @@
                         Company Name:
                     </td>
                     <td class="infoList data">
-                        <input type="text" placeholder="Placeholder Name" class="editBox" id="compNameField" maxlength="128" required>
+                        <input type="text" placeholder="Company Name Here..." class="editBox" id="compNameField" maxlength="128" required>
                     </td>
                 </tr>
                 <tr>
@@ -185,7 +188,7 @@
                         Company Website:
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder URL" class="editBox" id="compSiteField" maxlength="128" required>
+                        <input type="text" placeholder="Company Site Here..." class="editBox" id="compSiteField" maxlength="128" required>
                     </td>
                 </tr>
                 <tr>
@@ -193,7 +196,7 @@
                         Describe your company in a sentence or two
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox v2" id="compDescField" placeholder="Placeholder Sentences" maxlength="256" required></textarea>
+                        <textarea class="editBox v2" id="compDescField" placeholder="Please describe your company..." maxlength="256" required></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -203,7 +206,37 @@
                     <td class="infoList">
                         <select class="editBox" id="compVertField" required>
                             <option value="" disabled selected>Select an Option</option>
-                            <option value="idk">Temporary Placeholder</option>
+                            <option value="agtech">Agriculture/Agtech</option>
+                            <option value="ai">Artificial Intelligence</option>
+                            <option value="ar">Augmented Reality</option>
+                            <option value="b2b">B2B</option>
+                            <option value="biotech">Biotech</option>
+                            <option value="blockchain">Blockchain</option>
+                            <option value="community">Community</option>
+                            <option value="consumer">Consumer</option>
+                            <option value="crowdfunding">Crowdfunding</option>
+                            <option value="devtools">Developer Tools</option>
+                            <option value="drones">Drones</option>
+                            <option value="ecomm">E-commerce</option>
+                            <option value="edu">Education</option>
+                            <option value="energy">Energy</option>
+                            <option value="enterprise">Enterprise</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="esports">Esports/Online Gaming</option>
+                            <option value="financial">Financial Services</option>
+                            <option value="gov">Government</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="health">Healthcare</option>
+                            <option value="market">Marketplace</option>
+                            <option value="media">Media</option>
+                            <option value="moonshots">Moonshots/Hard Tech</option>
+                            <option value="nonprofit">Nonprofit</option>
+                            <option value="robotics">Robotics</option>
+                            <option value="sec">Security</option>
+                            <option value="transport">Transportation</option>
+                            <option value="travel">Travel</option>
+                            <option value="vr">Virtual Reality</option>
+                            
                         </select>
                     </td>
                 </tr>
@@ -212,7 +245,7 @@
                         What does your company make?
                     </td>
                     <td class="infoList">
-                        <input type="text" placeholder="Placeholder Product/Service" class="editBox" id="compProdField" maxlength="128" required>
+                        <input type="text" placeholder="Please tell us what you do..." class="editBox" id="compProdField" maxlength="128" required>
                     </td>
                 </tr>
                 <tr>
@@ -220,7 +253,7 @@
                         Why did you pick this idea?
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox v2" id="compReasField" placeholder="Placeholder Explanation" maxlength="1024" required></textarea>
+                        <textarea class="editBox v2" id="compReasField" placeholder="Please enter explanation here..." maxlength="1024" required></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -230,8 +263,8 @@
                     <td class="infoList">
                         <select class="editBox" id="compTimeField" required>
                             <option value="" disabled selected>Select an Option</option>
-                            <option value="partTime">Part-Time</option>
-                            <option value="fullTime">Full-Time</option>
+                            <option value="fullTimeN">Part-Time</option>
+                            <option value="fullTimeY">Full-Time</option>
                         </select>
                     </td>
                 </tr>
@@ -242,7 +275,14 @@
                     <td class="infoList">
                         <select class="editBox" id="compProgField" required>
                             <option value="" disabled selected>Select an Option</option>
-                            <option value="idk">Temporary Placeholder</option>
+                            <option value="nothing">Nothing Built</option>
+                            <option value="idea">Idea/Sketches</option>
+                            <option value="mock">Mock/Renderings</option>
+                            <option value="prototype">Prototype/Pre-launch</option>
+                            <option value="privateBeta">Private Beta</option>
+                            <option value="publicBeta">Public Beta</option>
+                            <option value="preOrder">Taking Pre-orders</option>
+                            <option value="launched">Launched</option>
                         </select>
                     </td>
                 </tr>
@@ -251,7 +291,7 @@
                         How far along are you?
                     </td>
                     <td class="infoList">
-                        <textarea class="editBox" id="compProg2Field" placeholder="Placeholder Paragraph" maxlength="1024" required></textarea>
+                        <textarea class="editBox" id="compProg2Field" placeholder="Please describe your progress here..." maxlength="1024" required></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -278,6 +318,9 @@
                 </tr>
             </table>
             <button class="editButton" id="theSaveButton">Save</button>
+            <div id="saved">
+                Saved!
+            </div>
             <script src="js/company.js"></script>
         </div>
     </body>

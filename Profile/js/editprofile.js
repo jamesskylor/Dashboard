@@ -13,37 +13,130 @@ document.getElementById("theFileInput").addEventListener("change", (e)=>{
     updateAvatar();
 });
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function loadValues(){
-    // Get info from database ************************************************************************************************************
-    var name = "John Smith";
-    var email = "jsmith@gmail.com";
-    var image = "https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg";
-    // Set all the input values to their corresponding database values (except password)
-    document.getElementById("perNameField").value = name;
-    document.getElementById("perEmailField").value = email;
-    document.getElementById("theAvatar").src = image;
+    
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
+    let fetchData = async (url) => {
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
+        
+        let getUsers = await fetch(url+'/users/'+idNum, {
+            method: "GET",
+            headers: {
+                "apiKey": theAPIKey
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            //console.log(data[0]);
+            loadUser(data[0]);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+        
+        return;
+    }
+    fetchData(url);
+}
+
+function loadUser(userJSON) {
+    document.getElementById("perNameField").value = userJSON.name;
+    document.getElementById("perEmailField").value = userJSON.email;
+    document.getElementById("theAvatar").style.backgroundImage = userJSON.avatar;
 }
 
 function saveTheProfile(){
     // Take in all the values
-    var name = document.getElementById("perNameField").value;
-    var email = document.getElementById("perEmailField").value;
-    var password = document.getElementById("perPasswordField").value;
+    var newData = {
+        name: document.getElementById("perNameField").value,
+        email: document.getElementById("perEmailField").value,
+        avatar: document.getElementById("theAvatar").style.backgroundImage
+    }
+    console.log(JSON.stringify(newData));
+    var passwrd = document.getElementById("perPasswordField").value;
     var checkPass = document.getElementById("perConfirmField").value;
-    // Get  the Image
-    var image = document.getElementById("theAvatar").style.backgroundImage; // Care about this later when we have a database to compare pros/cons with *****************************
     // Check their validity
-    if(password == checkPass){
+    if(passwrd == checkPass){
         // If valid
-        // Send data to the server to save the update ***********************************************************************************
+        var url = 'https://dashdb.herokuapp.com';
+        var theAPIKey = "C@D@123";
         
-        if(password != ""){
+        if(passwrd != ""){
+            var newPass = {
+                password: passwrd
+            }
             // Send the new password, since it's not blank
+            let updatePass = async(url, newPass) => {
+                var idString = getCookie("dashId");
+                if(idString == ""){
+                    location.assign("../Login/login.html");
+                }
+                var idNum = parseInt(idString);
+                
+                let sendPass = await fetch(url+"/users/pass/"+idNum, {
+                    method: "PUT",
+                    headers: {
+                        "apiKey": theAPIKey,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newPass)
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            }
             
+            updatePass(url, newPass);
         }
         
+        let updateData = async (url, newData) => {
+            var idString = getCookie("dashId");
+            if(idString == ""){
+                location.assign("../Login/login.html");
+            }
+            var idNum = parseInt(idString);
+
+            let sendData = await fetch(url+'/users/cont/'+idNum, {
+                method: "PUT",
+                headers: {
+                    "apiKey": theAPIKey,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newData)
+            })
+            .then(() => {
+                // Return to the profile page
+                location.assign("profile.html");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        }
+        
+        updateData(url, newData);
+        
         // Return to the Profile Page
-        location.assign("profile.html");
+        //location.assign("profile.html");
     }
     else{
         // If not valid
@@ -58,9 +151,37 @@ function saveTheProfile(){
     }
 }
 
-function updateAvatar(){ // Change this accordingly with what our database ends up being *************************************************************************
+function updateAvatar(){
     // Take in the file
-    var theImgFile = document.getElementById("theFileInput").files[0];
-    // Change the src of "theAvatar" to the new image
-    document.getElementById("theAvatar").style.backgroundImage = "url("+URL.createObjectURL(theImgFile)+")";
+    var fileInput = document.getElementById("theFileInput").files[0];
+    var canvas = document.createElement("CANVAS");
+    
+    var tempImg = new Image();
+    var theImgFile;
+    tempImg.onload = () => {
+        var endWidth = 100;
+        var endHeight = 100;
+        var xcoord = 0;
+        var ycoord = 0;
+        if(tempImg.width > tempImg.height) {
+            var temp = tempImg.height / 100.0;
+            endWidth = tempImg.width / temp;
+            endHeight = 100;
+            xcoord = -1*(endWidth - 100)/2;
+            ycoord = 0;
+        }
+        else {
+            var temp = tempImg.width / 100.0;
+            endWidth = 100;
+            endHeight = tempImg.height / temp;
+            xcoord = 0;
+            ycoord = -1*(endHeight - 100)/2;
+        }
+        canvas.width = 100;
+        canvas.height = 100;
+        canvas.getContext("2d").drawImage(tempImg, xcoord, ycoord, endWidth, endHeight);
+        theImgFile = "url("+canvas.toDataURL()+")";
+        document.getElementById("theAvatar").style.backgroundImage = theImgFile;
+    }
+    tempImg.src = URL.createObjectURL(fileInput);
 }
