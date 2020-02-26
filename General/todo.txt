@@ -38,7 +38,6 @@ Anyone:
 
 
 Jason (organize thoughts):
-
 (1 hr) {Wednesday}
 - Publish onto domain
     - Enable CORS
@@ -48,12 +47,6 @@ Jason (organize thoughts):
     jason@temporary.placeholder
     thisIsTheOnlyUnhashedPassword
     - Change any blank values that are bugged just for demo
-
-
-(0.5 hr)
-- Ask how to integrate Philips code into a site
-- Add Philip's code
-
-(2 hr)
-- Figure out how to find other groups
-- Display on a template html page
+    
+(1 hr)
+- Clean
