@@ -29,5 +29,3 @@ Jason (organize thoughts):
 - Switch button css to black
 
 - Create Acct Page
-
-- cat new tables in again without publicity and application status for uData and cData
