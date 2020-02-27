@@ -1,6 +1,6 @@
 document.getElementById("theEditButton").addEventListener("click", (e)=>{
     e.preventDefault();
-    goToEdit();
+    submitUpdate();
 });
 
 function submitUpdate(){
