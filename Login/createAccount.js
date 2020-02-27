@@ -14,8 +14,13 @@ function signup() {
     // Check password
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirm").value;
-    if(password != confirmPassword) {
-        document.getElementById("invalidlogin").innerHTML = "Passwords do not match";
+    if(password != confirmPassword || password.length < 6 || password.length > 50) {
+        if(password.length < 6 || password.length > 50) {
+            document.getElementById("invalidlogin").innerHTML = "Invalid Password, must be between 6 and 50 characters in length";
+        }
+        else {
+            document.getElementById("invalidlogin").innerHTML = "Passwords do not match";
+        }
         document.getElementById("confirm").value = "";
         document.getElementById("password").value = "";
     }
@@ -30,18 +35,7 @@ function signup() {
         // Connect to server
         var url = 'https://dashdb.herokuapp.com';
         var theAPIKey = "C@D@123";
-        let fetchData = async (url, theAPIKey, newUser) => {
-            let createID = await fetch(url+'/users', {
-                method: "POST",
-                headers: {
-                    "apiKey": theAPIKey,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(newUser)
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        let fetchData = async (url, theAPIKey, email, password) => {
             let getID = await fetch(url+'/id', {
                 method: "GET",
                 headers: {
@@ -64,9 +58,28 @@ function signup() {
             else {
                 // Error message as login failed
                 document.getElementById("invalidlogin").innerHTML = "Something went wrong. Sorry for the inconvenience.";
+
             }
+
             return;
         }
-        fetchData(url, theAPIKey, newUser);
+        let setData = async (url, theAPIKey, newUser) => {
+            let createID = await fetch(url+'/users', {
+                method: "POST",
+                headers: {
+                    "apiKey": theAPIKey,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newUser)
+            })
+            .then(() => {
+                fetchData(url, theAPIKey, newUser.email, newUser.password);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+            return;
+        }
+        setData(url, theAPIKey, newUser);
     }
 }

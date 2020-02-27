@@ -27,5 +27,3 @@ Jason (organize thoughts):
         - Updates
 
 - Switch button css to black
-
-- Create Acct Page
