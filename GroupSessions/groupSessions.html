@@ -181,7 +181,7 @@
                 font-size: 300%;
                 white-space: nowrap;
                 padding-left: 5%;
-                font-size: 4vw;
+                font-size: 3vw;
             }
             h2 {
                 font-family: 'Lustria', serif;
@@ -200,7 +200,29 @@
                 height: 18vw;
                 border: none;
             }
-            
+            #theForm {
+                margin: auto;
+                font-size: 2vw;
+                width: 50vw;
+                margin-top: 20vh;
+            }
+            #getMatched {
+                margin-left: 21.5vw;
+                margin-top: 5vh;
+                width: 7vw;
+                border-radius: 0.5vh;
+                padding-top: 1vh;
+                padding-bottom: 1vh;
+                border: none;
+                background-color: white;
+                border: 1px solid black;
+                color: black;
+                font-size: 2vw;
+                font-family: 'Lustria', serif;
+            }
+            #getMatched:hover {
+                background-color: #cccccc;
+            }
             
             
             
@@ -265,8 +287,13 @@
                 Group Sessions
             </h1>
             
-            
-            
+            <form id="theForm">
+                <p>
+                    Do you want to be matched into a group session?
+                </p>
+                <input type="submit" id="getMatched" value="Yes">
+            </form>
+            <script src="js/groupSessions.js"></script>
         </div>
         
         

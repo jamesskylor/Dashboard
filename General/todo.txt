@@ -1,9 +1,5 @@
 /Application (2 work-days)
     Create it (everything) (14 hr)
-    
-/GroupSessions
-    Delete this
-    And myCoFounders.html/.js
 
 /Updates (1-4 work-days)
     Connect to the database (4 hr)
@@ -17,18 +13,20 @@ Jackie:
 - Do Updates things
 - Do the Application Page
 
-Anyone:
-- Fix the Sidebar links for all pages w/ it
-- Fix the Homepage links
-
-
-
 Jason (organize thoughts):
-
-- Publish onto domain
-    - Enable CORS
-- Use the site as:
-    jason@temporary.placeholder
-    thisIsTheOnlyUnhashedPassword
-    - Change any blank values that are bugged just for demo
 - Clean site of redundant pages and code
+    - Fix the Sidebar links for all pages w/ it
+    - Fix the Homepage links
+    - Remove GroupSessions
+    - Remove myCoFounders
+    - Add links to new:
+        - Group Sessions
+        - Deals
+        - Lessons
+        - Help
+        - Updates
+
+- Switch button css to black
+
+- Create Acct Page
+- Group Sessions Page
