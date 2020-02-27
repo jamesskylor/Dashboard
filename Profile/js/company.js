@@ -42,6 +42,7 @@ function loadValues() {
         .then((res) => res.json())
         .then((data) => {
             //console.log(data[0]);
+            sessionStorage.setItem("companyRows", data.length);
             loadCompany(data[0]);
         })
         .catch((err) => {
@@ -64,11 +65,14 @@ function loadCompany(companyJSON) {
     document.getElementById("compProgField").value = companyJSON.progress;
     document.getElementById("compProg2Field").value = companyJSON.progressplus;
     document.getElementById("inc"+companyJSON.incorporated).checked = true;
-    document.getElementById("compPub"+companyJSON.publicity).checked = true;
 }
 
 function saveInfo(){
     // Take in the values
+    var theMethod = "PUT";
+    if(sessionStorage.getItem("companyRows") == 0) {
+        theMethod = "POST";
+    }
     var newCData = {
         name: document.getElementById("compNameField").value,
         site: document.getElementById("compSiteField").value,
@@ -79,8 +83,7 @@ function saveInfo(){
         fulltime: document.getElementById("compTimeField").value.replace('fullTime', ''),
         progress: document.getElementById("compProgField").value,
         progressPlus: document.getElementById("compProg2Field").value,
-        incorporated: document.querySelector('input[name="compInc"]:checked').value,
-        publicity: document.querySelector('input[name="compPublicity"]:checked').value
+        incorporated: document.querySelector('input[name="compInc"]:checked').value
     }
     console.log(JSON.stringify(newCData));
     
@@ -95,7 +98,7 @@ function saveInfo(){
         var idNum = parseInt(idString);
         
         let sendCData = await fetch(url+'/companyData/'+idNum, {
-            method: "PUT",
+            method: theMethod,
             headers: {
                 "apiKey": theAPIKey,
                 "Content-Type": "application/json"

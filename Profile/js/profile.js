@@ -28,6 +28,13 @@ function getCookie(cname) {
     return "";
 }
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function loadValues(){
     var url = 'https://dashdb.herokuapp.com';
     var theAPIKey = "C@D@123";
@@ -63,6 +70,7 @@ function loadValues(){
         .then((res) => res.json())
         .then((data) => {
             //console.log(data[0]);
+            sessionStorage.setItem("profileRows", data.length);
             loadUserData(data[0]);
         })
         .catch((err) => {
@@ -89,8 +97,6 @@ function loadUserData(userDataJSON){
     document.getElementById("co"+userDataJSON.cofounder).checked = true;
     document.getElementById("accomplishmentField").defaultValue = userDataJSON.accomplishments;
     document.getElementById("locationField").value = userDataJSON.location;
-    document.getElementById("applicationField").value = userDataJSON.applicationstat;
-    document.getElementById("pub"+userDataJSON.publicity).checked = true;
 }
 
 function goToEdit(){
@@ -100,6 +106,10 @@ function goToEdit(){
 
 function saveInfo(){
     // Get values
+    var theMethod = "PUT";
+    if(sessionStorage.getItem("profileRows") == 0) {
+        theMethod = "POST";
+    }
     var newUData = {
         linkedURL: document.getElementById("linkedinField").value,
         githubURL: document.getElementById("githubField").value,
@@ -108,9 +118,7 @@ function saveInfo(){
         techFounder: document.querySelector('input[name="technical"]:checked').value,
         coFounder: document.querySelector('input[name="cofounder"]:checked').value,
         accomplishments: document.getElementById("accomplishmentField").value,
-        location: document.getElementById("locationField").value,
-        applicationStat: document.getElementById("applicationField").value,
-        publicity: document.querySelector('input[name="publicity"]:checked').value
+        location: document.getElementById("locationField").value
     }
     console.log(JSON.stringify(newUData));
     
@@ -125,7 +133,7 @@ function saveInfo(){
         var idNum = parseInt(idString);
         
         let sendUData = await fetch(url+'/userData/'+idNum, {
-            method: "PUT",
+            method: theMethod,
             headers: {
                 "apiKey": theAPIKey,
                 "Content-Type": "application/json"
