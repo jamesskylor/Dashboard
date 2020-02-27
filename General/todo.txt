@@ -25,5 +25,3 @@ Jason (organize thoughts):
         - Lessons
         - Help
         - Updates
-
-- Switch button css to black
