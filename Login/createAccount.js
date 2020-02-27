@@ -12,27 +12,36 @@ function setCookie(cname, cvalue, exdays) {
 
 function signup() {
     // Check password
-    
-    // Create the JSON
-    var newUser = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-        avatar: "placeholder"
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm").value;
+    if(password != confirmPassword) {
+        document.getElementById("invalidlogin").innerHTML = "Passwords do not match";
+        document.getElementById("confirm").value = "";
+        document.getElementById("password").value = "";
     }
-    // Connect to server
-    var url = 'https://dashdb.herokuapp.com';
-    var theAPIKey = "C@D@123";
-    let fetchData = async (url, theAPIKey, newUser) => {
-        let createID = await fetch(url+'/users', {
-            method: "POST",
-            headers: {
-                "apiKey": theAPIKey,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newUser)
-        })
-        .then(() => {
+    else{
+        // Create the JSON
+        var newUser = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            avatar: "placeholder"
+        }
+        // Connect to server
+        var url = 'https://dashdb.herokuapp.com';
+        var theAPIKey = "C@D@123";
+        let fetchData = async (url, theAPIKey, newUser) => {
+            let createID = await fetch(url+'/users', {
+                method: "POST",
+                headers: {
+                    "apiKey": theAPIKey,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newUser)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
             let getID = await fetch(url+'/id', {
                 method: "GET",
                 headers: {
@@ -54,15 +63,10 @@ function signup() {
             }
             else {
                 // Error message as login failed
-                document.getElementById("invalidlogin").innerHTML = "Invalid Login";
-                document.getElementById("email").value = "";
-                document.getElementById("password").value = "";
+                document.getElementById("invalidlogin").innerHTML = "Something went wrong. Sorry for the inconvenience.";
             }
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-        return;
+            return;
+        }
+        fetchData(url, theAPIKey, newUser);
     }
-    fetchData(url, theAPIKey, newUser);
 }
