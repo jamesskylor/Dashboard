@@ -1,22 +1,62 @@
-document.getElementById("theEditButton").addEventListener("click", (e)=>{
+document.getElementById("theSubmitButton").addEventListener("click", (e)=>{
     e.preventDefault();
     submitUpdate();
+    console.log('submitted');
 });
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 function submitUpdate(){
     // Get values
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    if(document.getElementById("launchWeeks").value === "") {
     var newUData = {
-        linkedURL: document.getElementById("linkedinField").value,
-        githubURL: document.getElementById("githubField").value,
-        eduLVL: document.getElementById("educationField").value,
-        expArea: document.getElementById("expertField").value,
-        techFounder: document.querySelector('input[name="technical"]:checked').value,
-        coFounder: document.querySelector('input[name="cofounder"]:checked').value,
-        accomplishments: document.getElementById("accomplishmentField").value,
-        location: document.getElementById("locationField").value,
-        applicationStat: document.getElementById("applicationField").value,
-        publicity: document.querySelector('input[name="publicity"]:checked').value
+        updateDate: date,
+        launch: 0,
+        users: document.getElementById("users").value, 
+        userLearning: document.getElementById("userLearning").value,
+        goals: document.getElementById('goals3').value,
+        improvement: document.getElementById('growth').value,
+        biggestObstacle: document.getElementById("biggestObstacle").value,
+        news: document.getElementById("news").value,
+        morale: document.getElementById("morale").value,
+        
+    } }else {
+     newUData = {
+        updateDate: date,
+        launch: document.getElementById("launchWeeks").value,
+        users: document.getElementById("users").value,
+        userLearning: document.getElementById("userLearning").value,
+        goals: document.getElementById('goals3').value,
+        improvement: document.getElementById('growth').value,
+        biggestObstacle: document.getElementById("biggestObstacle").value,
+        news: document.getElementById("news").value,
+        morale: document.getElementById("morale").value,
+        revenue: document.getElementById("revenue").value,
+        moneyInTheBank: document.getElementById("moneyInTheBank").value,
+        monthlyBurnRate: document.getElementById("monthlyBurnRate").value,
+        productUpdates: document.getElementById("productUpdates").value,
+        marketing: document.getElementById("marketing").value,
+        offersAccepted: document.getElementById("offersAccepted").value,
+        offersDeclined: document.getElementById("offersDeclined").value,
+        offersOustanding: document.getElementById("offersOustanding").value,
+        hiresFires: document.getElementById("hiresFires").value
     }
+    }
+    
     console.log(JSON.stringify(newUData));
     
     var url = 'http://localhost:3002';
@@ -26,7 +66,7 @@ function submitUpdate(){
     let updateData = async (url, newUData) => {
         var idNum = parseInt(getCookie("dashId"));
         
-        let sendUData = await fetch(url+'/userData/'+idNum, {
+        let sendUData = await fetch(url+'/updates/4', {
             method: "POST",
             headers: {
                 "apiKey": theAPIKey,

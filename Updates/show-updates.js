@@ -15,29 +15,29 @@ function getCookie(cname) {
 
 window.addEventListener("load", (e)=>{
     // Get the database values and load them in to the inputs (and the non-input things too)
+    console.log("start");
     loadValues();
 });
 
 function loadValues(){
-    var url = 'https://dashdb.herokuapp.com';
-    var theAPIKey = "C@D@123";
-    let fetchData = async (url, theAPIKey) => {
-        var idString = getCookie("dashId");
-        if(idString == ""){
-            location.assign("../Login/login.html");
-        }
-        var idNum = parseInt(idString);
-        var updateDate = "2017-07-23";
-        let getUpdates = await fetch(url+'/updates/'+idNum + updateDate, {
+    var url = 'http://localhost:3002';
+    var theAPIKey = "notTheRealAPIKey";
+    var dateSubmitted = sessionStorage.getItem('key');
+    // var theAPIKey = "C@D@123";
+    let fetchData = async (url, theAPIKey, dateSubmitted) => {
+        console.log("hello");
+        var idNum = parseInt(getCookie("dashId"));
+        let getUpdates = await fetch(url+'/update/4', {
             method: "GET",
             headers: {
-                "apiKey": theAPIKey
+                "apiKey": theAPIKey,
+                "updateDate": dateSubmitted
             }
         })
         .then((res) => res.json())
         .then((data) => {
-            //console.log(data[0]);
-            loadUpdateData(data[0]);
+            console.log(data);
+            loadUpdates(data[0]);
         })
         .catch((err) => {
             console.log(err);
@@ -45,35 +45,64 @@ function loadValues(){
         
         return;
     }
-    fetchData(url, theAPIKey);
+    console.log("hello2");
+    fetchData(url, theAPIKey, dateSubmitted);
 }
+function launched () {
+                var x= document.getElementById("switch-innertext");
+                if(x.innerHTML ==="Weeks until launch:") {
+                    x.innerHTML = "Congratulations you are launched!";
+                } else {
+                    x.innerHTML = "Weeks until launch:"
+                }
+                var y= document.getElementById("numberWeeks");
+                if(y.style.display ==="none") {
+                    y.style.display = "block";
+                }
+                else {
+                    y.style.display = "none";
+                }
+                var hideThis = document.getElementById("hideThis");
+                if(hideThis.style.display =="block") {
+                    hideThis.style.display = "none";
+                }
+                else{
+                    hideThis.style.display = "block";
+                }
+               
+            }
 
-function loadUser(userJSON){
-    if(document.getElementById("input1").value === 0) {
+function loadUpdates(updatesJSON){
+    if(updatesJSON.launch === "0") {
     document.getElementById("users").value = updatesJSON.users;
-    document.getElementById("userLearning).innerHTML = updatesJSON.userLearning;
-    document.getElementById("goals").innerHTML = updatesJSON.goals;
-    document.getElementById("improvement").innerHTML = updatesJSON.goals;
-    document.getElementById("biggestObstacle").innerHTML = updatesJSON.biggestObstacle;
+    document.getElementById("userLearning").innerHTML = updatesJSON.userlearning;
+    document.getElementById("goals3").innerHTML = updatesJSON.goals;
+    document.getElementById("growth").defaultValue = updatesJSON.improvement;
+    document.getElementById("biggestObstacle").innerHTML = updatesJSON.biggestobstacle;
     document.getElementById("news").innerHTML = updatesJSON.news;
     document.getElementById("morale").value = updatesJSON.morale;
-    document.getElementById("expenses").value = updatesJSON.expenses;
-    document.getElementById("revenue").value = updatesJSON.moneyInTheBank;
-    document.getElementById("productUpdates").innerHTML = updatesJSON.productUpdates;
-    document.getElementById("marketing").innerHTML = updatesJSON.marketing;
-    document.getElementById("offersAccepted").value = updatesJSON.offersAccepted;
-    document.getElementById("offersDeclined").value = updatesJSON.offersDeclined;
-    document.getElementById("hiresFires").value = updatesJSON.hiresFires;
+    document.getElementById("revenue").value = updatesJSON.moneyinthebank;
+    document.getElementById("monthlyBurnRate").value = updatesJSON.monthlyburnrate;
+    document.getElementById("productUpdates").value = updatesJSON.productupdates;
+    document.getElementById("marketing").defaultValue = updatesJSON.marketing;
+    document.getElementById("offersAccepted").value = updatesJSON.offersaccepted;
+    document.getElementById("offersDeclined").value = updatesJSON.offersdeclined;
+    document.getElementById("hiresFires").defaultValue = updatesJSON.hiresfires;
+    launched();
     } else {
-    document.getElementById("input1").value = updatesJSON.launch;
+    document.getElementById("launchWeeks").value = updatesJSON.launch;
+    console.log(updatesJSON.launch);
+    console.log(updatesJSON);
     document.getElementById("users").value = updatesJSON.users;
-    document.getElementById("userLearning).innerHTML = updatesJSON.userLearning;
-    document.getElementById("goals").innerHTML = updatesJSON.goals;
-    document.getElementById("improvement").innerHTML = updatesJSON.goals;
-    document.getElementById("biggestObstacle").innerHTML = updatesJSON.biggestObstacle;
-    document.getElementById("news").innerHTML = updatesJSON.news;
+    document.getElementById("userLearning").value = updatesJSON.userlearning;
+    document.getElementById("goals").value = updatesJSON.goals;
+    document.getElementById("improvement").value = updatesJSON.goals;
+    document.getElementById("biggestObstacle").value = updatesJSON.biggestobstacle;
+    document.getElementById("news").value = updatesJSON.news;
     document.getElementById("morale").value = updatesJSON.morale;
 }
    
 }
+
+
 
