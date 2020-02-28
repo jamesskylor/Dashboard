@@ -8,20 +8,18 @@
         
         
         <title>
-            Login | Founder School
+            Create Account | Founder School
         </title>
         <style>
             *{
                 padding: 0;
                 margin: 0;
-                /*overflow-x: hidden;
-                overflow-y: hidden;*/
             }
             body {
                 overflow-x: hidden;
             }
             #theBackground {
-                height: 90vh;
+                height: 120vh;
                 width: 100vw;
                 padding-top: 10vh;
                 align-content: center;
@@ -61,7 +59,7 @@
                 height: 3vw;
                 font-size: 1vw;
                 margin-top: 1vw;
-                margin-bottom: 1.5vw;
+                margin-bottom: 2.2vw;
                 font-family: 'Raleway', sans-serif;
                 overflow-y: hidden;
                 background-color: #e0e0e0;
@@ -107,23 +105,10 @@
                 color: red;
                 font-size: 1.5vw;
             }
-            #createAccount {
+            #login {
                 font-family: 'Lustria', serif;
                 text-decoration: none;
                 color: black;
-                line-height: 1;
-                padding-bottom: -10vw;
-            }
-            a {
-                display: block;
-                margin-top: 1vw;
-                font-size: 1vw;
-            }
-            span.blue {
-                color: #0000ee;
-            }
-            span.blue:hover {
-                text-decoration: underline;
             }
         </style>
     </head>
@@ -133,9 +118,15 @@
             <div id="theBox" class="shadow">
                 <div id="theContent">
                     <h1>
-                        Account Login
+                        Sign Up
                     </h1>
                     <form id="theForm">
+                        <div>
+                            <h2>
+                                Name:
+                            </h2>
+                            <input type="text" id="name" placeholder="Name" class="textfield">
+                        </div>
                         <div>
                             <h2>
                                 Email:
@@ -150,19 +141,23 @@
                             <input type="password" id="password" placeholder="Password" class="textfield">
                             <br>
                         </div>
+                        <div>
+                            <h2>
+                                Confirm Password:
+                            </h2>
+                            <input type="password" id="confirm" placeholder="Password" class="textfield">
+                            <br>
+                        </div>
                         <div id="invalidlogin">
                             
                         </div>
-                        <input type="submit" id="submit" value="Login">
+                        <input type="submit" id="submit" value="Sign Up">
                     </form>
                     <br>
-                    <a id="createAccount" href="createAccount.html">
-                        Don't have an account? <span class="blue">Sign up here</span>
-                    </a>
                 </div>
             </div>
         </div>
-        <script src="login.js"></script>
+        <script src="createAccount.js"></script>
     </body>
     
 </html>

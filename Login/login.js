@@ -1,4 +1,4 @@
-document.getElementById("submit").addEventListener("click", (e) => {
+document.getElementById("theForm").addEventListener("submit", (e) => {
     e.preventDefault();
     login();
 });
@@ -13,9 +13,8 @@ function setCookie(cname, cvalue, exdays) {
 function login() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url, theAPIKey, email, password) => {
         let getID = await fetch(url+'/id', {
             method: "GET",
@@ -29,18 +28,18 @@ function login() {
             console.log(err);
         });
         let tempIdNum = await getID.json();
-        if() { // Check if login passed
+        if(tempIdNum[0].hasOwnProperty("id")) { // Check if login passed
             let idNum = tempIdNum[0].id;
 
-            // put id into cookie that expires (or not if remember me is selected)
+            // put id into cookie that expires in a day
             setCookie("dashId", idNum, 1);
-
             location.assign("../Homepage/dashboard-index.html"); // Not sure if this is the right address
         }
         else {
             // Error message as login failed
-            
-            
+            document.getElementById("invalidlogin").innerHTML = "Invalid Login";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
         }
         
         return;

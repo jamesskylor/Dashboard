@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            My Profile | _____
+            My Profile | Founder School
         </title>
         <style>
             .sidebar {
@@ -131,6 +131,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -201,16 +203,17 @@
                 margin-left: 10%;
                 margin-top: 3%;
                 border: none;
-                background-color: #3d3d3d;
+                background-color: #000000;
                 width: 5vw;
                 height: 3vw;
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
-                color: #cccccc;
+                color: #ffffff;
                 margin-bottom: 3%;
+                font-weight: bold;
             }
             button.editButton:hover {
-                background-color: #616161;
+                background-color: #4d4d4d;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
             }
@@ -224,11 +227,11 @@
                 padding-right: 2vw;
             }
             td.title {
-                width: 15vw;
+                width: 25vh;
                 font-weight: bold;
             }
             td.data {
-                width: 30vw;
+                width: 60vh;
             }
             input.editBox {
                 width: 100%;
@@ -278,7 +281,6 @@
                 overflow: hidden;
                 border-radius: 50%;
                 position: relative;
-                background-image: url("https://g.foolcdn.com/editorial/images/539491/getty-stock-market-success.jpg");
                 background-size: cover;
                 background-position: center;
             }
@@ -286,18 +288,74 @@
                 margin-left: 10%;
                 margin-top: 3%;
                 border: none;
-                background-color: #3d3d3d;
+                background-color: #000000;
                 width: 5vw;
                 height: 3vw;
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
-                color: #cccccc;
+                color: #ffffff;
                 margin-bottom: 3%;
+                font-weight: bold;
             }
             #theSaveButton:hover {
-                background-color: #616161;
+                background-color: #4d4d4d;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
+            }
+            #saved {
+                font-family: 'Lustria', serif;
+                padding-left: 10vw;
+                opacity: 0;
+            }
+            .fade-out {
+                animation: fadeOut ease-in 3s;
+                -webkit-animation: fadeOut ease-in 3s;
+                -moz-animation: fadeOut ease-in 3s;
+                -o-animation: fadeOut ease-in 3s;
+                -ms-animation: fadeOut ease-in 3s;
+            }
+            @keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-moz-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-webkit-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-o-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
+                }
+            }
+
+            @-ms-keyframes fadeOut {
+                0% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:0;
             }
         </style>
         
@@ -309,7 +367,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -337,12 +395,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -374,11 +432,6 @@
                                         Company
                                 </a>
                             </td>
-                            <td class="selection">
-                                <a href="myCoFounders.html" class="myLink">
-                                        Co-Founders
-                                </a>
-                            </td>
                         </tr>
                     </table>
                 </nav>
@@ -390,7 +443,7 @@
                             My Profile
                         </h1>
                         <h2>
-                            Placeholder Name Account
+                            Founder School Account
                         </h2>
                         <table class="infoList">
                             <tr>
@@ -398,7 +451,7 @@
                                     Name:
                                 </td>
                                 <td class="infoList data" id="nameField">
-                                    Placeholder Name
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -406,15 +459,7 @@
                                     Email:
                                 </td>
                                 <td class="infoList" id="emailField">
-                                    Placeholder Email
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="infoList title">
-                                    Password:
-                                </td>
-                                <td class="infoList" id="passwordField">
-                                    Placeholder number of asterisks
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -448,7 +493,7 @@
                                         GitHub:
                                     </td>
                                     <td class="infoList">
-                                        <input type="url" placeholder="Placeholder URL" class="editBox" id="githubField" maxlength="128">
+                                        <input type="url" placeholder="Please copy and paste in your Github Profile Page URL" class="editBox" id="githubField" maxlength="128">
                                     </td>
                                 </tr>
                                 <tr>
@@ -459,8 +504,9 @@
                                         <select class="editBox" id="educationField" required>
                                             <option value="" disabled selected>Select an Option</option>
                                             <option value="HS">High School Diploma</option>
-                                            <option value="Undergrad">Undergraduate Degree</option>
-                                            <option value="Grad">Graduate Degree</option>
+                                            <option value="someU">Some University</option>
+                                            <option value="bach">Bachelors Degree</option>
+                                            <option value="grad">Masters Degree</option>
                                             <option value="PhD">PhD</option>
                                         </select>
                                     </td>
@@ -472,7 +518,13 @@
                                     <td class="infoList">
                                         <select class="editBox" id="expertField" required>
                                             <option value="" disabled selected>Select an Option</option>
-                                            <option value="idk">TemporaryPlaceholder</option>
+                                            <option value="operations">Business Operations</option>
+                                            <option value="data">Data</option>
+                                            <option value="design">Design</option>
+                                            <option value="engineering">Engineering</option>
+                                            <option value="growth">Growth</option>
+                                            <option value="product">Product</option>
+                                            <option value="sales">Sales</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -503,7 +555,7 @@
                                         Most Impressive Accomplishment:
                                     </td>
                                     <td class="infoList">
-                                        <textarea class="editBox" id="accomplishmentField" placeholder="Placeholder Text" maxlength="1024" required></textarea>
+                                        <textarea class="editBox" id="accomplishmentField" placeholder="Please tell us about your most impressive accomplishments..." maxlength="1024" required></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -511,34 +563,15 @@
                                         Location:
                                     </td>
                                     <td class="infoList">
-                                        <input type="text" placeholder="Placeholder Value" class="editBox" id="locationField" maxlength="128" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Application Status:
-                                    </td>
-                                    <td class="infoList">
-                                        <select class="editBox" id="applicationField" required>
-                                            <option value="" disabled selected>Select an Option</option>
-                                            <option value="applied">Applied</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Profile:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="radio" id="pubY" name="publicity" value="Y" class="Priv" required>
-                                        <label>Public</label>
-                                        <input type="radio" id="pubN" name="publicity" value="N" class="Priv">
-                                        <label>Private</label>
+                                        <input type="text" placeholder="Where are you based?" class="editBox" id="locationField" maxlength="128" required>
                                     </td>
                                 </tr>
                             </table>
                             <input type="submit" class="editButton" id="theSaveButton" value="Save">
                         </form>
+                        <div id="saved">
+                            Saved!
+                        </div>
                         <script src="js/profile.js"></script>
                     </div>
                 </div>
@@ -592,21 +625,12 @@
         </footer>
         
         
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         

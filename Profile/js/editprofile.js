@@ -30,12 +30,14 @@ function getCookie(cname) {
 
 function loadValues(){
     
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
-    sessionStorage.setItem('dashdbemail', 'jason@temporary.placeholder');
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
-        var idNum = parseInt(getCookie("dashId"));
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
         
         let getUsers = await fetch(url+'/users/'+idNum, {
             method: "GET",
@@ -60,7 +62,7 @@ function loadValues(){
 function loadUser(userJSON) {
     document.getElementById("perNameField").value = userJSON.name;
     document.getElementById("perEmailField").value = userJSON.email;
-    document.getElementById("theAvatar").src = userJSON.avatar;
+    document.getElementById("theAvatar").style.backgroundImage = userJSON.avatar;
 }
 
 function saveTheProfile(){
@@ -68,17 +70,16 @@ function saveTheProfile(){
     var newData = {
         name: document.getElementById("perNameField").value,
         email: document.getElementById("perEmailField").value,
-        avatar: document.getElementById("theAvatar").style.backgroundImage // Check if it's in the format of just the url or url(theURL), also deal with how we are going to stor this
+        avatar: document.getElementById("theAvatar").style.backgroundImage
     }
     console.log(JSON.stringify(newData));
     var passwrd = document.getElementById("perPasswordField").value;
     var checkPass = document.getElementById("perConfirmField").value;
     // Check their validity
-    if(passwrd == checkPass){
+    if(passwrd == checkPass && passwrd.length > 6 && passwrd.length < 50){
         // If valid
-        var url = 'http://localhost:3002';
-        var theAPIKey = "notTheRealAPIKey";
-        // var theAPIKey = "C@D@123";
+        var url = 'https://dashdb.herokuapp.com';
+        var theAPIKey = "C@D@123";
         
         if(passwrd != ""){
             var newPass = {
@@ -86,7 +87,11 @@ function saveTheProfile(){
             }
             // Send the new password, since it's not blank
             let updatePass = async(url, newPass) => {
-                var idNum = parseInt(getCookie("dashId"));
+                var idString = getCookie("dashId");
+                if(idString == ""){
+                    location.assign("../Login/login.html");
+                }
+                var idNum = parseInt(idString);
                 
                 let sendPass = await fetch(url+"/users/pass/"+idNum, {
                     method: "PUT",
@@ -105,7 +110,11 @@ function saveTheProfile(){
         }
         
         let updateData = async (url, newData) => {
-            var idNum = parseInt(getCookie("dashId"));
+            var idString = getCookie("dashId");
+            if(idString == ""){
+                location.assign("../Login/login.html");
+            }
+            var idNum = parseInt(idString);
 
             let sendData = await fetch(url+'/users/cont/'+idNum, {
                 method: "PUT",
@@ -142,9 +151,37 @@ function saveTheProfile(){
     }
 }
 
-function updateAvatar(){ // Change this accordingly with what our database ends up being *************************************************************************
+function updateAvatar(){
     // Take in the file
-    var theImgFile = document.getElementById("theFileInput").files[0];
-    // Change the src of "theAvatar" to the new image
-    document.getElementById("theAvatar").style.backgroundImage = "url("+URL.createObjectURL(theImgFile)+")";
+    var fileInput = document.getElementById("theFileInput").files[0];
+    var canvas = document.createElement("CANVAS");
+    
+    var tempImg = new Image();
+    var theImgFile;
+    tempImg.onload = () => {
+        var endWidth = 100;
+        var endHeight = 100;
+        var xcoord = 0;
+        var ycoord = 0;
+        if(tempImg.width > tempImg.height) {
+            var temp = tempImg.height / 100.0;
+            endWidth = tempImg.width / temp;
+            endHeight = 100;
+            xcoord = -1*(endWidth - 100)/2;
+            ycoord = 0;
+        }
+        else {
+            var temp = tempImg.width / 100.0;
+            endWidth = 100;
+            endHeight = tempImg.height / temp;
+            xcoord = 0;
+            ycoord = -1*(endHeight - 100)/2;
+        }
+        canvas.width = 100;
+        canvas.height = 100;
+        canvas.getContext("2d").drawImage(tempImg, xcoord, ycoord, endWidth, endHeight);
+        theImgFile = "url("+canvas.toDataURL()+")";
+        document.getElementById("theAvatar").style.backgroundImage = theImgFile;
+    }
+    tempImg.src = URL.createObjectURL(fileInput);
 }

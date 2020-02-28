@@ -24,12 +24,14 @@ function getCookie(cname) {
 }
 
 function loadValues() {
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url) => {
-        var idNum = parseInt(getCookie("dashId"));
-        //console.log("id: "+idNum);
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
         
         let getUsers = await fetch(url+'/companyData/'+idNum, {
             method: "GET",
@@ -40,6 +42,7 @@ function loadValues() {
         .then((res) => res.json())
         .then((data) => {
             //console.log(data[0]);
+            sessionStorage.setItem("companyRows", data.length);
             loadCompany(data[0]);
         })
         .catch((err) => {
@@ -62,11 +65,14 @@ function loadCompany(companyJSON) {
     document.getElementById("compProgField").value = companyJSON.progress;
     document.getElementById("compProg2Field").value = companyJSON.progressplus;
     document.getElementById("inc"+companyJSON.incorporated).checked = true;
-    document.getElementById("compPub"+companyJSON.publicity).checked = true;
 }
 
 function saveInfo(){
     // Take in the values
+    var theMethod = "PUT";
+    if(sessionStorage.getItem("companyRows") == 0) {
+        theMethod = "POST";
+    }
     var newCData = {
         name: document.getElementById("compNameField").value,
         site: document.getElementById("compSiteField").value,
@@ -77,20 +83,22 @@ function saveInfo(){
         fulltime: document.getElementById("compTimeField").value.replace('fullTime', ''),
         progress: document.getElementById("compProgField").value,
         progressPlus: document.getElementById("compProg2Field").value,
-        incorporated: document.querySelector('input[name="compInc"]:checked').value,
-        publicity: document.querySelector('input[name="compPublicity"]:checked').value
+        incorporated: document.querySelector('input[name="compInc"]:checked').value
     }
     console.log(JSON.stringify(newCData));
     
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     
     let updateData = async (url, newCData) => {
-        var idNum = parseInt(getCookie("dashId"));
+        var idString = getCookie("dashId");
+        if(idString == ""){
+            location.assign("../Login/login.html");
+        }
+        var idNum = parseInt(idString);
         
         let sendCData = await fetch(url+'/companyData/'+idNum, {
-            method: "PUT",
+            method: theMethod,
             headers: {
                 "apiKey": theAPIKey,
                 "Content-Type": "application/json"
@@ -103,4 +111,10 @@ function saveInfo(){
     }
     
     updateData(url, newCData);
+    
+    var responsiveText = document.getElementById("saved");
+    if(responsiveText.classList.contains("fade-out")){
+        responsiveText.classList.remove("fade-out");
+    }
+    responsiveText.classList.add("fade-out");
 }

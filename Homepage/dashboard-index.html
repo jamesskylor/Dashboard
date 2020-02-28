@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            Dashboard | _____
+            Dashboard | Founder School
         </title>
         <style> 
             html, body {
@@ -89,7 +89,7 @@
             .material-icons.md-40 {
                 padding-bottom: 0.2vw;
                 margin-right: 3.5vw;
-                font-size: 2.5vw; 
+                font-size: 2.5vw;
             }
             .material-icons.inSquares {
                 padding-top: 6vh;
@@ -140,6 +140,8 @@
             }
             td .innerContent {
                 margin: 5%;
+                margin-top: 1vw;
+                align-content: center;
                 font-family: 'Lustria', serif;
                 color: #000000;
                 text-align: center;
@@ -239,7 +241,7 @@
                 color: #ffffff;
                 border: none;
                 height: 2.3vw;
-                width: 7.4vw;
+                width: auto;
                 margin-left: 5vw;
                 font-weight: bold;
             }
@@ -249,6 +251,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -260,6 +264,12 @@
             #titleContent {
                 padding-left: 5vw;
             }
+            span.blue {
+                color: #0000ee;
+            }
+            span.blue:hover {
+                text-decoration: underline;
+            }
         </style>
     </head>
     
@@ -268,7 +278,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -296,12 +306,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -318,12 +328,12 @@
                         Welcome!
                     </h1> 
                     <p>
-                        Here you can find all the resources available for Placeholder_Name members.
+                        Here you can find all the resources available for Founder School members.
                         <br>
                         <br>
                     </p>
-                    <a href="" style="text-decoration: none; color: #000000; font-family: 'Lustria', serif; padding-left: 3vw">
-                        How can we help?
+                    <a href="mailto:skylor@jamesskylor.com" style="text-decoration: none; color: #000000; font-family: 'Lustria', serif; padding-left: 3vw">
+                        Please let us know <span class="blue">how we can help you</span>
                     </a>
                 </div>
                 <div class="pop">
@@ -362,9 +372,6 @@
                                     <h3>
                                         Profile
                                     </h3>
-                                    <p>
-                                        Update your profile
-                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -377,9 +384,6 @@
                                     <h3>
                                         My Updates
                                     </h3>
-                                    <p>
-                                        Track the health of your startup
-                                    </p>
                                 </div>
                             </a>
                         </div> 
@@ -392,9 +396,6 @@
                                     <h3>
                                         Lessons
                                     </h3>
-                                    <p>
-                                        View lessons curated by Placeholder Name
-                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -409,39 +410,30 @@
                                     <h3>
                                         Group Sessions
                                     </h3>
-                                    <p>
-                                       Chat with peers and mentors 
-                                    </p>
                                 </div>
                             </a>
                         </div>
                     </td>
                     <td id="DealsBox">
                         <div class="inside">
-                            <a href="">
+                            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                                 <div class="innerContent">
                                     <i class="material-icons inSquares">local_offer</i>
                                     <h3>
                                         Deals
                                     </h3>
-                                    <p>
-                                        Boost your productivity with discounted tools
-                                    </p>
                                 </div>
                             </a>
                         </div>
                     </td>
                     <td id="HelpBox">
                         <div class="inside">
-                            <a href="mailto:">
+                            <a href="mailto:skylor@jamesskylor.com">
                                 <div class="innerContent">
                                     <i class="material-icons inSquares">help_outline</i>
                                     <h3>
                                         Help
                                     </h3>
-                                    <p>
-                                        Something wrong? Contact us
-                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -491,21 +483,12 @@
                     </div>
             </div></footer>
        
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
     </body>

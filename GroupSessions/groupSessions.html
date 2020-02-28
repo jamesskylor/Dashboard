@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            Group Sessions | _____
+            Group Sessions | Founder School
         </title>
         <style>
             .sidebar {
@@ -130,6 +130,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -181,7 +183,7 @@
                 font-size: 300%;
                 white-space: nowrap;
                 padding-left: 5%;
-                font-size: 4vw;
+                font-size: 3vw;
             }
             h2 {
                 font-family: 'Lustria', serif;
@@ -200,7 +202,30 @@
                 height: 18vw;
                 border: none;
             }
-            
+            #theForm {
+                margin: auto;
+                font-size: 2vw;
+                width: 50vw;
+                margin-top: 20vh;
+            }
+            #getMatched {
+                margin-left: 21.5vw;
+                margin-top: 5vh;
+                width: 7vw;
+                border-radius: 0.5vh;
+                padding-top: 1vh;
+                padding-bottom: 1vh;
+                border: none;
+                background-color: white;
+                border: 1px solid black;
+                color: black;
+                font-size: 2vw;
+                font-family: 'Lustria', serif;
+                font-weight: bold;
+            }
+            #getMatched:hover {
+                background-color: #fffbf7;
+            }
             
             
             
@@ -215,7 +240,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -243,12 +268,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -265,8 +290,13 @@
                 Group Sessions
             </h1>
             
-            
-            
+            <form id="theForm">
+                <p>
+                    Do you want to be matched into a group session?
+                </p>
+                <input type="submit" id="getMatched" value="Yes">
+            </form>
+            <script src="js/groupSessions.js"></script>
         </div>
         
         
@@ -312,21 +342,12 @@
         </footer>
         
         
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         

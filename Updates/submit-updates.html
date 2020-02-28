@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
         <title>
-            Submit Update | _____
+            My Updates | Founder School
         </title>
         <style>
             .sidebar {
@@ -131,6 +131,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -272,7 +274,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -300,12 +302,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -327,7 +329,7 @@
             <div class="table">
                 <table id="parent">
                     <tr> 
-                        <th> <h1> Updates history </h1></th>
+                        <th> Updates history</th>
                     </tr>
                     <tr> 
                         <td>
@@ -384,66 +386,95 @@
         </footer>
         
         
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         <script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'radar',
-    data: {
-        labels: ['Number of Users', 'Weeks until launch', 'Morale', 'Revenue', 'Margins', 'Monthly Users', 'Expenses'],
-        datasets: [{
-            data: [],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Number of Users', 'Weeks until launch', 'Morale', 'Revenue', 'Margins', 'Monthly Users', 'Expenses'],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
                 }
-            }]
-        }
-    }
-});
-</script>
-
-
+            });
+        </script>
         
-    
     </body>
-<script src="my-updates.js"> </script>
+    <script> 
+        function updateHistory ()  {
+        // function used to print the update history.
+            var tabel = document.createElement("TABLE");
+            tabel.className= "parentTable";
+            var parentTable = document.getElementById("parent");
+            var currentRow = document.createElement("TR");
+            var currentRow2 = document.createElement("TR");
+            currentRow2.className = "currentRow2";
+            tabel.appendChild(currentRow);
+            var currentCell = document.createElement("TD");
+            currentCell.className="currentCell";
+            var currentCell2 = document.createElement("TD");
+            currentCell2.className="currentCell";
+            var tableHeader  = document.createElement("A");
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var link = document.createTextNode(date); // placeholder for the actual date
+            tableHeader.appendChild(link);
+            tableHeader.title=date;
+            tableHeader.href = ("/Dashboard/Updates/my-updates.html");
+            tableHeader.className ="tableHeader";
+            var paragraph = document.createElement("P");
+            paragraph.className="paragraph";
+            var paragraph2 = document.createElement("P");
+            paragraph2.className="paragraph2";
+            paragraph.innerHTML = "number of Users: 1000.";
+            paragraph2.innerHTML = "Margins: 1000";
+            var tableContainer = document.createElement("DIV");
+            tableContainer.className = "tableContainer";
+            currentRow.appendChild(tableHeader);
+            currentCell.appendChild(paragraph);
+            currentCell2.appendChild(paragraph2);
+            currentRow2.appendChild(currentCell);
+            currentRow2.appendChild(currentCell2);
+            tableContainer.appendChild(currentRow2);
+            tabel.appendChild(tableContainer);
+            parentTable.appendChild(tabel);
+
+        }
+        updateHistory();
+    </script>
     
 </html>

@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            Submit Updates | _____
+            My Updates: <span id="replaceTitleDate"></span> | Founder School
         </title>
         <style>
             .sidebar {
@@ -130,6 +130,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -205,7 +207,7 @@
                 display: flex;
                 flex-direction: column;
                 width: 50vw;
-                margin-top: 5vw;
+                margin-top: 2vw;
             }
             #last {
                 margin-bottom: 10vw;    
@@ -244,12 +246,11 @@
                 flex-grow: 1;
                 height: 2vw;
                 background-color:#FFFFFF;
-                margin-bottom: 1vw;
                 }
             .item-text {
                 margin-left: 1vw;
                 color: #000000;
-                font-size: 1.7vw;
+                font-size: 1.5vw;
                 font-family: 'Lustria';
             }
             .item2 {
@@ -379,7 +380,7 @@
                 
             }
             h1 {
-                font-size: 2.5vw;
+                font-size: 2.3vw;
                 margin-left: 15.55vw;
                 margin-bottom: 3.2vw;
             }
@@ -437,7 +438,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -465,12 +466,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -774,21 +775,12 @@
                
             }
         </script>
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 7vw from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 7vw from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         
