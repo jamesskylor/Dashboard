@@ -13,4 +13,5 @@ Tasks:
     - Remove todo.txt
 - Create Logo
 - Test updates
+    - Fix the missing parts of updates
 - Transfer heroku to skylor
