@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            Submit Updates | _____
+            Submit Updates | Founder School
         </title>
         <style>
             .sidebar {
@@ -130,6 +130,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -265,22 +267,17 @@
                 padding: 0px;
                 background-color: white;
             }
-            #launchWeeks {
+            #input1 {
             margin-left: 11.5vw;
             height: 1.5vw;
             width: 20vw;
             }
-            #users {
+            #input2 {
             margin-left: 2vw;
             height: 2vw;
             width: 20vw;
             }
-            #userLearning {
-            margin-left: 2vw;
-            height: 2vw;
-            width: 20vw;
-            }
-            #growth {
+            #input3 {
                 margin-left: 2vw;
                 width: 20vw;
                 height: 10vw;
@@ -288,7 +285,7 @@
                 overflow: auto;
                 overflow-x: hidden;
             }
-            #goals3 {
+            #input4 {
                 margin-left: 2vw;
                 width: 45vw;
                 height: 7vw;
@@ -401,32 +398,6 @@
             p.ptitle {
                 margin-left: 2vw;
             }
-            #theSubmitButton:hover {
-                background-color: #616161;
-                /*background-color: #ee252d;
-                color: #ffffff;*/
-            }
-            button.editButton {
-                margin-left: 10%;
-                margin-top: 3%;
-                border: none;
-                background-color: #3d3d3d;
-                width: 5vw;
-                height: 3vw;
-                font-size: 1.5vw;
-                font-family: 'Lustria', serif;
-                color: #cccccc;
-                margin-bottom: 3%;
-            }
-            button.editButton:hover {
-                background-color: #616161;
-                /*background-color: #ee252d;
-                color: #ffffff;*/
-            }
-            .submitButton {
-                margin-left: 30vw;
-                margin-bottom: 5vw;
-            }
         </style>
         
         
@@ -437,7 +408,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -465,12 +436,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -496,7 +467,7 @@
                 <div class="item" id="switch-text"><p id="switch-innertext">Weeks until launch:</p>
                         <div id="numberWeeks">
                             <form> 
-                                <input type="text" id="launchWeeks">
+                                <input type="text" id="input1">
                             </form>
                         </div>
                 </div>
@@ -507,13 +478,13 @@
             <div class="inner-container2">
                 <div class="item"> <p id="improvement">Users/Perspective users talked to this week?</p>
                     <form>
-                        <input type="type" id="users" maxlength="10">
+                        <input type="type" id="input2" maxlength="10">
                     </form>
                 </div>
                 <div class="item"><p id ="improvement">What have you learned from them?</p>
                     <div>
                         <form> 
-                            <input type="text" id="userLearning">
+                            <input type="text" id="input2">
                         </form>
                     </div>
                 </div>
@@ -524,21 +495,21 @@
             <div class="inner-container1" id="goals1" style="height: 37vw;">
                 <div class="item2"> <p>What are your top 1-3 goals for the next week?</p>
                     <form>
-                        <textarea type="type" wrap="soft" maxlength="800" id="goals3"></textarea>
+                        <textarea type="type" wrap="soft" maxlength="800" id="input4"></textarea>
                     </form>
                 </div>
                 <div class="inner-inner-container" id="goals" style="margin-bottom: -4vw;">
                     <div class="item3"><p id="improvement">What is your weekly growth rate?</p>
                         <div>
                             <form> 
-                                <textarea type="text" wrap="soft" maxlength="800" id="growth"></textarea>
+                                <textarea type="text" wrap="soft" maxlength="800" id="input3"></textarea>
                             </form>
                         </div>
                     </div>
                     <div class="item3"><p id="improvement">News of the week</p>
                         <div>
                             <form> 
-                                <textarea type="text" wrap="soft" id="news" maxlength="800"></textarea> 
+                                <textarea type="text" wrap="soft" id="input3" maxlength="800"></textarea> 
                             </form>
                         </div>
                     </div>
@@ -548,7 +519,7 @@
                         Biggest Obstacle?
                     </p>
                     <form>
-                        <textarea type="type" wrap="soft" maxlength="800" class="textField" id="biggestObstacle"></textarea>
+                        <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
                     </form>
                 </div>
             </div>
@@ -566,7 +537,7 @@
                         Money in the Bank
                     </p>
                     <form>
-                        <input type="number" class="numberField" id="moneyInTheBank">
+                        <input type="number" class="numberField">
                     </form>
                 </div>
                 <div class="item">
@@ -574,7 +545,7 @@
                         Revenue (MRR)
                     </p>
                     <form>
-                        <input type="number" class="numberField" id="revenue">
+                        <input type="number" class="numberField">
                     </form>
                 </div>
                 <div class="item">
@@ -582,7 +553,7 @@
                         Monthly Burn Rate
                     </p>
                     <form>
-                        <input type="number" class="numberField" id="monthlyBurnRate">
+                        <input type="number" class="numberField">
                     </form>
                 </div>
             </div>
@@ -599,7 +570,7 @@
                         <p>
                             Please tell us about any updates to your product
                         </p>
-                        <textarea type="type" wrap="soft" maxlength="800" class="textField" id="productUpdates"></textarea>
+                        <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
                     </div>
                 </div>
             </div>
@@ -615,7 +586,7 @@
                     <p>
                         Please update us on your marketing activities (sales, traffic, conversions rates, press, new partnerships, etc.)
                     </p>
-                    <textarea type="type" wrap="soft" maxlength="800" class="textField" id="marketing"></textarea>
+                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
                 </div>
             </div>
         </div>
@@ -632,7 +603,7 @@
                             Offers Accepted
                         </p>
                         <form>
-                            <input type="number" class="numberField" id=offersAccepted>
+                            <input type="number" class="numberField">
                         </form>
                     </div>
                     <div class="item">
@@ -640,7 +611,7 @@
                             Offers Declined
                         </p>
                         <form>
-                            <input type="number" class="numberField" id="offersDeclined">
+                            <input type="number" class="numberField">
                         </form>
                     </div>
                     <div class="item">
@@ -648,7 +619,7 @@
                             Offers Outstanding
                         </p>
                         <form>
-                            <input type="number" class="numberField" id="offersOustanding">
+                            <input type="number" class="numberField">
                         </form>
                     </div>
                 </div>
@@ -656,7 +627,7 @@
                     <p>
                         Major Hires/Fires
                     </p>
-                    <textarea type="type" wrap="soft" maxlength="800" class="textField" id="hiresFires"></textarea>
+                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
                 </div>
             </div>
         </div>
@@ -666,7 +637,7 @@
             <div class="inner-container" id="moraleQuestion">
                 <div class="item"> <p id="scale">On a scale of 1-10, what is your morale?</p>
                     <form>
-                        <select class="morale" id="morale" style="width:45vw">
+                        <select class="morale" style="width:45vw">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -702,12 +673,10 @@
                     <p>
                         What do you need? How can we help you?
                     </p>
-                    <textarea type="type" wrap="soft" maxlength="800" class="textField" id="support"></textarea>
+                    <textarea type="type" wrap="soft" maxlength="800" class="textField"></textarea>
                 </div>
             </div>
     </div>
-    <div class="submitButton"> 
-    <input type="submit" class="editButton" id="theSubmitButton" value="Submit"></div>
 </div>
         <footer class ="footer"> 
             <div class ="linkWrapper">
@@ -774,26 +743,17 @@
                
             }
         </script>
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 7vw from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 7vw from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         
         
     </body>
-    <script src="my-updates.js"></script>
+<script src="my-updates.js"></script>
     
 </html>

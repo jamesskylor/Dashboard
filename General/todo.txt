@@ -10,8 +10,6 @@ Tasks:
         - About (None)
         - Privacy Policy (None)
         - FAQ (None)
-    - Remove /Application
-    - Remove /Lessons
     - Remove todo.txt
 - Create Logo
 - Test updates
