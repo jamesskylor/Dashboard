@@ -1,7 +1,6 @@
 Tasks:
 - Do the Application Page
 - Clean site of redundant pages and code
-    - Change Footers to Founder School
     - Fix links on index/homepage and sidebar:
         - Lessons: (Lessons Webflow)
     - Fix the Footers w/ their links
