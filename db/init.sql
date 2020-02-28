@@ -35,7 +35,7 @@ CREATE TABLE companyData (
     publicity CHAR NOT NULL
 );
 
-CREATE TABLE weeklyUpdates (
+CREATE TABLE updates (
     id INT NOT NULL,
     updateDate TEXT,
     launch INT,
@@ -58,11 +58,9 @@ CREATE TABLE weeklyUpdates (
     support TEXT                 
 );
 
-INSERT INTO updates (id,updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale, expenses,revenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires)
-VALUES ('1','2017-07-23', '1','100', 'What to focus on as a compnay', 'Learng more about users', 'grow start-up', 'Finding Users', 'talked to potential LPS', '10', '2000.50', '100','10', '50', 'product doing well', 'Got pres from major news outlets', '10', '20', '5', 'Hired Great senior executive of marketing fired old vp');
-
-INSERT INTO weeklyUpdates (id,updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale,revenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires, support)
+INSERT INTO updates (id,updateDate, launch, users, userLearning, goals, improvement, biggestObstacle, news, morale,revenue, moneyInTheBank, monthlyBurnRate, productUpdates, marketing, offersAccepted, offersDeclined, offersOutstanding, hiresFires, support)
 VALUES ('1','2017-07-24', '1','100', 'learning', 'Learng more about users', 'grow start-up', 'Finding Users', 'talked to potential LPS', '10', '2000.50', '100','10',  'product doing well', 'Got pres from major news outlets', '10', '20', '5', 'Hired Great senior executive of marketing fired old vp', 'need help');
+
 INSERT INTO users (name, email, passwordhash, avatar)
 VALUES ('Jason X', 'jason@temporary.placeholder', 'thisIsTheOnlyUnhashedPassword', 'http://www.doesntexist.com');
 
