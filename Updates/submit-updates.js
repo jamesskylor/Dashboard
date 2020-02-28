@@ -1,7 +1,6 @@
 document.getElementById("theSubmitButton").addEventListener("click", (e)=>{
     e.preventDefault();
     submitUpdate();
-    console.log('submitted');
 });
 function getCookie(cname) {
     var name = cname + "=";
