@@ -4,7 +4,6 @@ Jackie:
 
 Jason (organize thoughts):
 - Clean site of redundant pages and code
-    - Replace all 'Placeholder_Name's
     - Fix links on index/homepage and sidebar:
         - Lessons: (Lessons Webflow)
         - Help: Soon get email address from skylor
@@ -16,6 +15,6 @@ Jason (organize thoughts):
         - Privacy Policy (None)
         - FAQ (None)
         - Contact (Mailto)
-        - Remove /Application
+    - Remove /Application
     - Remove /Lessons
     - Remove todo.txt

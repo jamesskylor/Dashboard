@@ -7,7 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            My Updates: _____ | _____
+            My Updates: <span id="replaceTitleDate"></span> | Founder School
         </title>
         <style>
             .sidebar {
@@ -407,7 +407,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -719,21 +719,12 @@
                
             }
         </script>
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 7vw from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 7vw from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         
