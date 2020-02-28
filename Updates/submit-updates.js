@@ -22,39 +22,43 @@ function submitUpdate(){
     // Get values
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var path = "";
     if(document.getElementById("launchWeeks").value === "") {
-    var newUData = {
-        updateDate: date,
-        launch: 0,
-        users: document.getElementById("users").value, 
-        userLearning: document.getElementById("userLearning").value,
-        goals: document.getElementById('goals3').value,
-        improvement: document.getElementById('growth').value,
-        biggestObstacle: document.getElementById("biggestObstacle").value,
-        news: document.getElementById("news").value,
-        morale: document.getElementById("morale").value,
-        
-    } }else {
-     newUData = {
-        updateDate: date,
-        launch: document.getElementById("launchWeeks").value,
-        users: document.getElementById("users").value,
-        userLearning: document.getElementById("userLearning").value,
-        goals: document.getElementById('goals3').value,
-        improvement: document.getElementById('growth').value,
-        biggestObstacle: document.getElementById("biggestObstacle").value,
-        news: document.getElementById("news").value,
-        morale: document.getElementById("morale").value,
-        revenue: document.getElementById("revenue").value,
-        moneyInTheBank: document.getElementById("moneyInTheBank").value,
-        monthlyBurnRate: document.getElementById("monthlyBurnRate").value,
-        productUpdates: document.getElementById("productUpdates").value,
-        marketing: document.getElementById("marketing").value,
-        offersAccepted: document.getElementById("offersAccepted").value,
-        offersDeclined: document.getElementById("offersDeclined").value,
-        offersOustanding: document.getElementById("offersOustanding").value,
-        hiresFires: document.getElementById("hiresFires").value
+        var newUData = {
+            updateDate: date,
+            launch: 0,
+            users: document.getElementById("users").value, 
+            userLearning: document.getElementById("userLearning").value,
+            goals: document.getElementById('goals3').value,
+            improvement: document.getElementById('growth').value,
+            biggestObstacle: document.getElementById("biggestObstacle").value,
+            news: document.getElementById("news").value,
+            morale: document.getElementById("morale").value,
+        }
+        path = "/updates/";
     }
+    else {
+        var newUData = {
+            updateDate: date,
+            launch: document.getElementById("launchWeeks").value,
+            users: document.getElementById("users").value,
+            userLearning: document.getElementById("userLearning").value,
+            goals: document.getElementById('goals3').value,
+            improvement: document.getElementById('growth').value,
+            biggestObstacle: document.getElementById("biggestObstacle").value,
+            news: document.getElementById("news").value,
+            morale: document.getElementById("morale").value,
+            revenue: document.getElementById("revenue").value,
+            moneyInTheBank: document.getElementById("moneyInTheBank").value,
+            monthlyBurnRate: document.getElementById("monthlyBurnRate").value,
+            productUpdates: document.getElementById("productUpdates").value,
+            marketing: document.getElementById("marketing").value,
+            offersAccepted: document.getElementById("offersAccepted").value,
+            offersDeclined: document.getElementById("offersDeclined").value,
+            offersOustanding: document.getElementById("offersOustanding").value,
+            hiresFires: document.getElementById("hiresFires").value
+        }
+        path = "/updates/";
     }
     
     console.log(JSON.stringify(newUData));
@@ -64,8 +68,8 @@ function submitUpdate(){
     
     let updateData = async (url, newUData) => {
         var idNum = parseInt(getCookie("dashId"));
-        
-        let sendUData = await fetch(url+'/updates/4', {
+        console.log("ID: "+idNum);
+        let sendUData = await fetch(url+path+idNum, {
             method: "POST",
             headers: {
                 "apiKey": theAPIKey,
