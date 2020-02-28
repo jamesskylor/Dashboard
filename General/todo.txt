@@ -1,27 +1,21 @@
-/Application (2 work-days)
-    Create it (everything) (14 hr)
-
-/Updates (1-4 work-days)
-    Connect to the database (4 hr)
-    Improve CSS (4 hr)
-    Connect the Submit Updates (4 hr)
-    Possibly more (IDK)
-
-
-
 Jackie:
 - Do Updates things
 - Do the Application Page
 
 Jason (organize thoughts):
 - Clean site of redundant pages and code
-    - Fix the Sidebar links for all pages w/ it
-    - Fix the Homepage links
-    - Remove GroupSessions
-    - Remove myCoFounders
-    - Add links to new:
-        - Group Sessions
-        - Deals
-        - Lessons
-        - Help
-        - Updates
+    - Replace all 'Placeholder_Name's
+    - Fix links on index/homepage and sidebar:
+        - Lessons: (Lessons Webflow)
+        - Help: Soon get email address from skylor
+    - Fix the email to for group session
+    - Fix the Footers w/ their links
+        - Apply Now (Application Webflow)
+        - Atom Capital (No site yet)
+        - About (None)
+        - Privacy Policy (None)
+        - FAQ (None)
+        - Contact (Mailto)
+        - Remove /Application
+    - Remove /Lessons
+    - Remove todo.txt

@@ -37,11 +37,8 @@ $(function() {
         if(href == "myProfile.html") {
             theScriptName = "js/profile.js";
         }
-        else if(href == "myCompany.html") {
-            theScriptName = "js/company.js";
-        }
         else {
-            theScriptName = "js/cofounder.js";
+            theScriptName = "js/company.js";
         }
         $.getScript(theScriptName, ()=>{
             loadValues();
