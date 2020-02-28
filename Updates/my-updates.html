@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
         <title>
-            Submit Update | _____
+            My Updates | Founder School
         </title>
         <style>
             .sidebar {
@@ -258,7 +258,16 @@
                 border-top: 1px solid black;
             }
             
-            
+            #thatLogo {
+                margin-top: -1.58vw;
+                margin-left: -1.98vw;
+                margin-bottom: -2vw;
+                width: 27vw;
+            }
+            span.founderSchool {
+                padding: 0;
+                margin-top: -5vw;
+            }
             
             
             
@@ -271,8 +280,7 @@
         <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
-                <i class= "material-icons md-40" style="color: #1b4fce">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <img src="../General/FSLogoLarge.svg" id="thatLogo">
             </span>
             </a>
             <br>
@@ -389,7 +397,7 @@
             function toggleSideBar() {
                
                     console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
+                    document.getElementById("mySidebar").style.width = "27vw";
                     //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
               
             }

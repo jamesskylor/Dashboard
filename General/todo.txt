@@ -10,7 +10,5 @@ Tasks:
         - Privacy Policy (None)
         - FAQ (None)
     - Remove todo.txt
-- Create Logo
 - Test updates
-    - Fix the missing parts of updates
 - Transfer heroku to skylor

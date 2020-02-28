@@ -54,6 +54,7 @@
                 padding-top: 1vw;
                 white-space: nowrap; /* makes text not show up in the sidebar when minimized */
                 overflow-x: hidden; /* hides the text that over flows */
+                overflow-y: hidden;
                 border-right:  0.1vw solid #3D3D38;
             }
             .sidebar a {
@@ -270,6 +271,16 @@
             span.blue:hover {
                 text-decoration: underline;
             }
+            #thatLogo {
+                margin-top: -1.58vw;
+                margin-left: -1.98vw;
+                margin-bottom: -2vw;
+                width: 27vw;
+            }
+            span.founderSchool {
+                padding: 0;
+                margin-top: -5vw;
+            }
         </style>
     </head>
     
@@ -277,8 +288,7 @@
         <div id="mySidebar" class="sidebar" onmouseover="toggleSideBar()" onmouseout="untoggleSideBar()">
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
-                <i class= "material-icons md-40" style="color: #1b4fce">cloud</i>
-                <span class="icon-text">Founder School</span>
+                <img src="../General/FSLogoLarge.svg" id="thatLogo">
             </span>
             </a>
             <br>
