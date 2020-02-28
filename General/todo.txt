@@ -4,17 +4,16 @@ Jackie:
 
 Jason (organize thoughts):
 - Clean site of redundant pages and code
+    - Change Footers to Founder School
     - Fix links on index/homepage and sidebar:
         - Lessons: (Lessons Webflow)
-        - Help: Soon get email address from skylor
-    - Fix the email to for group session
     - Fix the Footers w/ their links
         - Apply Now (Application Webflow)
-        - Atom Capital (No site yet)
+        - Founder School (No site yet)
         - About (None)
         - Privacy Policy (None)
         - FAQ (None)
-        - Contact (Mailto)
     - Remove /Application
     - Remove /Lessons
     - Remove todo.txt
+    - Transfer heroku to skylor
