@@ -13,6 +13,6 @@ Tasks:
     - Remove /Application
     - Remove /Lessons
     - Remove todo.txt
-    - Create Logo
-    - Transfer heroku to skylor
-- Connect the updates-db to master
+- Create Logo
+- Test updates
+- Transfer heroku to skylor

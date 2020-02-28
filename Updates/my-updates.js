@@ -19,9 +19,8 @@ function getCookie(cname) {
 // sessionStorage.setItem("key", document.getElementByClassName(tableHeader).value) use e. value to get the value of the date clicked.
 
 function loadValues(){
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     let fetchData = async (url, theAPIKey) => {
         var idNum = parseInt(getCookie("dashId"));
         let getUpdates = await fetch(url+'/updates/4', {

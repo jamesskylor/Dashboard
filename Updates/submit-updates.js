@@ -59,9 +59,8 @@ function submitUpdate(){
     
     console.log(JSON.stringify(newUData));
     
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
-    // var theAPIKey = "C@D@123";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     
     let updateData = async (url, newUData) => {
         var idNum = parseInt(getCookie("dashId"));

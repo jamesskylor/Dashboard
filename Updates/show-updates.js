@@ -20,12 +20,10 @@ window.addEventListener("load", (e)=>{
 });
 
 function loadValues(){
-    var url = 'http://localhost:3002';
-    var theAPIKey = "notTheRealAPIKey";
+    var url = 'https://dashdb.herokuapp.com';
+    var theAPIKey = "C@D@123";
     var dateSubmitted = sessionStorage.getItem('key');
-    // var theAPIKey = "C@D@123";
     let fetchData = async (url, theAPIKey, dateSubmitted) => {
-        console.log("hello");
         var idNum = parseInt(getCookie("dashId"));
         let getUpdates = await fetch(url+'/update/4', {
             method: "GET",
@@ -45,32 +43,31 @@ function loadValues(){
         
         return;
     }
-    console.log("hello2");
     fetchData(url, theAPIKey, dateSubmitted);
 }
 function launched () {
-                var x= document.getElementById("switch-innertext");
-                if(x.innerHTML ==="Weeks until launch:") {
-                    x.innerHTML = "Congratulations you are launched!";
-                } else {
-                    x.innerHTML = "Weeks until launch:"
-                }
-                var y= document.getElementById("numberWeeks");
-                if(y.style.display ==="none") {
-                    y.style.display = "block";
-                }
-                else {
-                    y.style.display = "none";
-                }
-                var hideThis = document.getElementById("hideThis");
-                if(hideThis.style.display =="block") {
-                    hideThis.style.display = "none";
-                }
-                else{
-                    hideThis.style.display = "block";
-                }
-               
-            }
+    var x= document.getElementById("switch-innertext");
+    if(x.innerHTML ==="Weeks until launch:") {
+        x.innerHTML = "Congratulations you are launched!";
+    } else {
+        x.innerHTML = "Weeks until launch:"
+    }
+    var y= document.getElementById("numberWeeks");
+    if(y.style.display ==="none") {
+        y.style.display = "block";
+    }
+    else {
+        y.style.display = "none";
+    }
+    var hideThis = document.getElementById("hideThis");
+    if(hideThis.style.display =="block") {
+        hideThis.style.display = "none";
+    }
+    else{
+        hideThis.style.display = "block";
+    }
+
+}
 
 function loadUpdates(updatesJSON){
     if(updatesJSON.launch === "0") {
