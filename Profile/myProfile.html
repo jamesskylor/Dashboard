@@ -5,7 +5,7 @@
     <head>
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <title>
-            My Profile | _____
+            My Profile | Founder School
         </title>
         <style>
             html, body {
@@ -66,16 +66,17 @@
                 margin-left: 10%;
                 margin-top: 3%;
                 border: none;
-                background-color: #3d3d3d;
+                background-color: #000000;
                 width: 5vw;
                 height: 3vw;
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
-                color: #cccccc;
+                color: #ffffff;
                 margin-bottom: 3%;
+                font-weight: bold;
             }
             button.editButton:hover {
-                background-color: #616161;
+                background-color: #4d4d4d;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
             }
@@ -147,19 +148,18 @@
                 background-position: center;
             }
             #theSaveButton {
-                margin-left: 10%;
-                margin-top: 3%;
-                border: none;
-                background-color: #3d3d3d;
-                width: 5vw;
-                height: 3vw;
-                font-size: 1.5vw;
                 font-family: 'Lustria', serif;
-                color: #cccccc;
-                margin-bottom: 3%;
+                font-size: 0.9vw;
+                background-color: #000000;
+                color: #ffffff;
+                border: none;
+                height: 2.3vw;
+                width: auto;
+                margin-left: 5vw;
+                font-weight: bold;
             }
             #theSaveButton:hover {
-                background-color: #616161;
+                background-color: #4d4d4d;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
             }
@@ -173,7 +173,7 @@
                 My Profile
             </h1>
             <h2>
-                Placeholder Name Account
+                Founder School Account
             </h2>
             <table class="infoList">
                 <tr>
@@ -234,9 +234,9 @@
                             <select class="editBox" id="educationField" required>
                                 <option value="" disabled selected>Select an Option</option>
                                 <option value="HS">High School Diploma</option>
-                                <option value="someUni">Some University</option>
-                                <option value="Undergrad">Bachelors Degree</option>
-                                <option value="Grad">Masters Degree</option>
+                                <option value="someU">Some University</option>
+                                <option value="bach">Bachelors Degree</option>
+                                <option value="grad">Masters Degree</option>
                                 <option value="PhD">PhD</option>
                             </select>
                         </td>
@@ -294,29 +294,6 @@
                         </td>
                         <td class="infoList">
                             <input type="text" placeholder="Where are you based?" class="editBox" id="locationField" maxlength="128" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="infoList title">
-                            Application Status:
-                        </td>
-                        <td class="infoList">
-                            <select class="editBox" id="applicationField" required>
-                                <option value="" disabled selected>Select an Option</option>
-                                <option value="applied">Applied</option>
-                                <option value="notapplied">Not Applied</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="infoList title">
-                            Profile:
-                        </td>
-                        <td class="infoList">
-                            <input type="radio" id="pubY" name="publicity" value="Y" class="Priv" required>
-                            <label>Public</label>
-                            <input type="radio" id="pubN" name="publicity" value="N" class="Priv">
-                            <label>Private</label>
                         </td>
                     </tr>
                 </table>

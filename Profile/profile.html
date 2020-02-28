@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lustria&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <title>
-            My Profile | _____
+            My Profile | Founder School
         </title>
         <style>
             .sidebar {
@@ -131,6 +131,8 @@
                 border: none;
                 height: 2vw;
                 width: 6vw;
+                font-size: 0.8vw;
+                font-weight: bold;
             }
             .linkWrapper button:hover {
                 background-color: #CCCCCC;
@@ -201,16 +203,17 @@
                 margin-left: 10%;
                 margin-top: 3%;
                 border: none;
-                background-color: #3d3d3d;
+                background-color: #000000;
                 width: 5vw;
                 height: 3vw;
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
-                color: #cccccc;
+                color: #ffffff;
                 margin-bottom: 3%;
+                font-weight: bold;
             }
             button.editButton:hover {
-                background-color: #616161;
+                background-color: #4d4d4d;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
             }
@@ -224,11 +227,11 @@
                 padding-right: 2vw;
             }
             td.title {
-                width: 15vw;
+                width: 25vh;
                 font-weight: bold;
             }
             td.data {
-                width: 30vw;
+                width: 60vh;
             }
             input.editBox {
                 width: 100%;
@@ -285,16 +288,17 @@
                 margin-left: 10%;
                 margin-top: 3%;
                 border: none;
-                background-color: #3d3d3d;
+                background-color: #000000;
                 width: 5vw;
                 height: 3vw;
                 font-size: 1.5vw;
                 font-family: 'Lustria', serif;
-                color: #cccccc;
+                color: #ffffff;
                 margin-bottom: 3%;
+                font-weight: bold;
             }
             #theSaveButton:hover {
-                background-color: #616161;
+                background-color: #4d4d4d;
                 /*background-color: #ee252d;
                 color: #ffffff;*/
             }
@@ -363,7 +367,7 @@
             <a class="logo" href="../Homepage/dashboard-index.html">
             <span id="logoPart"> 
                 <i class= "material-icons md-40" style="color: #ee252d/*#06c*/">cloud</i>
-                <span class="icon-text">Placeholder</span>
+                <span class="icon-text">Founder School</span>
             </span>
             </a>
             <br>
@@ -391,12 +395,12 @@
                 <span class="icon-text">Group Sessions</span>
             </a>
             <br>
-            <a href="">
+            <a href="https://www.notion.so/c595b0bbb7494940837a391cd83eca4f?v=69d90a1b2d5541728acafb12c9e7dc09">
                 <i class="material-icons md-40">local_offer</i>
                 <span class="icon-text">Deals</span>
             </a>
             <br>
-            <a href="mailto:">
+            <a href="mailto:skylor@jamesskylor.com">
                 <i class="material-icons md-40">help_outline</i>
                 <span class="icon-text">Help</span>
             </a>
@@ -439,7 +443,7 @@
                             My Profile
                         </h1>
                         <h2>
-                            Placeholder Name Account
+                            Founder School Account
                         </h2>
                         <table class="infoList">
                             <tr>
@@ -562,29 +566,6 @@
                                         <input type="text" placeholder="Where are you based?" class="editBox" id="locationField" maxlength="128" required>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Application Status:
-                                    </td>
-                                    <td class="infoList">
-                                        <select class="editBox" id="applicationField" required>
-                                            <option value="" disabled selected>Select an Option</option>
-                                            <option value="applied">Applied</option>
-                                            <option value="notapplied">Not Applied</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="infoList title">
-                                        Profile:
-                                    </td>
-                                    <td class="infoList">
-                                        <input type="radio" id="pubY" name="publicity" value="Y" class="Priv" required>
-                                        <label>Public</label>
-                                        <input type="radio" id="pubN" name="publicity" value="N" class="Priv">
-                                        <label>Private</label>
-                                    </td>
-                                </tr>
                             </table>
                             <input type="submit" class="editButton" id="theSaveButton" value="Save">
                         </form>
@@ -644,21 +625,12 @@
         </footer>
         
         
-        <script> 
-           
+        <script>
             function toggleSideBar() {
-               
-                    console.log("opening sidebar")
-                    document.getElementById("mySidebar").style.width = "24vw";
-                    //document.getElementById("dashboardContent").style.marginLeft = "17vw"; //subtract 80 from first one.
-              
+                document.getElementById("mySidebar").style.width = "27vw";
             }
             function untoggleSideBar() {
-                
-                    console.log("closing sidebar");
-                    document.getElementById("mySidebar").style.width = "7vw";
-                    document.getElementById("dashboardContent").style.marginLeft = "0px"; //subtract 80 from the first one.
-                
+                document.getElementById("mySidebar").style.width = "7vw";
             }
         </script>
         

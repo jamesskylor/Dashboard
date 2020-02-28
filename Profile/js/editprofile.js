@@ -76,7 +76,7 @@ function saveTheProfile(){
     var passwrd = document.getElementById("perPasswordField").value;
     var checkPass = document.getElementById("perConfirmField").value;
     // Check their validity
-    if(passwrd == checkPass){
+    if(passwrd == checkPass && passwrd.length > 6 && passwrd.length < 50){
         // If valid
         var url = 'https://dashdb.herokuapp.com';
         var theAPIKey = "C@D@123";

@@ -1,47 +1,19 @@
-/Application (2 work-days)
-    Create it (everything) (14 hr)
-
-/GroupSessions (1-2 work-days)
-    Connect it to the database and Philip's code (1-2 hr)
-    Testing (6 hr)
-
-/Updates (1-4 work-days)
-    Connect to the database (4 hr)
-    Improve CSS (4 hr)
-    Connect the Submit Updates (4 hr)
-    Possibly more (IDK)
-    updates add 
- New of the week;
-Change obstacles to the bottom of the box. 
-for goals.
-*Only shows up if they are launched.* In this order underneath the goals section.
-Financials: Money in the Bank, revenue(MRR), Monthly burn rate. 
-Product updates: Long text. 
-Marketing: Long text. Please update us on your marketing activities(sales, traffic, conversions rates, press, new partnerships etc.)
-Team section: Offers accepted, offered declined, offers outstanding. Major hires and fires(text box). 
-
-
-
 Jackie:
 - Do Updates things
 - Do the Application Page
 
-Anyone:
-- Fix the Sidebar links for all pages w/ it
-- Fix the Homepage links
-
-
-
 Jason (organize thoughts):
-(1 hr) {Wednesday}
-- Publish onto domain
-    - Enable CORS
-    
-(5 min)
-- Use the site as:
-    jason@temporary.placeholder
-    thisIsTheOnlyUnhashedPassword
-    - Change any blank values that are bugged just for demo
-    
-(1 hr)
 - Clean site of redundant pages and code
+    - Change Footers to Founder School
+    - Fix links on index/homepage and sidebar:
+        - Lessons: (Lessons Webflow)
+    - Fix the Footers w/ their links
+        - Apply Now (Application Webflow)
+        - Founder School (No site yet)
+        - About (None)
+        - Privacy Policy (None)
+        - FAQ (None)
+    - Remove /Application
+    - Remove /Lessons
+    - Remove todo.txt
+    - Transfer heroku to skylor
