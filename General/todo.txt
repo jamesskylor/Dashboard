@@ -1,8 +1,5 @@
 Tasks:
-- Do the Application Page
 - Clean site of redundant pages and code
-    - Fix links on index/homepage and sidebar:
-        - Lessons: (Lessons Webflow)
     - Fix the Footers w/ their links
         - Apply Now (Application Webflow)
         - Founder School (No site yet)
@@ -10,7 +7,3 @@ Tasks:
         - Privacy Policy (None)
         - FAQ (None)
     - Remove todo.txt
-- Test updates
-    - Fix the submit updates thing
-        - Possibly a problem of either client side or the repo of HerokuDB in case of bugs in the expressjs code
-- Transfer heroku to skylor
