@@ -1,8 +1,5 @@
-Jackie:
-- Do Updates things
+Tasks:
 - Do the Application Page
-
-Jason (organize thoughts):
 - Clean site of redundant pages and code
     - Change Footers to Founder School
     - Fix links on index/homepage and sidebar:
@@ -16,4 +13,6 @@ Jason (organize thoughts):
     - Remove /Application
     - Remove /Lessons
     - Remove todo.txt
+    - Create Logo
     - Transfer heroku to skylor
+- Connect the updates-db to master
